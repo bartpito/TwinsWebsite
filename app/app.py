@@ -7,7 +7,7 @@ app = Flask("TwinsPage")
 
 @app.route('/')
 def mainPage():
-  return "hello, world"
+  return render_template("mainPage.html")
 
 
 
