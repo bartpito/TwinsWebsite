@@ -6,8 +6,8 @@ from flask import Flask, render_template, url_for
 app = Flask("TwinsPage")
 
 @app.route('/')
-def mainPage():
-  return render_template("mainPage.html")
+def index():
+  return render_template("index.html")
 
 
 
