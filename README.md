@@ -1,3 +1,5 @@
 # TwinsWebsite
-Goal is to create a website with my twin borther where will will post our projects etc.
 ## In progress ...
+
+Goal is to create ML portfolio page with flask
+
