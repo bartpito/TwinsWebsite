@@ -7,11 +7,9 @@ app = Flask("TwinsPage")
 
 @app.route('/')
 def index():
-  return render_template("index.html")
+  return render_template('index.html')
 
-
-
-@app.route('/Pito')
+@app.route('/Pito') 
 def hello_pito():
   return render_template('hello.html') 
 
