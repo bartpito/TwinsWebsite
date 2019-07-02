@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
 
 app = Flask(__name__)
 
 
-@app.route('/About/<name>')
-def hello(name=None):
-  return render_template('about.html', name=name)
+@app.route('/<name>')
+def index(name='pito'):
+  return render_template('home.html', name=name) 
+
+
+@app.route('/About')
+def hello():
+  return render_template('about.html') 
 
 
 
