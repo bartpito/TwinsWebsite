@@ -2,17 +2,16 @@
 <html>
   <head>
     <title>About {{ name }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
   <section class="one">
-    <h1>About {{ name }}</h1>
-    <div class="one__icon">Button</div>
+    <button type="button" class='btn' onclick="window.location.href='{{ url_for( 'index', name='pito' ) }}'">Pito</button>
   </section>
 
   <section class="two">
-    <h1>Section 2</h1> 
-    <img src="https://fillmurray.com/300/500" alt="" class="two__image">
+    <button type="button" class='btn' onclick="window.location.href='{{ url_for( 'index', name='bart' ) }}'">Bart</button>
   </section>
 
   <section class="three">
