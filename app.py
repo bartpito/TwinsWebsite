@@ -5,9 +5,12 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-  return "Hello, World!"
+@app.route('/About/<name>')
+def hello(name=None):
+  return render_template('about.html', name=name)
+
+
+
 
 
 
