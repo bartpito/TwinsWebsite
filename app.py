@@ -5,14 +5,16 @@ from flask import Flask, render_template, url_for, redirect
 app = Flask(__name__)
 
 
-@app.route('/<name>')
-def index(name='pito'):
-  return render_template('home.html', name=name) 
+@app.route('/')
+def index():
+  return render_template('mainpage.html')
 
-
-@app.route('/About')
-def hello():
-  return render_template('about.html') 
+@app.route('/About/<name>')
+def about(name=None):
+  if name == 'pito':
+    return render_template('pito.html') 
+  elif name == 'bart':
+    return render_template('bart.html')
 
 
 
