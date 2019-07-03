@@ -4,7 +4,6 @@ from flask import Flask, render_template, url_for, redirect
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
   return render_template('mainpage.html')
@@ -15,9 +14,6 @@ def about(name=None):
     return render_template('pito.html') 
   elif name == 'bart':
     return render_template('bart.html')
-
-
-
 
 
 
