@@ -6,8 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
-  <section class="one">
-    <button style='margin-right:800px' type="button" class='btn' 
+    <section class="one">
+    {{ nav.navbar.render() }}
+      <button style='margin-right:800px' type="button" class='btn' 
       onclick="window.location.href='{{ url_for( 'about', name='pito' ) }}'">Pito</button>
 
     <button type="button" class='btn'
@@ -17,6 +18,6 @@
   <section class="three">
     <h1>Section 3</h1>
   </section>
-
+  
   </body>
 </html>
