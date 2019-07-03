@@ -11,8 +11,10 @@ h1 {
 }
 
 h2 {
-  color: black;
-  font-size: 1.6em; 
+  color: hsla(248, 72%, 69%, 1); 
+  font-size: 2.6em; 
+  text-align: center;
+  margin-top: -40px;
 }
 
 p {
@@ -22,25 +24,25 @@ p {
 
 .circle {
   float: left;
-  margin-top: 400px;
+  margin-top: 100px;
   margin-left: 400px;
   height: 180px;
   width: 180px;
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   background-color: black;
-  border: 10px solid purple;
+  border: 10px solid hsla(248, 72%, 69%, 1);
 }   
 
-
-
-.desc {
-  margin-top: 100px;
-  border: 5px solid black;
-  height: 150px;
-  width: 150px;
-}
-
-
 .main {
-  border: 5px solid black;
+  margin-top: 45px;
+  margin-left: 250px;
+  font-size: 1.2em;
+  width: 400px;
+  height: 100px;
+  float: left;
+  text-align: center;
 }
+
+
+
+
