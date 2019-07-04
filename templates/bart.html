@@ -1,33 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title>Bart</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bart.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   </head>
   <body>
-    <div>      
-      <div class='circle'><h1>AI / ML</h1></div>
-      <div class='circle'><h1>NLP</h1></div>
-      <div class='circle'><h1>Python</h1></div>
+    <section class='one'>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">I am interested in</h1>
+        <div class="border"></div>
+        <div class="services-container">
 
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="service-title">AI / ML</div>
+            <div class="service-desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <div class="service-title">NLP</div>
+            <div class="service-desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <div class="service-title">RL</div>
+            <div class="service-desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="service-title">Python</div>
+            <div class="service-desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class='main'>
-        <h2 style='margin-left:95px;'><u>Fast</u></h2>
-        <p style='margin-left: 95px;'>Fast load times and lag free interaction, 
-        my highest priority.</p>
-      </div>
-
-      <div class='main'>
-        <h2><u>Intuitive</u></h2>
-        <p>Strong preference for easy to use, intuitive UX/UI.</p>
-      </div>
-
-      <div class='main'>
-        <h2 style='margin-left:-98px;'><u>Responsive</u></h2>
-        <p style='margin-left:-98px;'>My layouts will work on any device, big or small.</p>
-      </div>
+    <div class='img-section'>
+      <img src='../static/user.jpg', style='width:100%;'>
     </div>
-
+    </section>
+    <section class='two'>
+      <div class='about-section'>
+        <h1>About me</h1>
+      </div>
+    </section>
   </body>
 </html>
