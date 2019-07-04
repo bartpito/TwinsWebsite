@@ -86,9 +86,7 @@ p {
 
 abbr[title],
 abbr[data-original-title] {
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+  color: purple;
   cursor: help;
   border-bottom: 0;
   -webkit-text-decoration-skip-ink: none;
@@ -154,14 +152,14 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: purple;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color:purple;
+  
 }
 
 a:not([href]):not([tabindex]) {
@@ -2955,12 +2953,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: purple;
+  
 }
 
 .btn-link:focus, .btn-link.focus {
-  text-decoration: underline;
+  color: purple;
+
   box-shadow: none;
 }
 
@@ -4067,11 +4066,15 @@ input[type="button"].btn-block {
 }
 
 .nav-link:hover, .nav-link:focus {
-  text-decoration: none;
+  color: purple;
+}
+
+.nav-link a:hover {
+  color:purple;
 }
 
 .nav-link.disabled {
-  color: #6c757d;
+  color: purple;
   pointer-events: none;
   cursor: default;
 }
@@ -4095,14 +4098,14 @@ input[type="button"].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #6c757d;
+  color: purple;
   background-color: transparent;
   border-color: transparent;
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: purple;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -4119,7 +4122,7 @@ input[type="button"].btn-block {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
+  color: purple;
   background-color: #007bff;
 }
 
@@ -4463,26 +4466,26 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: purple;
 }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+  color: purple;
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: purple;
 }
 
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-  color: rgba(0, 0, 0, 0.9);
+  color: purple;
 }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
+  color: purple;
   border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -4511,22 +4514,22 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: purple;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color: purple);
 }
 
 .navbar-dark .navbar-nav .nav-link.disabled {
-  color: rgba(255, 255, 255, 0.25);
+  color: purple;
 }
 
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: purple;
 }
 
 .navbar-dark .navbar-toggler {
@@ -4824,7 +4827,7 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: underline;
+  color:purple;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -9966,7 +9969,7 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: none !important;
   }
   a:not(.btn) {
-    text-decoration: underline;
+    color:purple;
   }
   abbr[title]::after {
     content: " (" attr(title) ")";
