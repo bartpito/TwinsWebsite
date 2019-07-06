@@ -44,5 +44,35 @@ p {
 }
 
 
+.one {
+  background: hsl(189, 10%, 16%);
+  position: relative;
+}
 
+.one::after,
+.one::before {
+  position: absolute;
+  content: '';
+  width: 150px;
+  height: 150px;
+  background: hsl(189, 10%, 16%);
+  bottom: -1em;
+  z-index: 100;
+}
+
+
+.one::before {
+  right: 50%;
+  transform: skew(0, 20deg)
+}
+
+
+.one::after {
+  left: 50%;
+  transform: skew(0, -20deg)
+}
+
+.two{
+  background-color: yellow;
+}
 
