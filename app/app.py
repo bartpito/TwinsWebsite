@@ -7,6 +7,12 @@ from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 app = Flask(__name__)
 nav = Nav(app)
 
+@nav.navigation("navbar")
+def create_navbar():
+  home_view = View("Home", 'index')
+  pito_view = View("About Pito", 'about', name="pito")
+  bart_view = View("About Bart", 'about', name="bart")
+  return Navbar("MySite", home_view, pito_view, bart_view)
 
 @app.route('/')
 def index():
