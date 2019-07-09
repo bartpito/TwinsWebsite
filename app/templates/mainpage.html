@@ -6,17 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
-  <section class="one">
-    <button style='margin-right:800px' type="button" class='btn' 
-      onclick="window.location.href='{{ url_for( 'about', name='pito' ) }}'">Pito</button>
-
-    <button type="button" class='btn'
-            onclick="window.location.href='{{ url_for( 'about', name='bart' ) }}'">Bart</button>
-  </section>
-
-  <section class="three">
-    <h1>Section 3</h1>
-  </section>
-
+    <section class="one">
+      <button style='margin-right:800px' type="button" class='btn' 
+        onclick="window.location.href='{{ url_for( "about", name="pito" ) }}'">Pito</button>
+      <button type="button" class='btn'
+            onclick="window.location.href='{{ url_for( "about", name="bart" ) }}'">Bart</button>
+    </section>
   </body>
 </html>
