@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en" dir="ltr" style="background-color: white">
   <head>
-    <title>Pito</title>
+    <meta charset="utf-8">
+    <title>{{ name }}</title>
     <link rel="stylesheet"  href="{{ url_for('static', filename='bootstrap.css') }}" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pito.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   </head>
-  <body style='background: hsl(189, 10%, 16%)'>
-    {% block navbar %}
-    <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: transparent; color: white; width: 340px; border:2px solid white; border-radius: 30px; margin-left: 20px;
-    margin-top: 20px">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a style="text-align: center; color:white;font-weight: bold;" class="nav-link" href="{{ url_for( 'index') }}">Home Page <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <div class="pito">
-              <a style="color:white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
+    <body style='background-color: white;'>
+      {% block navbar %}
+      <nav class="navbar navbar-expand-sm" style="background-color: white; color: purple; width: 340px; border: 2px solid black; border-radius: 30px; margin-left: 20px;
+      margin-top: 10px">
+        <div class="collapse navbar-collapse" id="navbarNav" style="background-color: white">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="text-align: center; color:black;font-weight: bold;" class="nav-link" href="{{ url_for( 'index') }}">Home Page <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <div class="pito">
+                <a style="color:black;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a style="color: black;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About Bart</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {% endblock %}
+    <section class='one'>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">I am interested in</h1>
+        <div class="border"></div>
+        <div class="services-container">
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
             </div>
-          </li>
-          <li class="nav-item">
-            <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About Bart</a>
-          </li>
-        </ul>
+            <div class="service-title">AI / ML</div>
+            <div class="service-desc">
+              hello ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro,
+              hil.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <div class="service-title">NLP</div>
+            <div class="service-desc">
+              hello ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro,
+              nhil.
+            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="service-title">Python</div>
+            <div class="service-desc">
+              hello ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, 
+              hil.
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
-    {% endblock %}
- </body>
+    </div>
+    <div class='img-section'>
+      <img src='../static/pito.jpg', style='width:100%;'>
+    </div>
+    </section>
+    <section class='two'>
+      <div class='about-section' >
+         <img src='../static/aboutme.png', style='width:100%;  border-radius: 2px;'>
+      </div>
+    </section>
+  </body>
 </html>
+
