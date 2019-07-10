@@ -8,7 +8,10 @@ app = Flask(__name__)
 nav = Nav(app)
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a76336b71bfd59cc986c83d1e2284cf5a4f97def
 @nav.navigation("navbar")
 def create_navbar():
   home_view = View("Home", 'index')

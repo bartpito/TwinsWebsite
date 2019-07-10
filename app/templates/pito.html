@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en" dir="ltr">
+
+<html lang="en" dir="ltr" style="background-color: rgb(43, 42, 40)">
   <head>
     <meta charset="utf-8">
     <title>{{ name }}</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='bootstrap.css') }}" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pito.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   </head>
-  <body>
+    <body style='background-color: rgb(43, 42, 40);'>
+      {% block navbar %}
+      <nav class="navbar navbar-expand-sm" style="background-color: rgb(43, 42, 40); width: 340px; border: 2px solid rgb(252, 207, 14); border-radius: 30px; margin-left: 20px;
+      margin-top: 10px">
+        <div class="collapse navbar-collapse" id="navbarNav" style="background-color: rgb(43, 42, 40)">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a style="text-align: center; color:rgb(252, 207, 14);font-weight: bold;" class="nav-link" href="{{ url_for( 'index') }}">Home Page <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <div class="pito">
+                <a style="color:rgb(252, 207, 14);font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a style="color: rgb(252, 207, 14);font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About Bart</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {% endblock %}
     <section class='one'>
     <div class="services-section">
       <div class="inner-width">
@@ -52,7 +73,7 @@
       </div>
     </div>
     <div class='img-section'>
-      <img src='../static/pito.jpg', style='width:100%;'>
+      <img src='../static/user.jpg', style='width:100%;'>
     </div>
     </section>
     <section class='two'>
@@ -61,34 +82,5 @@
       </div>
     </section>
   </body>
-=======
-<html>
-  <head>
-    <title>Pito</title>
-    <link rel="stylesheet"  href="{{ url_for('static', filename='bootstrap.css') }}" type="text/css"/>
-  </head>
-  <body style='background: hsl(189, 10%, 16%)'>
-    {% block navbar %}
-    <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: transparent; color: white; width: 340px; border:2px solid white; border-radius: 30px; margin-left: 20px;
-    margin-top: 20px">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a style="text-align: center; color:white;font-weight: bold;" class="nav-link" href="{{ url_for( 'index') }}">Home Page <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <div class="pito">
-              <a style="color:white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About bart</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    {% endblock %}
- </body>
->>>>>>> mainPage
 </html>
 
