@@ -55,21 +55,6 @@ section {
   background-color: white;
 }
 
-.button {width: 320px;
-  height: 80px;
-  background-color: transparent; 
-  font-size: 2.3em;
-  color: rgb(255, 185, 185);
-  font-family: 'Montserrat', sans-serif;
-  padding-top: px;
-  transition: all .6s; 
-  cursor: pointer;
-  z-index: 1;
-  display: inline-block;
-          }
-
-
-
 .semi-transparent-button {
   display: block;
   box-sizing: border-box;
