@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html style="margin: 0; padding:0">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/projectsPage.css') }}">
-<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
-<style>
-</style>
-</head>
-<body>
-    <div class="split left">
-            <section style="background: #6441a5; color: #fff;">
-                <h2>PITO</h2>
-                <nav class="stroke">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Downloads</a></li>
-                        <li><a href="#">More</a></li>
-                        <li><a href="#">Nice staff</a></li>
-                    </ul>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/projectsPage.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <section style="background: #e74c3c; color: #fff;">
+            <h2>Ours Projects</h2>
+            <nav class="stroke">
+                <ul>
+                        <li><a href="{{ url_for( 'index') }}">Home Page</a></li>
+                        <li><a href="{{ url_for( 'about', name='pito' ) }}">About Pito</a></li>
+                        <li><a href="{{ url_for( 'about', name='bart' ) }}">About Bart</a></li>
+                </ul>
             </nav>
         </section>
-  </div>
-</div>
-
-<div class="split right">
-  <div class="centered">
-    <img src='../static/views/user.jpg', style='width:100%;  border-radius: 2px;'>
-    <h2>John Doe</h2>
-    <p>Some text here too.</p>
-  </div>
-</div>
-     
-</body>
+    </div>
+    </body>
+</html>
