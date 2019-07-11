@@ -34,5 +34,10 @@ def projects():
     return render_template('projects.html')
 
 
+@app.route('/ProjectsPage')
+def projectsPage():
+    return render_template('projectsPage.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1')

@@ -114,8 +114,8 @@ ul.a {
   font-size: 26px;
 }
 .service-box:hover .service-icon{
-  background: rgb(43, 42, 40);
-  color: black;
+  background: darkgreen;
+  color: white;
 }
 .service-title{
   font-size: 18px;
