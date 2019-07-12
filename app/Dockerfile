@@ -1,8 +1,9 @@
 FROM python:3
 
-COPY . ../NewsSentimentAnalysis
+COPY . ../app
 
-WORKDIR /NewsSentimentAnalysis
+WORKDIR /app
+
 
 RUN pip3 install -r requirments.txt 
 RUN python -m nltk.downloader punkt
