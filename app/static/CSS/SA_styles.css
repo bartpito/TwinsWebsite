@@ -1,0 +1,101 @@
+html {
+  background-color: #ffffff;
+}
+
+body {
+
+  font-family: monospace;
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 0.6em;
+}
+
+.topic {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 40px;
+  font-style: italic;
+}
+
+.button {
+  padding: 1px 6px;
+}
+
+.button {
+  align-items:: flex-start;
+  text-align: center;
+  cursor: default;
+  box-sizing: border-box;
+}
+
+.button {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0;
+  text-shadow: none;
+  display: inline-block;
+  margin: 0em;
+  font: 200 7.5px Arial;
+}
+
+.button {
+    -webkit-writing-mode: horizontal-tb !important;
+}
+
+.button {
+  -webkit-writing-mode: horizontal-tb !important;
+}
+
+.button {
+  -webkit-appearance button;
+}
+
+.button .predict-button {
+  width: 120px;
+  height: 25px;
+  border-radius: 8px;
+  background-color: #7052CB;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.text {
+  height: 20px;
+  width: 140px;
+  border-radius: 5px;
+  margin-bottom: 5px;	
+  color: black;
+  font: 600 9px Arial;
+}
+
+
+.inner {
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 60%;
+  margin-left: 150px;
+}
+
+
+.image {
+  height: 205px;
+  width: 255px;
+  background-color: #ffffff;
+  background-image: url("./newspaper.jpeg");
+  position: absolute;
+  bottom: 140px;
+  margin-left: 600px;
+  border-radius: 30px;
+  border-color: snow;
+}
+
+
