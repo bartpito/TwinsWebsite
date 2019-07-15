@@ -20,7 +20,7 @@ p {
 .topic {
   font-size: 1.2em;
   font-weight: bold;
-  margin-top: 40px;
+  
   font-style: italic;
 }
 
@@ -29,7 +29,7 @@ p {
 }
 
 .button {
-  align-items:: flex-start;
+  align-items: center;
   text-align: center;
   cursor: default;
   box-sizing: border-box;
@@ -47,16 +47,10 @@ p {
   font: 200 7.5px Arial;
 }
 
+
 .button {
     -webkit-writing-mode: horizontal-tb !important;
-}
-
-.button {
-  -webkit-writing-mode: horizontal-tb !important;
-}
-
-.button {
-  -webkit-appearance button;
+    -webkit-appearance button;
 }
 
 .button .predict-button {
@@ -72,17 +66,20 @@ p {
   height: 20px;
   width: 140px;
   border-radius: 5px;
-  margin-bottom: 5px;	
   color: black;
   font: 600 9px Arial;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 
 .inner {
   background-color: #ffffff;
-  position: absolute;
-  bottom: 60%;
-  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 
@@ -93,7 +90,7 @@ p {
   background-image: url("../views/newspaper.jpeg");
   position: absolute;
   bottom: 140px;
-  left: 50%;
+  left: 25%;
   border-radius: 30px;
   border-color: snow;
 }
