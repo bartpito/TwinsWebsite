@@ -38,7 +38,7 @@ h3 {
   bottom: 490px;
   margin-left: 405px;
   border-radius: 60px;
-  background-image: url('./smile.jpg') ;
+  background-image: url('../views/smile.jpg') ;
   overflow: hidden;
   position: absolute
 }
@@ -49,7 +49,7 @@ h3 {
   bottom: 490px;
   margin-left: 405px;
   border-radius: 60px;
-  background-image: url('./mad.jpg') ;
+  background-image: url('../views/mad.jpg') ;
   overflow: hidden;
   position: absolute;
 }

@@ -82,7 +82,7 @@ p {
   background-color: #ffffff;
   position: absolute;
   bottom: 60%;
-  margin-left: 150px;
+  left: 50%;
 }
 
 
@@ -90,10 +90,10 @@ p {
   height: 205px;
   width: 255px;
   background-color: #ffffff;
-  background-image: url("./newspaper.jpeg");
+  background-image: url("../views/newspaper.jpeg");
   position: absolute;
   bottom: 140px;
-  margin-left: 600px;
+  left: 50%;
   border-radius: 30px;
   border-color: snow;
 }

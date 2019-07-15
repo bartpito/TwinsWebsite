@@ -25,7 +25,7 @@ maxlen = 100
 max_words = 20000
 emb_size = 50
 
-network = Network(max_words, maxlen, emb_size, None, False, 'projects/SentimentAnalysis/data/my_model_3.h5')
+network = Network(max_words, maxlen, emb_size, None, False, 'data/my_model_3.h5')
 
 global graph
 graph = tf.get_default_graph()
@@ -79,7 +79,7 @@ def predict():
             print(network.parser.titles[0])
             print(prediction)
    
-    return render_template('SentimentResult.html', prediction=prediction, text=network.parser.titles[0])
+    return render_template('SentimentResults.html', prediction=prediction, text=network.parser.titles[0])
 
 if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1')
+    app.run(debug=True, host='0.0.0.0')

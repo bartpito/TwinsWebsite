@@ -1,6 +1,6 @@
 FROM python:3
 
-COPY . /app
+COPY /home/pito/Desktop/Twins_project/TwinsWebsite/app/projects/SentimentAnalysis /home/pito/Desktop/Twins_project/TwinsWebsite/app
 
 WORKDIR /app
 
