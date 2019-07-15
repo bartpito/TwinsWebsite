@@ -15,7 +15,7 @@
 		
 	<h3><u>Topic Title:</u></h3>
  	{% if prediction == 1%}	
-	<p class='topic' style='color:white; background-color:blue;'><b>{{text}}</b></p>
+	<p class='topic' style='color:white; background-color:green;'><b>{{text}}</b></p>
 	<p class="image-smile"></p>
 	{% elif prediction == 0%}
 	<p class="topic" style="color:white; background-color:red;"><b>{{text}}</b></p>
@@ -23,7 +23,7 @@
 	{% endif %}
 	<h3 style="color:black;text-align:center;"><u>Result:</u></h3>
 	{% if prediction == 1%}
-	<h2 class="result" style="color:white; background-color:blue;">POSITIVE</h2>
+	<h2 class="result" style="color:white; background-color:green;">POSITIVE</h2>
 	{% elif prediction == 0%}
 	<h2 class="result" style="color:white; background-color:red;">NEGATIVE</h2>
 	{% endif %}

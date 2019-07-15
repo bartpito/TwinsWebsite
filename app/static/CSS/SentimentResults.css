@@ -35,12 +35,11 @@ h3 {
 .image-smile{
   height: 122px;
   width: 122px;
-  bottom: 490px;
-  margin-left: 405px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 60px;
   background-image: url('../views/smile.jpg') ;
-  overflow: hidden;
-  position: absolute
 }
 
 .image-angry{

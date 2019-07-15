@@ -14,13 +14,21 @@ h2 {
 }
 
 p {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
+
+
+.ml-container {
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+}
+
 
 .topic {
   font-size: 1.2em;
   font-weight: bold;
-  
   font-style: italic;
 }
 
@@ -29,8 +37,6 @@ p {
 }
 
 .button {
-  align-items: center;
-  text-align: center;
   cursor: default;
   box-sizing: border-box;
 }
@@ -68,10 +74,7 @@ p {
   border-radius: 5px;
   color: black;
   font: 600 9px Arial;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
+  }
 
 
 .inner {
@@ -80,6 +83,7 @@ p {
   align-items: center;
   justify-content: center;
   margin: 0;
+  margin-top: 5%;
 }
 
 
@@ -89,7 +93,7 @@ p {
   background-color: #ffffff;
   background-image: url("../views/newspaper.jpeg");
   position: absolute;
-  bottom: 140px;
+  bottom: 20%;
   left: 25%;
   border-radius: 30px;
   border-color: snow;
