@@ -1,102 +1,80 @@
 html {
-  background-color: #ffffff;
+	background-color: #ffffff;
 }
-
 body {
-
-  font-family: monospace;
-  text-align: center;
-  color: black;
+	font-family: monospace;
+	text-align: center;
+	color: black;
 }
-
 h2 {
-  font-size: 1.8em;
+	font-size: 1.8em;
 }
-
 p {
-  font-size: 0.8em;
+	font-size: 0.8em;
 }
-
-
 .ml-container {
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-
+	align-items: center;
+	justify-content: center;
+	margin: 0;
 }
-
-
 .topic {
-  font-size: 1.2em;
-  font-weight: bold;
-  font-style: italic;
+	font-size: 1.2em;
+	font-weight: bold;
+	font-style: italic;
 }
-
 .button {
-  padding: 1px 6px;
+	padding: 1px 6px;
 }
-
 .button {
-  cursor: default;
-  box-sizing: border-box;
+	cursor: default;
+	box-sizing: border-box;
 }
-
 .button {
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0;
-  text-shadow: none;
-  display: inline-block;
-  margin: 0em;
-  font: 200 7.5px Arial;
+	text-rendering: auto;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0;
+	text-shadow: none;
+	display: inline-block;
+	margin: 0em;
+	font: 200 7.5px Arial;
 }
-
-
 .button {
-    -webkit-writing-mode: horizontal-tb !important;
-    -webkit-appearance button;
+	-webkit-writing-mode: horizontal-tb !important;
+	-webkit-appearance button;
 }
-
 .button .predict-button {
-  width: 120px;
-  height: 25px;
-  border-radius: 8px;
-  background-color: #7052CB;
-  color: #ffffff;
-  font-size: 15px;
+	width: 120px;
+	height: 25px;
+	border-radius: 8px;
+	background-color: #7052CB;
+	color: #ffffff;
+	font-size: 15px;
 }
-
 .text {
-  height: 20px;
-  width: 140px;
-  border-radius: 5px;
-  color: black;
-  font: 600 9px Arial;
-  }
-
-
+	height: 20px;
+	width: 140px;
+	border-radius: 5px;
+	color: black;
+	font: 600 9px Arial;
+}
 .inner {
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  margin-top: 5%;
+	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	margin-top: 5%;
 }
-
-
 .image {
-  height: 205px;
-  width: 255px;
-  background-color: #ffffff;
-  background-image: url("../views/newspaper.jpeg");
-  position: absolute;
-  bottom: 20%;
-  left: 25%;
-  border-radius: 30px;
-  border-color: snow;
+	height: 205px;
+	width: 255px;
+	background-color: #ffffff;
+	background-image: url("../views/newspaper.jpeg");
+	position: absolute;
+	bottom: 20%;
+	left: 25%;
+	border-radius: 30px;
+	border-color: snow;
 }
-
-

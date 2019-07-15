@@ -2,14 +2,17 @@ html {
   background-color: hsl(189, 10%, 16%);
 }
 
+
 p {
   color: black;
   font-size: 1.0em;
 }
 
+
 section {
   padding: 54vh 0;
 }
+
 
 .one {
   padding-top: 10px;
