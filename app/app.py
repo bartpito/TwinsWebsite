@@ -35,6 +35,7 @@ def create_navbar():
     home_view = View("Home", 'index')
     pito_view = View("About Pito", 'about', name="pito")
     bart_view = View("About Bart", 'about', name="bart")
+    project_view = View("Projects", )
     return Navbar("MySite", home_view, pito_view, bart_view)
 
 
@@ -51,21 +52,16 @@ def about(name=None):
         return render_template('bart.html')
 
 
-@app.route('/Projects')
-def projects():
-    return render_template('projects.html')
-
-
 @app.route('/ProjectsPage')
 def projectsPage():
     return render_template('projectsPage.html')
 
 @app.route('/Sentiment')
-def home():
+def sentiment():
     return render_template('SentimentMainPage.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/Predict', methods=['POST'])
 
 
 
