@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html style="margin: 0; padding:0">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/projectsPage.css') }}">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        <section style="background: #e74c3c; color: #fff;">
-            <h2>Ours Projects</h2>
-            <nav class="stroke">
-                <ul>
-                        <li><a href="{{ url_for( 'index') }}">Home Page</a></li>
-                        <li><a href="{{ url_for( 'about', name='pito' ) }}">About Pito</a></li>
-                        <li><a href="{{ url_for( 'about', name='bart' ) }}">About Bart</a></li>
-                        <li><a href="{{ url_for( 'sentiment' ) }}">Sentiment Analysis</a></li>
-                </ul>
-            </nav>
-        </section>
-    </div>
-    </body>
+<head>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="{{ url_for('static', filename='CSS/projectsPage.css') }}" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+	<title></title>
+</head>
+<body>
+	<section style="background: #e74c3c; color: #fff;">
+		<h2>Ours Projects</h2>
+		<nav class="stroke">
+			<ul>
+				<li>
+					<a href="{{  url_for(  'index')  }}">Home Page</a>
+				</li>
+				<li>
+					<a href="{{  url_for(  'about',  name='pito'  )  }}">About Pito</a>
+				</li>
+				<li>
+					<a href="{{  url_for(  'about',  name='bart'  )  }}">About Bart</a>
+				</li>
+				<li>
+					<a href="{{  url_for(  'sentiment'  )  }}">Sentiment Analysis</a>
+				</li>
+			</ul>
+		</nav>
+	</section>
+</body>
 </html>
