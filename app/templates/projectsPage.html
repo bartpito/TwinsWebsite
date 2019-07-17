@@ -4,10 +4,56 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="{{ url_for('static', filename='CSS/projectsPage.css') }}" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	<title></title>
 </head>
 <body>
-	<section style="background: #e74c3c; color: #fff;">
+	<div class="menu">
+	<input type="checkbox" id="toggle" />
+	<label id="show-menu" for="toggle">
+		<div class="btnProject">
+		<i class="material-icons md-36 togglebtnProject menubtnProject">menu</i>
+		<i class="material-icons md-36 togglebtnProject closebtnProject">close</i>
+		</div>
+		<div class="btnProject">
+		<a class="material-icons md-36" href="{{ url_for( 'index' ) }}">photo_camera</a>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">photo</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">music_note</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">chat_bubble</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">settings</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">phone</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">cloud</i>
+		</div>
+		<div class="btnProject">
+		<i class="material-icons md-36">videocam</i>
+		</div>
+	</label>
+	</div>
+</body>	
+</html>
+
+
+
+
+
+
+
+
+	<!--<section style="background: #e74c3c; color: #fff;">
 		<h2>Ours Projects</h2>
 		<nav class="stroke">
 			<ul>
@@ -25,6 +71,9 @@
 				</li>
 			</ul>
 		</nav>
-	</section>
-</body>
+	</section>-->
+
 </html>
+
+
+

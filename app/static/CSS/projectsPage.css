@@ -1,8 +1,36 @@
 body {
+	overflow: hidden;
+	background: #212121
+}
+input {
+	position: absolute;
+	display: none
+}
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body {
 	color: rgb(252, 207, 14);
 	font-family: 'Roboto', sans-serif;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
+	background: #212121
+}
+input {
+	position: absolute;
+	display: none
+}
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .split {
 	height: 100%;
@@ -104,4 +132,138 @@ nav.stroke ul li a:after,nav.fill ul li a:after {
 }
 nav.stroke ul li a:hover:after {
 	width: 100%;
+}
+.menu {
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -25px;
+	margin-top: -25px;
+}
+.btnProject {
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	position: absolute;
+	overflow: hidden;
+	cursor: pointer;
+}
+.material-icons.md-36{
+	font-size: 36px;
+	color: #03A9F4 
+}
+.btnProject {
+	background: #ECEFF1;
+	font-size: 15px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.btnProject:not(:first-child) {
+	opacity: 0;
+	
+	
+}
+.btnProject:nth-child(2) {
+	top:0px;
+	
+	
+}
+.btnProject:nth-child(3) {
+	top:0px;
+	left:0px;
+	
+	
+}
+.btnProject:nth-child(4) {
+	left:0px;
+	;
+}
+.btnProject:nth-child(5) {
+	top:0px;
+	left:0px;
+}
+.btnProject:nth-child(6) {
+	top:0px;
+}
+.btnProject:nth-child(7) {
+	top:0px;
+	left:0px;
+}
+.btnProject:nth-child(8) {
+	left:0px;
+}
+.btnProject:nth-child(9) {
+	top:0px;
+	left:0px;
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(2) {
+	top:-150px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(3) {
+	top:-100px;
+	left:100px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(4) {
+	left:150px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(5) {
+	top :100px;
+	left:100px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(6) {
+	top:150px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(7) {
+	top:100px;
+	left:-100px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(8) {
+	left:-150px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input#toggle:checked ~ #show-menu .btnProject:nth-child(9) {
+	top:-100px;
+	left:-100px;
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.menubtnProject, .closebtnProject {
+	position: absolute;
+	transition: all 0.3s ease;
+}
+.closebtnProject {
+	transform: translateY(50px);
+	opacity: 0;
+}
+input#toggle:checked ~ #show-menu .btnProject .menubtnProject {
+	transform: translateY(-50px);
+	opacity: 0;
+}
+input#toggle:checked ~ #show-menu .btnProject .closebtnProject {
+	transform: translateY(0px);
+	opacity: 1;
 }
