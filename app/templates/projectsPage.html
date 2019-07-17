@@ -10,40 +10,31 @@
 	<title></title>
 </head>
 <body>
-	<div class="menu">
-	<input type="checkbox" id="toggle" />
-	<label id="show-menu" for="toggle">
-		<div class="btnProject">
-		<i class="material-icons md-36 togglebtnProject menubtnProject">menu</i>
-		<i class="material-icons md-36 togglebtnProject closebtnProject">close</i>
-		</div>
-		<div class="btnProject">
-		<a class="material-icons md-36" href="{{ url_for( 'index' ) }}">photo_camera</a>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">photo</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">music_note</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">chat_bubble</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">settings</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">phone</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">cloud</i>
-		</div>
-		<div class="btnProject">
-		<i class="material-icons md-36">videocam</i>
-		</div>
-	</label>
-	</div>
-</body>	
+		<body>
+				<div class="menu-wrap">
+				  <input type="checkbox" class="toggler" />
+				  <div class="hamburger"><div></div></div>
+				  <div class="menu">
+					<div>
+					  <div>
+						<ul>
+						  <li><a href="{{ url_for( 'index' ) }}">Home</a></li>
+						  <li><a href="{{ url_for( 'about', name='pito' ) }}">About Pito</a></li>
+						  <li><a href="{{ url_for( 'about', name='bart' ) }}">About Bart</a></li>
+						</ul>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			
+				<header class="showcase">
+				  <div class="container showcase-inner">
+					<h1>Ours Projects</h1>
+					<a href="{{ url_for( 'sentiment' ) }}" class="btn">Sentiment Analysis</a>
+				  </div>
+				</header>
+			  </body>
+
 </html>
 
 
