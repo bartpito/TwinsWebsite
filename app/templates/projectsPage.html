@@ -5,35 +5,35 @@
 	<link href="{{ url_for('static', filename='CSS/projectsPage.css') }}" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title></title>
 </head>
 <body>
-		<body>
-				<div class="menu-wrap">
-				  <input type="checkbox" class="toggler" />
-				  <div class="hamburger"><div></div></div>
-				  <div class="menu">
+		<div class="menu-wrap">
+			<input class="toggler" type="checkbox">
+			<div class="hamburger">
+				<div></div>
+			</div>
+			<div class="menu">
+				<div>
 					<div>
-					  <div>
 						<ul>
-						  <li><a href="{{ url_for( 'index' ) }}">Home</a></li>
-						  <li><a href="{{ url_for( 'about', name='pito' ) }}">About Pito</a></li>
-						  <li><a href="{{ url_for( 'about', name='bart' ) }}">About Bart</a></li>
+							<li><a href="{{ url_for( 'index' ) }}">Home</a></li>
+							<li><a href="{{ url_for( 'about', name='pito' ) }}">About Pito</a></li>
+							<li><a href="{{ url_for( 'about', name='bart' ) }}">About Bart</a></li>
 						</ul>
-					  </div>
 					</div>
-				  </div>
 				</div>
-			
-				<header class="showcase">
-				  <div class="container showcase-inner">
-					<h1>Ours Projects</h1>
-					<a href="{{ url_for( 'sentiment' ) }}" class="btn">Sentiment Analysis</a>
-				  </div>
-				</header>
-			  </body>
+			</div>
+		</div>
+		<header class="showcase">
+			<div class="container showcase-inner">
+				<h1>Ours Projects</h1>
+				<a href="{{ url_for( 'sentiment' ) }}" class="btn">Sentiment Analysis</a>
+			</div>
+		</header>
+	</body>
+	
 
 </html>
 
