@@ -37,8 +37,8 @@ a:hover{
 }
 .sidebar header {
     background-color: #000000;
-    border-top: solid 3px black;
-    border-right: solid 3px black;
+    border-bottom: solid 3px white;
+    border-right: solid 3px grey;
     width: 100%;
     display: block;
     padding: 0.8em 1.6em;
@@ -57,7 +57,7 @@ a:hover{
     z-index: 9;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-    border-right: 3px solid black;
+    border-right: 3px solid grey;
 }
 .sidebar-nav ul {
     list-style: none;
