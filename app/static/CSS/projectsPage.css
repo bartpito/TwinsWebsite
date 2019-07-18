@@ -59,6 +59,10 @@ body {
     justify-content: center;
     text-align: center;
     height: 65%;
+
+}
+.inline-a {
+    display: inline-block;
 }
 .showcase h1 {
     font-size: 4rem;
@@ -209,4 +213,3 @@ body {
     text-decoration: none;
     transition: color 0.4s ease;
 }
-  
