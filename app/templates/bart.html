@@ -10,9 +10,9 @@
   </head>
   <body style='background-color: hsl(189, 10%, 16%);'>
     {% block navbar %}
-    <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: transparent; 
-    color: pink; width: 380px; border:2px solid white; border-radius: 30px; margin-left: 20px; 
-    margin-top: 20px;" >
+    <nav class="navbar navbar-expand-sm" style="background-color: transparent; 
+    color: pink; width: 340px; border:2px solid white; border-radius: 30px; margin-left: 20px; 
+    margin-top: 10px;" >
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav list-item", style='list-style-type: none;'>
           <li class="nav-item active list-item">
@@ -24,7 +24,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About bart</a>
+            <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='bart' ) }}">About Bart</a>
           </li>
           <li class="nav-item">
               <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'projectsPage') }}">Projects Page</a>
