@@ -12,14 +12,13 @@ body {
     text-rendering: optimizeLegibility;
     background-color: #fefefe;
 }
-a{
+a {
     text-decoration: none;
     transition: all 0.6s ease;
 }
 a:hover{
     transition: all 0.4s ease;
 }
-
 .app {
     height: 100vh;
 }
@@ -93,7 +92,6 @@ a:hover{
     transition: all 0.6s ease;
 }
 .sidebar-nav > ul > li > a:after {
-    
     font-family: ionicons;
     font-size: 0.5em;
     width: 10px;
@@ -115,7 +113,6 @@ a:hover{
 .sidebar-nav .nav-flyout a:hover {
     background-color: goldenrod;
 }
-
 ul > li:hover .nav-flyout {
     transition: all 0.5s ease;
     transform: translateX(0);
