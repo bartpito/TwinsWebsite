@@ -117,3 +117,27 @@ ul > li:hover .nav-flyout {
     transition: all 0.5s ease;
     transform: translateX(0);
 }
+#section1 {
+    height: 600px;
+    background-color: white;
+}
+#section2 {
+    height: 600px;
+    background-color: white;
+}
+#section3 {
+    height: 600px;
+    background-color: white;
+}
+#section4 {
+    height: 600px;
+    background-color: white;
+}
+#section5 {
+    height: 600px;
+    background-color: white;
+}
+#section6 {
+    height: 600px;
+    background-color: white;
+}
