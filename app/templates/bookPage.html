@@ -80,7 +80,15 @@
 			</nav>
 		</aside>
 		<div id="section1">
-			<a style="margin-left: 16%; font-weight: bold;">Decision Tree</a>
+			<a style="margin-left: 16%; font-weight: bold; text-decoration: underline; text-decoration-style: solid;">Decision Tree</a>
+			<p style="margin-left: 17%; margin-right: 15%; text-align: right; text-align: left;">
+				In the first split or the root, all attributes/features are considered and the training data is divided into groups based on this split. 
+				We have X features, so will have X candidate splits. Now we will calculate how much accuracy each split will cost us, using a function. 
+				The split that costs least is chosen. This algorithm is recursive in nature as the groups formed can be sub-divided using same strategy. 
+				Due to this procedure, this algorithm is also known as the greedy algorithm, as we have an excessive desire of lowering the cost. This 
+				makes the root node as best predictor/classifier.
+			</p>
+			<img src="../static/views/DTree.png" alt="Flowers in Chania" style="margin-left: 20%">
 		</div>
 		<div id="section2">
 			<a style="margin-left: 16%; font-weight: bold;">Naive Bayes</a>
