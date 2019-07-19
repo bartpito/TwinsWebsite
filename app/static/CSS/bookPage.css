@@ -144,3 +144,8 @@ ul > li:hover .nav-flyout {
 p {
     margin-left: 20%;
 }
+
+.topic {
+    font-weight: 999;
+    margin-left: 16%;
+}
