@@ -103,6 +103,7 @@ a:hover{
 .sidebar-nav .nav-flyout {
     position: absolute;
     background-color: #080d11;
+    font-size: 0.9em;
     z-index: 9;
     left: 45%;
     top: 0;
@@ -118,7 +119,7 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 #section1 {
-    height: 600px;
+    height: 720px;
     background-color: white;
 }
 #section2 {
@@ -144,8 +145,18 @@ ul > li:hover .nav-flyout {
 p {
     margin-left: 20%;
 }
-
 .topic {
     font-weight: 999;
     margin-left: 16%;
+    font-size: 1.4em;
+}
+.basicText {
+    margin-left: 17%; 
+    margin-right: 15%; 
+    text-align: left;
+}
+
+h2.basicText {
+    font-size: 1.1em;
+    font-weight: bold;
 }
