@@ -11,8 +11,8 @@
   <body style='background-color: hsl(189, 10%, 16%);'>
     {% block navbar %}
     <nav class="navbar navbar-expand-sm" style="background-color: transparent; 
-    color: pink; width: 340px; border:2px solid white; border-radius: 30px; margin-left: 20px; 
-    margin-top: 10px;" >
+    color: pink; width: 400px; border:2px solid white; border-radius: 30px; margin-left: 20px; 
+    margin-top: 10px; font-size:0.8em;">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav list-item", style='list-style-type: none;'>
           <li class="nav-item active list-item">
@@ -28,6 +28,9 @@
           </li>
           <li class="nav-item">
               <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'projectsPage') }}">Projects Page</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: white;font-weight: bold" class="nav-link" href="{{ url_for( 'learningPage') }}">Learning Page</a>
           </li>
         </ul>
       </div>
@@ -88,7 +91,7 @@
     </section>
     <section class='two'>
       <div class='about-section' >
-         <img src='../static/views/aboutme.png', style='width:100%;  border-radius: 2px;'>
+         <br/><br/><img src='../static/views/aboutme.png', style='width:100%;  border-radius: 2px;'>
       </div>
     </section>
   </body>

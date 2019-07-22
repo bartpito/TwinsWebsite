@@ -32,19 +32,16 @@ ul.a {
 	box-sizing: border-box;
 }
 .img-section {
-	position: absolute;
-	margin-left: 0px auto;
-	width: 400px;
-	height: 200px;
-	left: 40%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 .about-section {
 	background: rgb(43, 42, 40);
 	text-align: center;
-	height: 300px;
-	width: 500px;
-	margin-top: -25%;
-	margin-left: 38%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 .services-section{
 	background-size: cover;
