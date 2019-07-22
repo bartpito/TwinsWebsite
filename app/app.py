@@ -86,8 +86,8 @@ def book():
 
 
 @app.route('/Learning')
-def learning():
-    return render_template('learning.html')
+def learningPage():
+    return render_template('learningPage.html')
 
 
 if __name__ == "__main__":
