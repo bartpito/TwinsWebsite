@@ -147,12 +147,16 @@
 			</p>
 			<img src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%">
 			<p class="basicText">
-					To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
-					that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
-					reinforcement so that future data points can be classified with more confidence.	
+				To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
+				that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
+				reinforcement so that future data points can be classified with more confidence.
+			</p>
+			<p class="basicText">
+					In machine learning, the hinge loss is a loss function used for training classifiers. The hinge loss is used for "maximum-margin" 
+					classification, most notably for support vector machines.
 			</p>
 			<img src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
-			<br/><h2 class="basicText">Loss Function for SVM : </h2>
+			<br/><br/><h2 class="basicText">Loss Function for SVM : </h2>
 			<p class="basicText">
 				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
 				regularization term is that we increase the cost penalty if the values for the weights are high. So while trying to minimize the cost, we not
