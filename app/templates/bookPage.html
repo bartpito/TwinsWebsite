@@ -139,7 +139,28 @@
 			</p>
 		</div>
 		<div id="section4">
-			<a class="topic" style="text-decoration: underline;">Support Vector Machine</a>
+			<a class="topic" style="text-decoration: underline;">Support Vector Machine</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N — the number of features) that 
+				distinctly classifies the data points.
+			</p>
+			<img src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%">
+			<p class="basicText">
+					To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
+					that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
+					reinforcement so that future data points can be classified with more confidence.	
+			</p>
+			<img src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
+			<br/><h2 class="basicText">Loss Function for SVM : </h2>
+			
+			<p>
+				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
+				regularization term is that we increase the cost penalty if the values for the weights are high. So while trying to minimize the cost, we not
+				only adjust the weights, we also try to minimize the value of the weights and thereby reduce over fitting to the training data and make the 
+				model less sensitive to outliers. So with the added regularization term, the total cost function finally looks like:	
+				<h2 class="basicText">Total cost = ||w²||/2 + C*(Sum of all losses for each observation)</h2>
+			</p>
 		</div>
 		<div id="section5">
 			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a>
@@ -153,4 +174,4 @@
 
 
 
-
+  

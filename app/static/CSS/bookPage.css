@@ -131,7 +131,7 @@ ul > li:hover .nav-flyout {
     background-color: white;
 }
 #section4 {
-    height: 600px;
+    height: 800px;
     background-color: white;
 }
 #section5 {
@@ -155,7 +155,6 @@ p {
     margin-right: 15%; 
     text-align: left;
 }
-
 h2.basicText {
     font-size: 1.1em;
     font-weight: bold;
