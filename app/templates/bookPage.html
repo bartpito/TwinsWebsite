@@ -153,14 +153,16 @@
 			</p>
 			<img src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
 			<br/><h2 class="basicText">Loss Function for SVM : </h2>
-			
-			<p>
+			<p class="basicText">
 				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
 				regularization term is that we increase the cost penalty if the values for the weights are high. So while trying to minimize the cost, we not
 				only adjust the weights, we also try to minimize the value of the weights and thereby reduce over fitting to the training data and make the 
 				model less sensitive to outliers. So with the added regularization term, the total cost function finally looks like:	
-				<h2 class="basicText">Total cost = ||w²||/2 + C*(Sum of all losses for each observation)</h2>
+				<h2 class="basicText" style="margin-left: 22%;">Total cost = ||w²||/2 + C*(Sum of all losses for each observation)</h2>
 			</p>
+			<br/><p class="basicText" style="font-weight: bold;">Two great articles about SVM:</p>
+			<a href="https://towardsdatascience.com/support-vector-machines-intuitive-understanding-part-1-3fb049df4ba1" style="margin-left: 18%;">Support vector machines (intuitive understanding)</a>
+			<br/><a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47" style="margin-left: 18%;">Support Vector Machine — Introduction to Machine Learning Algorithms</a>
 		</div>
 		<div id="section5">
 			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a>
