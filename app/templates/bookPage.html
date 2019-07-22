@@ -91,7 +91,7 @@
 				values of that input variable. Each leaf represents a value of the target variable given the values of the input variables represented 
 				by the path from the root to the leaf. 
 			</p>
-			<h2 class="basicText">Split</h2></p>
+			<h2 class="basicText">Split</h2>
 			<p class="basicText">	
 				In the first split or the root, all attributes/features are considered and the training data is divided into groups based on this split. 
 				We have X features, so will have X candidate splits. Now we will calculate how much accuracy each split will cost us, using a function. 
@@ -99,10 +99,23 @@
 				Due to this procedure, this algorithm is also known as the greedy algorithm, as we have an excessive desire of lowering the cost. This 
 				makes the root node as best predictor/classifier.
 			</p>
-			<img src="../static/views/DTree.png" alt="Flowers in Chania" style="margin-left: 20%">
+			<img src="../static/views/DTree.png" alt="Decision Tree" style="margin-left: 20%">
 		</div>
 		<div id="section2">
-			<a class="topic" style="text-decoration: underline;">Naive Bayes</a>
+			<a class="topic" style="text-decoration: underline;">Naive Bayes</a><br/>
+			<br/><h2 class="basicText">Principle of Naive Bayes Classifier</h2>
+			<p class="basicText">
+				A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the classifier is 
+				based on the Bayes theorem. 
+			</p>
+			<h2 class="basicText">Bayes Theorem</h2>
+			<p class="basicText">	
+				Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, B is the evidence and A is the 
+				hypothesis. The assumption made here is that the predictors/features are independent. That is presence of one particular feature does 
+				not affect the other. Hence it is called naive. Another assumption made here is that all the predictors have an equal effect on the outcome.
+			</p>
+			<img src="../static/views/bayes.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+			<img src="../static/views/bayes2.png" alt="bayes rule" style="margin-left: 20%; width:25%">
 		</div>	
 		<div id="section3">
 			<a class="topic" style="text-decoration: underline;">K Nearest Neighbours</a>
