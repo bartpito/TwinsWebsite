@@ -169,9 +169,9 @@
 			<br/><a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47" style="margin-left: 18%;">Support Vector Machine — Introduction to Machine Learning Algorithms</a>
 		</div>
 		<div id="section5">
-			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a>
-			<br/><h2 class="basicText">What is Gradient Descent?</h2><br/>
-			<br/><p class="basicText">
+			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a><br/>
+			<br/><h2 class="basicText">What is Gradient Descent?</h2>
+			<p class="basicText">
 				Gradient descent is an iterative machine learning optimization algorithm to reduce the cost function so that we have models that makes 
 				accurate predictions. We get optimized weights using gradient descent. <br/><br/><span style="font-weight: bold;">Cost function(C) </span>or <span style="font-weight: bold;">Loss function </span> 
 				measures the difference between the actual output and predicted output from the model. Cost function are a convex function.
@@ -186,6 +186,15 @@
 			<br/><p class="basicText">
 				We need to update the weights for all the neurons simultaneously.
 			</p>
+			<br/><h2 class="basicText">Stochastic Gradient Descent</h2>
+			<p class="basicText">
+				Stochastic Gradient Descent just picks one instance from training set at every step and update gradient only based
+				on that single record. The advantage of Stochastic Gradient Descent is that the algorithm is much faster at every iteration. 
+				However, the algorithm produces less regular and stable learning path compared to Batch Gradient Descent. Instead of decreasing 
+				smoothly, the cost function will bounce up and down. After rounds of iterations, the algorithm may find a good parameter, but the
+				final result is not necessary global optimal.
+			</p>
+			<br/><img src="../static/views/sgd2.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
 		</div>
 		<div id="section6">
 			<a class="topic" style="text-decoration: underline;">Logistic Regression</a>
