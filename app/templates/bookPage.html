@@ -170,6 +170,22 @@
 		</div>
 		<div id="section5">
 			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a>
+			<br/><h2 class="basicText">What is Gradient Descent?</h2><br/>
+			<br/><p class="basicText">
+				Gradient descent is an iterative machine learning optimization algorithm to reduce the cost function so that we have models that makes 
+				accurate predictions. We get optimized weights using gradient descent. <br/><br/><span style="font-weight: bold;">Cost function(C) </span>or <span style="font-weight: bold;">Loss function </span> 
+				measures the difference between the actual output and predicted output from the model. Cost function are a convex function.
+			</p>
+			<br/><h2 class="basicText">How can we find the optimized weights?</h2>
+			<p class="basicText">
+				We randomly initialize all the weights for a neural network to a value close to zero but not zero.
+				<br/>We calculate the gradient, ∂c/∂ω which is a partial derivative of cost with respect to weight.
+				<br/>α is learning rate, helps adjust the weights with respect to gradient descent. 
+			</p>
+			<br/><img src="../static/views/sgd1.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
+			<br/><p class="basicText">
+				We need to update the weights for all the neurons simultaneously.
+			</p>
 		</div>
 		<div id="section6">
 			<a class="topic" style="text-decoration: underline;">Logistic Regression</a>
