@@ -261,20 +261,36 @@
 			<a class="topic" style="text-decoration: underline;">Linear Regression</a><br/>
 			<br/><h2 class="basicText">Goal</h2>
 			<p class="basicText">
-				The goal of Regression is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
+				The goal of <span style="font-weight: bold;">Regression</span> is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
 			</p>
-			<br/><h2 class="basicText">Multiple regression Equation</h2>
+			<br/><h2 class="basicText">Multiple regression Equation:</h2>
 			<br/><img src="../static/views/lr2.png" alt="lr2" style="margin-left: 20%; width: 40%;"><br/>
 			<br/><p style="font-size: 0.8em;"> 
-				Y = Predicted value/Target Value
-				<br/>X = Input
-				<br/>W1 = Gradient/slope/Weight
+				f(x) = Y = Predicted value/Target Value
+				<br/>x = Input
+				<br/>w = Gradient/slope/Weight
 				<br/>b = Bias
 			</p>
-			<br/><h2 class="basicText">Goal</h2>
+			<br/><h2 class="basicText">How do we determine the weights?</h2>
 			<p class="basicText">
-				The goal of Regression is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
+				The weights are are measured by <span style="font-weight: bold;">MSE (Mean Squared Error)</span> and adjusting them to get a best possible Linear line.
 			</p>
+			<br/><img src="../static/views/lr3.png" alt="lr3" style="margin-left: 20%; width: 40%;"><br/>
+			<p class="basicText">
+				The ‘red line’ is our <span style="font-weight: bold;">linear regression line or our predicted value(y’)</span>. And the ‘blue’ points are our <span style="font-weight: bold;">given data or actual value</span>. The average of square of distance from the 
+				blue points(actual value) to the red line(predicted value) must be minimum to get the best fit regression line.
+				<br/><br/>Thus can be represented as: 
+			</p>
+			<br/><img src="../static/views/lr2.gif" alt="lr2" style="margin-left: 20%; width: 8%;"><br/>
+			<br/><br/><p class="basicText">
+				To gain optimal result we need to <span style="font-weight: bold;">minimize MSE</span>.
+				<br/>So to minimize this error or MSE we use gradient descent to find the weights after MSE or error rate calculation. <span style="font-weight: bold;">Gradient Descent can be Equated as</span> :
+			</p>
+			<br/><img src="../static/views/lr3.gif" alt="lr3" style="margin-left: 20%; width: 17%;"><br/>
+			<br/><br/>	<p class="basicText">
+				Now after we get the Gradient descent <span style="font-weight: bold;">we need to update the weight every time until we get the best fitted value</span>.
+			</p>
+			<br/><img src="../static/views/lr4.gif" alt="lr4" style="margin-left: 20%; width: 10%;"><br/>
 		</div>
 		<div id="section8">
 			<a class="topic" style="text-decoration: underline;">XXX</a><br/>
