@@ -329,6 +329,17 @@
 		</div>
 		<div id="section9">
 			<a class="topic" style="text-decoration: underline;">L1 Regularization</a><br/>
+			<br/><h2 class="basicText">Explanation:</h2>
+			<p class="basicText">
+				If your linear model contains many predictor variables or if these variables are correlated, the traditional OLS parameter estimates have large variance, thus making the model unreliable. This leads to an over-fitted model. A penalty term causes the regression 
+				coefficients for these unimportant variables to shrink towards zero. This process allows the model to identify the variables strongly associated with the output variable, thereby reducing the variance.
+				<br/><br/><span style="font-weight: bold;">Lasso Regression</span> (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
+				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
+			<br/><img src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><br/><p class="basicText">
+				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
 		</div>
 	</section>
 </body>
