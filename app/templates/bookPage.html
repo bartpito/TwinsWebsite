@@ -300,12 +300,12 @@
 			<a class="topic" style="text-decoration: underline;">Polynomial Regression</a><br/>
 			<br/><h2 class="basicText">What is Regression?</h2>
 			<p class="basicText">
-					Regression analysis is a form of predictive modelling technique which <span style="font-weight: bold;">investigates the relationship between a dependent and independent variable.</span>
-					<br/><br/>The above definition is a bookish definition, in simple terms the regression can be defined as, “Using the relationship between variables to find the best fit line or the regression equation that can be used to 
-					make predictions”.
+				Regression analysis is a form of predictive modelling technique which <span style="font-weight: bold;">investigates the relationship between a dependent and independent variable.</span>
+				<br/><br/>The above definition is a bookish definition, in simple terms the regression can be defined as, “Using the relationship between variables to find the best fit line or the regression equation that can be used to 
+				make predictions”.
 			</p>
 			<br/><br/><p class="basicText">
-					What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
+				What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
 			</p>
 			<br/><img src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
 			<img src="../static/views/pr2.gif" alt="lr4" style="margin-left: 10%;">
@@ -338,9 +338,20 @@
 			</p>
 			<br/><img src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
 			<br/><br/><p class="basicText">
-				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+				If lambda is zero then we will get back OLS (Ordinary Least Squares) whereas very large value will make coefficients zero hence it will under-fit.
 			</p>
 		</div>
+		<div id="section10">
+			<a class="topic" style="text-decoration: underline;">L2 Regularization</a><br/>
+				<br/><h2 class="basicText">Explanation:</h2>
+				<p class="basicText">
+					<span style="font-weight: bold;">Ridge regression</span> adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
+				</p>
+				<br/><img src="../static/views/ridge.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+				<br/><br/><p class="basicText">
+					If <span style="font-weight: bold;">lambda is zero then you can imagine we get back OLS</span>. However, if <span style="font-weight: bold;">lambda is very large then it will add too much weight and it will lead to under-fitting</span>. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
+				</p>
+			</div>
 	</section>
 </body>
 </html>
