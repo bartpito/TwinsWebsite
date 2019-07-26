@@ -271,6 +271,10 @@
 				<br/>w = Gradient/slope/Weight
 				<br/>b = Bias
 			</p>
+			<br/><h2 class="basicText">Bias</h2>
+			<p class="basicText">
+				Bias refers to <span style="font-weight: bold;">the error due to the model’s simplistic assumptions in fitting the data</span>. A high bias means that the model is unable to capture the patterns in the data and this results in under-fitting.
+			</p>
 			<br/><h2 class="basicText">How do we determine the weights?</h2>
 			<p class="basicText">
 				The weights are are measured by <span style="font-weight: bold;">MSE (Mean Squared Error)</span> and adjusting them to get a best possible Linear line.
@@ -296,9 +300,18 @@
 			<a class="topic" style="text-decoration: underline;">Polynomial Regression</a><br/>
 			<br/><h2 class="basicText">What is Regression?</h2>
 			<p class="basicText">
-					Regression analysis is a form of predictive modelling technique which investigates the relationship between a dependent and independent variable.
+					Regression analysis is a form of predictive modelling technique which <span style="font-weight: bold;">investigates the relationship between a dependent and independent variable.</span>
 					<br/><br/>The above definition is a bookish definition, in simple terms the regression can be defined as, “Using the relationship between variables to find the best fit line or the regression equation that can be used to 
 					make predictions”.
+			</p>
+			<br/><br/><p class="basicText">
+					What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
+			</p>
+			<br/><img src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
+			<img src="../static/views/pr2.gif" alt="lr4" style="margin-left: 10%;">
+			<br/><br/><p class="basicText">
+				Hence If we try to use a simple linear regression in the above graph then the linear regression line won’t fit very well. It is very difficult to fit a linear regression line in the above graph with a low value of error. Hence we can try to use the polynomial
+				regression to fit a polynomial line so that we can achieve a minimum error or minimum cost function. <span style="font-weight: bold;">The equation of the polynomial regression for the above graph data would be:</span>
 			</p>
 		</div>
 		</section>
