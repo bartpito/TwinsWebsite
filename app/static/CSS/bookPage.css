@@ -119,47 +119,47 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 #section1 {
-    height: 750px;
+    height: 90%;
     background-color: white;
 }
 #section2 {
-    height: 600px;
+    height: 70;
     background-color: white;
 }
 #section3 {
-    height: 620px;
+    height: 70%;
     background-color: white;
 }
 #section4 {
-    height: 1050px;
+    height: 110%;
     background-color: white;
 }
 #section5 {
-    height: 1320px;
+    height: 140%;
     background-color: white;
 }
 #section6 {
-    height: 1500px;
+    height: 150%;
     background-color: white;
 }
 #section7 {
-    height: 1600px;
+    height: 175%;
     background-color: white;
 }
 #section8 {
-    height: 1300px;
+    height: 132%;
     background-color: white;
 }
 #section9 {
-    height: 540px;
+    height: 60%;
     background-color: white;
 }
 #section10 {
-    height: 1050px;
+    height: 50%;
     background-color: white;
 }
 #section11 {
-    height: 1320px;
+    height: 130%;
     background-color: white;
 }
 #section12 {
@@ -172,14 +172,15 @@ p {
 .topic {
     font-weight: 999;
     margin-left: 16%;
-    font-size: 1.4em;
+    font-size: 1.5vw;
 }
 .basicText {
     margin-left: 17%; 
     margin-right: 15%; 
     text-align: left;
+    font-size: 1vw;
 }
 h2.basicText {
-    font-size: 1.1em;
+    font-size:1vw;
     font-weight: bold;
 }
