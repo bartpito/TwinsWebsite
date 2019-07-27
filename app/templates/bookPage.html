@@ -368,6 +368,30 @@
 		</div>
 		<div id="section11">
 			<a class="topic" style="text-decoration: underline;">Learning process of Neural Network</a><br/>
+			<br/><h2 class="basicText">Learning process of a neural network</h2>
+			<p class="basicText">
+				<span style="font-weight: bold;">Neural network</span> is made up of neurons connected to each other; at the same time, each connection of our neural network is associated with a weight that dictates the importance of this relationship in the neuron when multiplied by the input value.
+				<br/><br/>
+				Each neuron has an <span style="font-weight: bold;">activation function</span> that defines the output of the neuron. The activation function is used to introduce non-linearity in the modeling capabilities of the network.
+				<br/><br/>
+				Training our neural network, that is, learning the values of our parameters (weights wij and bj biases) is the most genuine part of Deep Learning and we can see this learning process in a neural network as an iterative process of “going and return” by the layers of neurons. <span style="font-weight: bold;">The “going” 
+				is a forwardpropagation of the information and the “return” is a backpropagation of the information.</span>
+				<br/><br/>
+				The first phase <span style="font-weight: bold;">forwardpropagation</span> occurs when the network is exposed to the training data and these cross the entire neural network for their predictions (labels) to be calculated. That is, passing the input data through the network in such a way that all the neurons apply their transformation 
+				to the information they receive from the neurons of the previous layer and sending it to the neurons of the next layer. When the data has crossed all the layers, and all its neurons have made their calculations, the final layer will be reached with a result of label prediction for those input examples.
+				<br/><br/>
+				Next, we will use a <span style="font-weight: bold;">loss function</span> to estimate the loss (or error) and to compare and measure how good/bad our prediction result was in relation to the correct result (remember that we are in a supervised learning environment and we have the label that tells us the expected value). Ideally, we want our cost to be zero, that is, without
+				divergence between estimated and expected value. Therefore, as the model is being trained, the weights of the interconnections of the neurons will gradually be adjusted until good predictions are obtained.
+				<br/><br/>
+				Once the loss has been calculated, this information is propagated backwards. Hence, its name: <span style="font-weight: bold;">backpropagation</span>. Starting from the output layer, that loss information propagates to all the neurons in the hidden layer that contribute directly to the output. However, the neurons of the hidden layer only receive a fraction of the total 
+				signal of the loss, based on the relative contribution that each neuron has contributed to the original output. This process is repeated, layer by layer, until all the neurons in the network have received a loss signal that describes their relative contribution to the total loss.
+			</p>
+			<br/><img class='imgPos' src="../static/views/nn1.png" alt="lr4" style="margin-left: 25%;"><br/>
+			<br/><br/><p class="basicText">
+				Now that we have spread this information back, we can adjust the weights of connections between neurons.What we are doing is making the loss as close as possible to zero the next time we go back to using the network for a prediction. For this, we will use a technique called <span style="font-weight: bold;">gradient descent</span>. This technique changes the weights in small increments with the help of the 
+				calculation of the derivative (or gradient) of the loss function, which allows us to see in which direction “to descend” towards the global minimum; this is done in general in batches of data in the successive iterations (epochs) of all the dataset that we pass to the network in each iteration.
+				<br/><br/>
+			</p>
 		</div>
 	</section>
 </body>
