@@ -390,7 +390,13 @@
 			<br/><br/><p class="basicText">
 				Now that we have spread this information back, we can adjust the weights of connections between neurons.What we are doing is making the loss as close as possible to zero the next time we go back to using the network for a prediction. For this, we will use a technique called <span style="font-weight: bold;">gradient descent</span>. This technique changes the weights in small increments with the help of the 
 				calculation of the derivative (or gradient) of the loss function, which allows us to see in which direction “to descend” towards the global minimum; this is done in general in batches of data in the successive iterations (epochs) of all the dataset that we pass to the network in each iteration.
-				<br/><br/>
+				<br/><br/><span style="font-weight: bold;">To recap, the learning algorithm consists of:</span>
+				<br/><br/><span style="font-weight: bold;">1. </span>Start with values (often random) for the network parameters (wij weights and bj biases).
+				<br/><br/><span style="font-weight: bold;">2. </span>Take a set of examples of input data and pass them through the network to obtain their prediction.
+				<br/><br/><span style="font-weight: bold;">3. </span>Compare these predictions obtained with the values of expected labels and calculate the loss with them.
+				<br/><br/><span style="font-weight: bold;">4. </span>Perform the backpropagation in order to propagate this loss to each and every one of the parameters that make up the model of the neural network.
+				<br/><br/><span style="font-weight: bold;">5. </span>Use this propagated information to update the parameters of the neural network with the gradient descent in a way that the total loss is reduced and a better model is obtained.
+				<br/><br/><span style="font-weight: bold;">6. </span>Continue iterating in the previous steps until we consider that we have a good model.
 			</p>
 		</div>
 	</section>
