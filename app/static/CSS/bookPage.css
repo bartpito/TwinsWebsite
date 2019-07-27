@@ -123,31 +123,31 @@ ul > li:hover .nav-flyout {
     background-color: white;
 }
 #section2 {
-    height: 70;
-    background-color: white;
-}
-#section3 {
     height: 70%;
     background-color: white;
 }
+#section3 {
+    height: 75%;
+    background-color: white;
+}
 #section4 {
-    height: 110%;
+    height: 125%;
     background-color: white;
 }
 #section5 {
-    height: 140%;
-    background-color: white;
-}
-#section6 {
     height: 150%;
     background-color: white;
 }
+#section6 {
+    height: 160%;
+    background-color: white;
+}
 #section7 {
-    height: 175%;
+    height: 186%;
     background-color: white;
 }
 #section8 {
-    height: 132%;
+    height: 146%;
     background-color: white;
 }
 #section9 {
@@ -168,9 +168,11 @@ ul > li:hover .nav-flyout {
 }
 p {
     margin-left: 20%;
+    position: relative;
 }
 .topic {
     font-weight: 999;
+    position: relative;
     margin-left: 16%;
     font-size: 1.5vw;
 }
@@ -179,8 +181,12 @@ p {
     margin-right: 15%; 
     text-align: left;
     font-size: 1vw;
+    position: relative
 }
 h2.basicText {
     font-size:1vw;
     font-weight: bold;
+}
+.imgPos {
+    position: relative;
 }

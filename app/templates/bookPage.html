@@ -136,7 +136,7 @@
 				Due to this procedure, this algorithm is also known as the greedy algorithm, as we have an excessive desire of lowering the cost. This 
 				makes the root node as best predictor/classifier.
 			</p>
-			<img src="../static/views/DTree.png" alt="Decision Tree" style="margin-left: 20%">
+			<img img class='imgPos' src="../static/views/DTree.png" alt="Decision Tree" style="margin-left: 20%">
 		</div>
 		<div id="section2">
 			<a class="topic" style="text-decoration: underline;">Naive Bayes</a><br/>
@@ -151,8 +151,8 @@
 				hypothesis. The assumption made here is that the predictors/features are independent. That is presence of one particular feature does 
 				not affect the other. Hence it is called naive. Another assumption made here is that all the predictors have an equal effect on the outcome.
 			</p>
-			<img src="../static/views/bayes.png" alt="bayes rule" style="margin-left: 20%; width:25%">
-			<img src="../static/views/bayes2.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+			<img img class='imgPos' src="../static/views/bayes.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+			<img img class='imgPos' src="../static/views/bayes2.png" alt="bayes rule" style="margin-left: 20%; width:25%">
 		</div>	
 		<div id="section3">
 			<a class="topic" style="text-decoration: underline;">K-Nearest Neighbors</a><br/>
@@ -169,7 +169,7 @@
 			<p class="basicText">
 				The Euclidean distance between points p and q is the length of the line segment connecting them.
 			</p>
-			<img src="../static/views/euclideanFormula.png" alt="euclidean Formula" style="margin-left: 20%; width:25%">
+			<img img class='imgPos' src="../static/views/euclideanFormula.png" alt="euclidean Formula" style="margin-left: 20%; width:25%">
 			<br/><br/><br/><h2 class="basicText">What is K?</h2>
 			<p class="basicText">
 				K represents the number of training data points lying in proximity to the test data point which we are going to use to find the class.
@@ -182,7 +182,7 @@
 				The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space (N — the number of features) that 
 				distinctly classifies the data points.
 			</p>
-			<br/><img src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%"><br/>
+			<br/><img img class='imgPos' src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%"><br/>
 			<br/><p class="basicText">
 				To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
 				that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
@@ -192,7 +192,7 @@
 					In machine learning, the hinge loss is a loss function used for training classifiers. The hinge loss is used for "maximum-margin" 
 					classification, most notably for support vector machines.
 			</p>
-			<img src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
+			<img img class='imgPos' src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
 			<br/><br/><h2 class="basicText">Loss Function for SVM : </h2>
 			<p class="basicText">
 				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
@@ -219,7 +219,7 @@
 				<br/>We calculate the gradient, ∂c/∂ω which is a partial derivative of cost with respect to weight.
 				<br/>α is learning rate, helps adjust the weights with respect to gradient descent. 
 			</p>
-			<br/><img src="../static/views/sgd1.png" alt="sgd" style="margin-left: 20%; width:25%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/sgd1.png" alt="sgd" style="margin-left: 20%; width:25%;"><br/>
 			<p style="margin-left: 20%; font-size: 75%">w is the weights for the neurons, α is learning rate, C is the cost and ∂c/∂ω is the gradient</p>
 			<br/><p class="basicText">
 				We need to update the weights for all the neurons simultaneously.
@@ -232,7 +232,7 @@
 				smoothly, the cost function will bounce up and down. After rounds of iterations, the algorithm may find a good parameter, but the
 				final result is not necessary global optimal.
 			</p>
-			<br/><img src="../static/views/sgd2.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
+			<br/><img img class='imgPos' src="../static/views/sgd2.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
 		</div>
 		<div id="section6">
 			<a class="topic" style="text-decoration: underline;">Logistic Regression</a><br/>
@@ -261,15 +261,15 @@
 			<br/><br/><p class="basicText" style="font-weight: bold;">
 				Sigmoid Function Graph:
 			</p>
-			<img src="../static/views/sigmoid.png" alt="sigmoid" style="margin-left: 20%; width:25%"><br/>
+			<img img class='imgPos' src="../static/views/sigmoid.png" alt="sigmoid" style="margin-left: 20%; width:25%"><br/>
 			<br/><br/><p class="basicText" style="font-weight: bold;">
 				Formula of a sigmoid function:
 			</p>
-			<img src="../static/views/sigmoid2.png" alt="sigmoid2" style="margin-left: 20%; width: 12%; height: 6%;"><br/>
+			<img img class='imgPos' src="../static/views/sigmoid2.png" alt="sigmoid2" style="margin-left: 20%; width: 12%; height: 6%;"><br/>
 			<br/><br/><p class="basicText" style="font-weight: bold;">
 				Cost Function: 
 			</p>
-			<br/><img src="../static/views/lr1.png" alt="lr1" style="margin-left: 20%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr1.png" alt="lr1" style="margin-left: 20%;"><br/>
 		</div>
 		<div id="section7">
 			<a class="topic" style="text-decoration: underline;">Linear Regression</a><br/>
@@ -278,7 +278,7 @@
 				The goal of <span style="font-weight: bold;">Regression</span> is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
 			</p>
 			<br/><h2 class="basicText">Multiple regression Equation:</h2>
-			<br/><img src="../static/views/lr2.png" alt="lr2" style="margin-left: 20%; width: 40%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr2.png" alt="lr2" style="margin-left: 20%; width: 40%;"><br/>
 			<br/><p style="font-size: 0.8em;"> 
 				f(x) = Y = Predicted value/Target Value
 				<br/>x = Input
@@ -293,22 +293,22 @@
 			<p class="basicText">
 				The weights are are measured by <span style="font-weight: bold;">MSE (Mean Squared Error)</span> and adjusting them to get a best possible Linear line.
 			</p>
-			<br/><img src="../static/views/lr3.png" alt="lr3" style="margin-left: 20%; width: 40%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr3.png" alt="lr3" style="margin-left: 20%; width: 40%;"><br/>
 			<p class="basicText">
 				The ‘red line’ is our <span style="font-weight: bold;">linear regression line or our predicted value(y’)</span>. And the ‘blue’ points are our <span style="font-weight: bold;">given data or actual value</span>. The average of square of distance from the 
 				blue points(actual value) to the red line(predicted value) must be minimum to get the best fit regression line.
 				<br/><br/>Thus can be represented as: 
 			</p>
-			<br/><img src="../static/views/lr2.gif" alt="lr2" style="margin-left: 20%; width: 8%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr2.gif" alt="lr2" style="margin-left: 20%; width: 8%;"><br/>
 			<br/><br/><p class="basicText">
 				To gain optimal result we need to <span style="font-weight: bold;">minimize MSE</span>.
 				<br/>So to minimize this error or MSE we use gradient descent to find the weights after MSE or error rate calculation. <span style="font-weight: bold;">Gradient Descent can be Equated as</span> :
 			</p>
-			<br/><img src="../static/views/lr3.gif" alt="lr3" style="margin-left: 20%; width: 17%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr3.gif" alt="lr3" style="margin-left: 20%; width: 17%;"><br/>
 			<br/><br/>	<p class="basicText">
 				Now after we get the Gradient descent <span style="font-weight: bold;">we need to update the weight every time until we get the best fitted value</span>.
 			</p>
-			<br/><img src="../static/views/lr4.gif" alt="lr4" style="margin-left: 20%; width: 10%;"><br/>
+			<br/><img img class='imgPos' src="../static/views/lr4.gif" alt="lr4" style="margin-left: 20%; width: 10%;"><br/>
 		</div>
 		<div id="section8">
 			<a class="topic" style="text-decoration: underline;">Polynomial Regression</a><br/>
@@ -321,7 +321,7 @@
 			<br/><br/><p class="basicText">
 				What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
 			</p>
-			<br/><img src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
+			<br/><img img class='imgPos' src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
 			<img src="../static/views/pr2.gif" alt="lr4" style="margin-left: 10%;">
 			<br/><br/><p class="basicText">
 				Hence If we try to use a simple linear regression in the above graph then the linear regression line won’t fit very well. It is very difficult to fit a linear regression line in the above graph with a low value of error. Hence we can try to use the polynomial
@@ -350,7 +350,7 @@
 				<br/><br/><span style="font-weight: bold;">Lasso Regression</span> (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
 				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
 			</p>
-			<br/><img src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><img class='imgPos'src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
 			<br/><br/><p class="basicText">
 				If lambda is zero then we will get back OLS (Ordinary Least Squares) whereas very large value will make coefficients zero hence it will under-fit.
 			</p>
@@ -361,7 +361,7 @@
 			<p class="basicText">
 				<span style="font-weight: bold;">Ridge regression</span> adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
 			</p>
-			<br/><img src="../static/views/ridge.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><img class='imgPos' src="../static/views/ridge.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
 			<br/><br/><p class="basicText">
 				If <span style="font-weight: bold;">lambda is zero then you can imagine we get back OLS</span>. However, if <span style="font-weight: bold;">lambda is very large then it will add too much weight and it will lead to under-fitting</span>. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
 			</p>
