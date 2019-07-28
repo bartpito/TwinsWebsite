@@ -40,10 +40,6 @@ p {
 	margin: 0em;
 	font: 200 7.5px Arial;
 }
-.button {
-	-webkit-writing-mode: horizontal-tb !important;
-	-webkit-appearance button;
-}
 .button .predict-button {
 	width: 120px;
 	height: 25px;

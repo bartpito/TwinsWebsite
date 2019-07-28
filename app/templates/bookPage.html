@@ -398,6 +398,24 @@
 				<br/><br/><span style="font-weight: bold;">5. </span>Use this propagated information to update the parameters of the neural network with the gradient descent in a way that the total loss is reduced and a better model is obtained.
 				<br/><br/><span style="font-weight: bold;">6. </span>Continue iterating in the previous steps until we consider that we have a good model.
 			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation functions:</h2>
+			<p class="basicText">
+				We use the activation functions to propagate the output of a neuron forward. This output is received by the neurons of the next layer to which this neuron is connected (up to the output layer included). As we have said, <span style="font-weight: bold;">the activation function serves to introduce non-linearity in the modeling capabilities of the network.</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1.Linear function:</span>
+				<br/><br/>A straight line function where activation is proportional to input ( which is the weighted sum from neuron ).
+				<br/><br/>This way, it gives a range of activations, so it is not binary activation. We can definitely connect a few neurons together and if more than 1 fires, we could take the max ( or softmax) and decide based on that. So that is ok too. Then what is the problem with this?
+				<br/><br/>If you are familiar with gradient descent for training, you would notice that for this function, derivative is a constant.
+				<br/><br/>A = cx, derivative with respect to x is c. That means, the gradient has no relationship with X. It is a constant gradient and the descent is going to be on constant gradient. If there is an error in prediction, the changes made by back propagation is constant and not depending on the change in input delta(x)!
+				<br/><br/>This is not that good!. There is another problem too. Think about connected layers. Each layer is activated by a linear function. That activation in turn goes into the next level as input and the second layer calculates weighted sum on that input and it in turn, fires based on another linear activation function.
+				<br/><br/>No matter how many layers we have, if all are linear in nature, the final activation function of last layer is nothing but just a linear function of the input of first layer! Pause for a bit and think about it.
+				<br/><br/>That means these two layers ( or N layers ) can be replaced by a single layer. Ah! We just lost the ability of stacking layers this way. No matter how we stack, the whole network is still equivalent to a single layer with linear activation ( a combination of linear functions in a linear manner is still another linear function ).
+			</p>
+			<br/><br/><br/><img class='imgPos' src="../static/views/nn2.png" alt="linear f" style="margin-left: 15%;"><br/>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Sigmoid function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn3.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn4.png" alt="sigmoid f" style="margin-left: 10%;">
+			</p>
 		</div>
 	</section>
 </body>
