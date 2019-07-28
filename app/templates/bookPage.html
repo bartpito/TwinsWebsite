@@ -423,6 +423,14 @@
 				<br/><br/>If you notice, towards either end of the sigmoid function, the Y values tend to respond very less to changes in X. What does that mean? The gradient at that region is going to be small. It gives rise to a problem of “vanishing gradients”. Hmm. So what happens when the activations reach near the “near-horizontal” part of the curve on either sides?
 				<br/><br/>Gradient is small or has vanished ( cannot make significant change because of the extremely small value ). The network refuses to learn further or is drastically slow ( depending on use case and until gradient /computation gets hit by floating point value limits ). There are ways to work around this problem and sigmoid is still very popular in classification problems.
 			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Tanh Function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn5.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn6.png" alt="sigmoid f" style="margin-left: 10%;">
+				<img class='imgPos' src="../static/views/nn7.png" alt="sigmoid f" style="margin-left: 2%;">
+				Ok, now this has characteristics similar to sigmoid that we discussed above. It is nonlinear in nature, so great we can stack layers! It is bound to range (-1, 1) so no worries of activations blowing up. One point to mention is that the gradient is stronger for tanh than sigmoid ( derivatives are steeper). Deciding between the sigmoid or tanh will depend on your requirement of gradient strength. Like sigmoid, tanh also has the vanishing gradient problem.
+				<br/><br/>Tanh is also a very popular and widely used activation function.
+			</p>
 		</div>
 	</section>
 </body>
