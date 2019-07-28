@@ -398,6 +398,14 @@
 				<br/><br/><span style="font-weight: bold;">5. </span>Use this propagated information to update the parameters of the neural network with the gradient descent in a way that the total loss is reduced and a better model is obtained.
 				<br/><br/><span style="font-weight: bold;">6. </span>Continue iterating in the previous steps until we consider that we have a good model.
 			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation function</h2>
+			<p class="basicText">
+				So what does an artificial neuron do? Simply put, it calculates a “weighted sum” of its input, adds a bias and then decides whether it should be “fired” or not.
+				<br/><br/>So consider a neuron.
+				<br/><br/><img class='imgPos' src="../static/views/nn8.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Now, the value of Y can be anything ranging from -inf to +inf. The neuron really doesn’t know the bounds of the value. So how do we decide whether the neuron should fire or not ( why this firing pattern? Because we learnt it from biology that’s the way brain works and brain is a working testimony of an awesome and intelligent system ).
+				We decided to add “activation functions” for this purpose. <span style="font-weight: bold; font-size: 1.1vw;">To check the Y value produced by a neuron and decide whether outside connections should consider this neuron as “fired” or not. Or rather let’s say — “activated” or not.</span>
+			</p>
 			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation functions:</h2>
 			<p class="basicText">
 				We use the activation functions to propagate the output of a neuron forward. This output is received by the neurons of the next layer to which this neuron is connected (up to the output layer included). As we have said, <span style="font-weight: bold;">the activation function serves to introduce non-linearity in the modeling capabilities of the network.</span>
@@ -431,6 +439,19 @@
 				Ok, now this has characteristics similar to sigmoid that we discussed above. It is nonlinear in nature, so great we can stack layers! It is bound to range (-1, 1) so no worries of activations blowing up. One point to mention is that the gradient is stronger for tanh than sigmoid ( derivatives are steeper). Deciding between the sigmoid or tanh will depend on your requirement of gradient strength. Like sigmoid, tanh also has the vanishing gradient problem.
 				<br/><br/>Tanh is also a very popular and widely used activation function.
 			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. ReLu Function:</span>
+				<br/><br/>Later, comes the ReLu function,
+				<br/><br/>A(x) = max(0,x)
+				<br/><br/>The ReLu function is as shown above. It gives an output x if x is positive and 0 otherwise.
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn9.jpeg" alt="sigmoid f" style="margin-left: 2%;">
+				<br/><br/>At first look this would look like having the same problems of linear function, as it is linear in positive axis. First of all, ReLu is nonlinear in nature. And combinations of ReLu are also non linear! ( in fact it is a good approximator. Any function can be approximated with combinations of ReLu). Great, so this means we can stack layers. It is not bound though. The range of ReLu is [0, inf). This means it can blow up the activation.
+				<br/><br/>Another point that I would like to discuss here is the sparsity of the activation. Imagine a big neural network with a lot of neurons. Using a sigmoid or tanh will cause almost all neurons to fire in an analog way. That means almost all activations will be processed to describe the output of a network. In other words the activation is dense. This is costly. We would ideally want a few neurons in the network to not activate and thereby making the activations sparse and efficient.
+				<br/><br/>ReLu give us this benefit. Imagine a network with random initialized weights ( or normalised ) and almost 50% of the network yields 0 activation because of the characteristic of ReLu ( output 0 for negative values of x ). This means a fewer neurons are firing ( sparse activation ) and the network is lighter. Woah, nice! ReLu seems to be awesome! Yes it is, but nothing is flawless.. Not even ReLu.
+				<br/><br/>Because of the horizontal line in ReLu( for negative X ), the gradient can go towards 0. For activations in that region of ReLu, gradient will be 0 because of which the weights will not get adjusted during descent. That means, those neurons which go into that state will stop responding to variations in error/ input ( simply because gradient is 0, nothing changes ). This is called dying ReLu problem. This problem can cause several neurons to just die and not respond making a substantial part of the network passive. There are variations in ReLu to mitigate this issue by simply making the horizontal line into non-horizontal component . for example y = 0.01x for x < 0 will make it a slightly inclined line rather than horizontal line. This is leaky ReLu. There are other variations too. The main idea is to let the gradient be non zero and recover during training eventually.
+				<span style="font-weight: bold; font-size: 1.1vw;">ReLu is less computationally expensive than tanh and sigmoid because it involves simpler mathematical operations.</span> That is a good point to consider when we are designing deep neural nets.
+			</p>
+
 		</div>
 	</section>
 </body>
