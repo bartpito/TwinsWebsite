@@ -415,6 +415,13 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Sigmoid function:</span>
 				<br/><br/><br/><img class='imgPos' src="../static/views/nn3.png" alt="sigmoid f" style="margin-left: 2%;">
 				<img class='imgPos' src="../static/views/nn4.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Well, this looks smooth and “step function like”. What are the benefits of this? Think about it for a moment. First things first, it is nonlinear in nature. Combinations of this function are also nonlinear! Great. Now we can stack layers. What about non binary activations? Yes, that too!. It will give an analog activation unlike step function. It has a smooth gradient too.
+				<br/><br/>And if you notice, between X values -2 to 2, Y values are very steep. Which means, any small changes in the values of X in that region will cause values of Y to change significantly. Ah, that means this function has a tendency to bring the Y values to either end of the curve.
+				<br/><br/>Looks like it’s good for a classifier considering its property? Yes ! It indeed is. It tends to bring the activations to either side of the curve ( above x = 2 and below x = -2 for example). Making clear distinctions on prediction.
+				<br/><br/>Another advantage of this activation function is, unlike linear function, the output of the activation function is always going to be in range (0,1) compared to (-inf, inf) of linear function. So we have our activations bound in a range. Nice, it won’t blow up the activations then.
+				<br/><br/>This is great. Sigmoid functions are one of the most widely used activation functions today. Then what are the problems with this?
+				<br/><br/>If you notice, towards either end of the sigmoid function, the Y values tend to respond very less to changes in X. What does that mean? The gradient at that region is going to be small. It gives rise to a problem of “vanishing gradients”. Hmm. So what happens when the activations reach near the “near-horizontal” part of the curve on either sides?
+				<br/><br/>Gradient is small or has vanished ( cannot make significant change because of the extremely small value ). The network refuses to learn further or is drastically slow ( depending on use case and until gradient /computation gets hit by floating point value limits ). There are ways to work around this problem and sigmoid is still very popular in classification problems.
 			</p>
 		</div>
 	</section>
