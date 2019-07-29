@@ -1,0 +1,76 @@
+## intent:goodbye
+- bye
+- bye
+- goodbye
+- thanks, bye
+- thanks, bye
+- thanks, bye
+- bye
+- goodbye
+
+## intent:greet
+- hi
+- Hello
+- hey
+- hey
+- hello
+- hi
+- hi
+- hey
+- hello
+- hello
+- hello
+- hello
+- hi
+- hello
+- hi
+
+## intent:inform
+- what is the weather
+- Gdansk
+- [Gdansk](location)
+- what is the weather
+- london
+- [london](location)
+- What is the weather in [Paris](location)
+- what is the weather
+- [Dublin](location)
+- What is the weather
+- London
+- [London](location)
+- what is the weather in [Dublin](location)
+- what is the weather
+- london
+- [london](location)
+- what is the weather
+- [dublin](location)
+- what is the weather?
+- London
+- [London](location)
+- what is the weather?
+- [Paris](location)
+- what is the weather?
+- London
+- [London](location)
+- what is the weather
+- Gdansk
+- [Gdansk](location)
+- what is the weather
+- Gdansk
+- [Gdansk](location)
+- what is the weather
+- Gdansk
+- [Gdansk](location)
+- what is the weather
+- [Gdansk][city]
+- [Gdansk](city)
+- [London](location)
+
+## lookup:cites
+- Berlin
+- Paris
+- Warsaw
+- Gdansk
+- London
+- Madrid
+- Sao Paulo

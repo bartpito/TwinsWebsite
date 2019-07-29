@@ -1,0 +1,29 @@
+%YAML 1.1
+---
+actions:
+- action_weather
+- action_allegro
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+entities:
+- location
+intents:
+- inform
+- greet
+- goodbye
+- out_of_scope
+slots:
+  location:
+    type: text
+templates:
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: Sorry, I did not understand that.
+  utter_goodbye:
+  - text: Talk to you later.
+  - text: Bye bye :(
+  utter_greet:
+  - text: Hello! How can I help?
