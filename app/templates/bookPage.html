@@ -501,10 +501,18 @@
 				<br/><br/>Overcoming the so-called saddle points is often considered to be even more challenging. These are plateaus, where the value of the cost function is almost constant. This situation is illustrated on the right-hand side of the same figure. At these points the gradient is almost zeroed in all directions making it impossible to escape.
 				<br/><br/>Sometimes, especially in the case of multi-layer networks, we may have to deal with regions where the cost function is very steep. In such places the value of the gradient drastically increases — the exploding gradient — what leads to taking huge steps, often ruining the entire previous optimization. However, this problem can be easily avoided by gradient clipping — defining the maximum allowed gradient value.
 			</p>
-			<br/><h2 class="basicText" style="font-size: 1.3vw;">Optimazers:</h2>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Optimizers:</h2>
 			<p class="basicText">
-					<br/><span style="font-weight: bold; font-size: 1.1vw;">Traps along the way</span>
-
+					<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Gradient descent</span>
+					<br/>Before we get to know more advanced algorithms, let’s take a look at some of basic strategies. Probably one of the most straightforward approaches is to simply go in direction opposite to the gradient. This strategy can be described by the following equation.
+					<br/><br/>Where α is a hyperparameter called learning rate, which translates into the length of the step that we will take in each iteration. Its selection expresses — in a certain extent — a compromise between the speed of learning and the accuracy of the result that can be obtained. Choosing too small step leads us to tedious calculations and the necessity of performing much more iterations. On the other hand, however, choosing too high value can effectively prevent us from finding the minimum. Such a situation is presented in the Figure 2 — we can see how in subsequent iterations we bounce around, not being able to stabilize. Meanwhile, the model where appropriate step was defined, found at a minimum almost immediately.
+					<br/><br/><img class='imgPos' src="../static/views/opti1.png" alt="loss f" style="margin-left: 10%;">
+					<br/><br/>In addition, this algorithm is vulnerable to previously described problems of saddle points. Since the size of the correction performed in subsequent iterations is proportional to the calculated gradient, we will not be able to escape from the plateau.
+					<br/><br/>Finally, to top it all off, the algorithm is ineffective — it requires the use of the entire training set in each iteration. This means that in every epoch we have to look at all the examples in order to perform next optimisation step. This may not be a problem when the training set consists of several thousand examples, but as I mentioned in one of my articles — neural networks work best when they have millions of records at their disposal. In that case, it is hard to imagine that in every iteration we use the whole set. It would be a waste of both time and computer memory. All these factors cause that gradient descent, in its purest form, does not work in most cases.
+					<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Stochastic Gradient descent</span>
+					Go to classification algorithms -> SGD
+					<br/><span style="font-weight: bold; font-size: 1.1vw;">2. SMini-batch gradient descent</span>
+					
 			</p>
 		</div>
 	</section>
