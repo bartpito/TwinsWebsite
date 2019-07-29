@@ -453,8 +453,26 @@
 			<p class="basicText">
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Softmax Function:</span>
 				<br/><br/>Softmax function, a wonderful activation function that turns numbers aka logits into probabilities that sum to one. Softmax function outputs a vector that represents the probability distributions of a list of potential outcomes.
+				</br/>Because Softmax function outputs numbers that represent probabilities, each number’s value is between 0 and 1 valid value range of probabilities. The range is denoted as [0,1]. The numbers are zero or positive. The entire output vector sums to 1. That is to say when all probabilities are accounted for, that’s 100%.
 				<span style="font-weight: bold; font-size: 1.1vw;">The essential goal of softmax is to turn numbers into probabilities.</span>
 				<br/><br/><br/><img class='imgPos' src="../static/views/ss1.png" alt="sigmoid f" style="margin-left: 2%; height: 20%; width: 80%;">
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Loss function</h2>
+			<p class="basicText">
+				Loss function helps in optimizing the parameters of the neural networks.<span style="font-weight: bold; font-size: 1.1vw;"> Our objective is to minimize the loss for a neural network by optimizing its parameters(weights)</span>. The loss is calculated using loss function by matching the target(actual) value and predicted value by a neural network. Then we use the gradient descent method to optimize the weights of the network such that the loss is minimized. This is how we train a neural network.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Loss functions:</h2>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Mean Squared Error:</span>
+				<br/><br/>When you have a regression task, one of the loss function you can go ahead is this one. As the name suggests, this loss is calculated by taking the mean of squared differences between actual(target) and predicted values.
+				For Example, you have a neural network with which takes some data related to house and predicts it’s price. In this case, you can use the MSE loss. Basically, in the case where the output is a real number, you should use this loss function.
+				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="sigmoid f" style="margin-left: 10%;">
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">2. Mean Squared Error:</span>
+				<br/><br/>When you have a regression task, one of the loss function you can go ahead is this one. As the name suggests, this loss is calculated by taking the mean of squared differences between actual(target) and predicted values.
+				For Example, you have a neural network with which takes some data related to house and predicts it’s price. In this case, you can use the MSE loss. Basically, in the case where the output is a real number, you should use this loss function.
+				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="sigmoid f" style="margin-left: 10%;">
 			</p>
 		</div>
 	</section>
