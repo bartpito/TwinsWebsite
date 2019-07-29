@@ -466,13 +466,30 @@
 				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Mean Squared Error:</span>
 				<br/><br/>When you have a regression task, one of the loss function you can go ahead is this one. As the name suggests, this loss is calculated by taking the mean of squared differences between actual(target) and predicted values.
 				For Example, you have a neural network with which takes some data related to house and predicts it’s price. In this case, you can use the MSE loss. Basically, in the case where the output is a real number, you should use this loss function.
-				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="loss f" style="margin-left: 10%;">
 			</p>
 			<p class="basicText">
-				<br/><span style="font-weight: bold; font-size: 1.1vw;">2. Mean Squared Error:</span>
-				<br/><br/>When you have a regression task, one of the loss function you can go ahead is this one. As the name suggests, this loss is calculated by taking the mean of squared differences between actual(target) and predicted values.
-				For Example, you have a neural network with which takes some data related to house and predicts it’s price. In this case, you can use the MSE loss. Basically, in the case where the output is a real number, you should use this loss function.
-				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">2. Binary Crossentropy:</span>
+				<br/><br/>When you have a binary classification task, one of the loss function you can go ahead is this one. If you are using BCE loss function, you just need one output node to classify the data into two classes. The output value should be passed through a sigmoid activation function so the output is in the range of (0–1).
+				<br/><br/>For example, you have a neural network which takes data related to atmosphere and predicts whether it will rain or not. If the output is greater than 0.5, the network classifies it as rain and if the output is less than 0.5, the network classifies it as not rain. (it could be opposite depending upon how you train the network). More the probability score value, more the chance of raining.
+				<br/><br/><img class='imgPos' src="../static/views/loss2.jpeg" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>While training the network, the target value fed to the network should be 1 if it is raining otherwise 0.
+				<br/><br/>One important thing, if you are using BCE loss function the output of the node should be between (0–1). It means you have to use sigmoid activation function on your final output. Since sigmoid converts any real value in the range between (0–1).
+				<br/><br/>What if you are not using sigmoid activation on the final layer? Then you can pass an argument called from logits as true to the loss function and it will internally apply the sigmoid to the output value.
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">3. Categorical Crossentropy:</span>
+				<br/><br/>When you have a multi-class classification task, one of the loss function you can go ahead is this one. If you are using CCE loss function, there must be the same number of output nodes as the classes. And the final layer output should be passed through a softmax activation so that each node output a probability value between (0–1).
+				<br/><br/>For example, you have a neural network which takes an image and classifies it into a cat or dog. If cat node has high probability score then the image is classified into cat otherwise dog. Basically, whichever class node has the highest probability score, the image is classified into that class.
+				<br/><br/><img class='imgPos' src="../static/views/loss3.jpeg" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>For feeding the target value at the time of training, you have to one hot encode them. If the image is of cat then target vector would be (1, 0) and if the image is of dog, target vector would be (0, 1). Basically, target vector would be of the same size as the number of classes and the index position corresponding to the actual class would be 1 and all other would be zero.
+				<br/><br/>What if you are not using softmax activation on the final layer? Then you can pass an argument called from logits as true to the loss function and it will internally apply the softmax to the output value. Same as in the above case.
+				
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">4. Sparse Categorical Crossentropy:</span>
+				<br/><br/>When you have a multi-class classification task, one of the loss function you can go ahead is this one. If you are using CCE loss function, there must be the same number of output nodes as the classes. And the final layer output should be passed through a softmax activation so that each node output a probability value between (0–1).
+				<br/><br/><img class='imgPos' src="../static/views/loss3.jpeg" alt="loss f" style="margin-left: 10%;">
 			</p>
 		</div>
 	</section>
