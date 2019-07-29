@@ -368,6 +368,90 @@
 		</div>
 		<div id="section11">
 			<a class="topic" style="text-decoration: underline;">Learning process of Neural Network</a><br/>
+			<br/><h2 class="basicText">Learning process of a neural network</h2>
+			<p class="basicText">
+				<span style="font-weight: bold;">Neural network</span> is made up of neurons connected to each other; at the same time, each connection of our neural network is associated with a weight that dictates the importance of this relationship in the neuron when multiplied by the input value.
+				<br/><br/>
+				Each neuron has an <span style="font-weight: bold;">activation function</span> that defines the output of the neuron. The activation function is used to introduce non-linearity in the modeling capabilities of the network.
+				<br/><br/>
+				Training our neural network, that is, learning the values of our parameters (weights wij and bj biases) is the most genuine part of Deep Learning and we can see this learning process in a neural network as an iterative process of “going and return” by the layers of neurons. <span style="font-weight: bold;">The “going” 
+				is a forwardpropagation of the information and the “return” is a backpropagation of the information.</span>
+				<br/><br/>
+				The first phase <span style="font-weight: bold;">forwardpropagation</span> occurs when the network is exposed to the training data and these cross the entire neural network for their predictions (labels) to be calculated. That is, passing the input data through the network in such a way that all the neurons apply their transformation 
+				to the information they receive from the neurons of the previous layer and sending it to the neurons of the next layer. When the data has crossed all the layers, and all its neurons have made their calculations, the final layer will be reached with a result of label prediction for those input examples.
+				<br/><br/>
+				Next, we will use a <span style="font-weight: bold;">loss function</span> to estimate the loss (or error) and to compare and measure how good/bad our prediction result was in relation to the correct result (remember that we are in a supervised learning environment and we have the label that tells us the expected value). Ideally, we want our cost to be zero, that is, without
+				divergence between estimated and expected value. Therefore, as the model is being trained, the weights of the interconnections of the neurons will gradually be adjusted until good predictions are obtained.
+				<br/><br/>
+				Once the loss has been calculated, this information is propagated backwards. Hence, its name: <span style="font-weight: bold;">backpropagation</span>. Starting from the output layer, that loss information propagates to all the neurons in the hidden layer that contribute directly to the output. However, the neurons of the hidden layer only receive a fraction of the total 
+				signal of the loss, based on the relative contribution that each neuron has contributed to the original output. This process is repeated, layer by layer, until all the neurons in the network have received a loss signal that describes their relative contribution to the total loss.
+			</p>
+			<br/><img class='imgPos' src="../static/views/nn1.png" alt="lr4" style="margin-left: 25%;"><br/>
+			<br/><br/><p class="basicText">
+				Now that we have spread this information back, we can adjust the weights of connections between neurons.What we are doing is making the loss as close as possible to zero the next time we go back to using the network for a prediction. For this, we will use a technique called <span style="font-weight: bold;">gradient descent</span>. This technique changes the weights in small increments with the help of the 
+				calculation of the derivative (or gradient) of the loss function, which allows us to see in which direction “to descend” towards the global minimum; this is done in general in batches of data in the successive iterations (epochs) of all the dataset that we pass to the network in each iteration.
+				<br/><br/><span style="font-weight: bold;">To recap, the learning algorithm consists of:</span>
+				<br/><br/><span style="font-weight: bold;">1. </span>Start with values (often random) for the network parameters (wij weights and bj biases).
+				<br/><br/><span style="font-weight: bold;">2. </span>Take a set of examples of input data and pass them through the network to obtain their prediction.
+				<br/><br/><span style="font-weight: bold;">3. </span>Compare these predictions obtained with the values of expected labels and calculate the loss with them.
+				<br/><br/><span style="font-weight: bold;">4. </span>Perform the backpropagation in order to propagate this loss to each and every one of the parameters that make up the model of the neural network.
+				<br/><br/><span style="font-weight: bold;">5. </span>Use this propagated information to update the parameters of the neural network with the gradient descent in a way that the total loss is reduced and a better model is obtained.
+				<br/><br/><span style="font-weight: bold;">6. </span>Continue iterating in the previous steps until we consider that we have a good model.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation function</h2>
+			<p class="basicText">
+				So what does an artificial neuron do? Simply put, it calculates a “weighted sum” of its input, adds a bias and then decides whether it should be “fired” or not.
+				<br/><br/>So consider a neuron.
+				<br/><br/><img class='imgPos' src="../static/views/nn8.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Now, the value of Y can be anything ranging from -inf to +inf. The neuron really doesn’t know the bounds of the value. So how do we decide whether the neuron should fire or not ( why this firing pattern? Because we learnt it from biology that’s the way brain works and brain is a working testimony of an awesome and intelligent system ).
+				We decided to add “activation functions” for this purpose. <span style="font-weight: bold; font-size: 1.1vw;">To check the Y value produced by a neuron and decide whether outside connections should consider this neuron as “fired” or not. Or rather let’s say — “activated” or not.</span>
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation functions:</h2>
+			<p class="basicText">
+				We use the activation functions to propagate the output of a neuron forward. This output is received by the neurons of the next layer to which this neuron is connected (up to the output layer included). As we have said, <span style="font-weight: bold;">the activation function serves to introduce non-linearity in the modeling capabilities of the network.</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1.Linear function:</span>
+				<br/><br/>A straight line function where activation is proportional to input ( which is the weighted sum from neuron ).
+				<br/><br/>This way, it gives a range of activations, so it is not binary activation. We can definitely connect a few neurons together and if more than 1 fires, we could take the max ( or softmax) and decide based on that. So that is ok too. Then what is the problem with this?
+				<br/><br/>If you are familiar with gradient descent for training, you would notice that for this function, derivative is a constant.
+				<br/><br/>A = cx, derivative with respect to x is c. That means, the gradient has no relationship with X. It is a constant gradient and the descent is going to be on constant gradient. If there is an error in prediction, the changes made by back propagation is constant and not depending on the change in input delta(x)!
+				<br/><br/>This is not that good!. There is another problem too. Think about connected layers. Each layer is activated by a linear function. That activation in turn goes into the next level as input and the second layer calculates weighted sum on that input and it in turn, fires based on another linear activation function.
+				<br/><br/>No matter how many layers we have, if all are linear in nature, the final activation function of last layer is nothing but just a linear function of the input of first layer! Pause for a bit and think about it.
+				<br/><br/>That means these two layers ( or N layers ) can be replaced by a single layer. Ah! We just lost the ability of stacking layers this way. No matter how we stack, the whole network is still equivalent to a single layer with linear activation ( a combination of linear functions in a linear manner is still another linear function ).
+			</p>
+			<br/><br/><br/><img class='imgPos' src="../static/views/nn2.png" alt="linear f" style="margin-left: 15%;"><br/>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Sigmoid function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn3.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn4.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Well, this looks smooth and “step function like”. What are the benefits of this? Think about it for a moment. First things first, it is nonlinear in nature. Combinations of this function are also nonlinear! Great. Now we can stack layers. What about non binary activations? Yes, that too!. It will give an analog activation unlike step function. It has a smooth gradient too.
+				<br/><br/>And if you notice, between X values -2 to 2, Y values are very steep. Which means, any small changes in the values of X in that region will cause values of Y to change significantly. Ah, that means this function has a tendency to bring the Y values to either end of the curve.
+				<br/><br/>Looks like it’s good for a classifier considering its property? Yes ! It indeed is. It tends to bring the activations to either side of the curve ( above x = 2 and below x = -2 for example). Making clear distinctions on prediction.
+				<br/><br/>Another advantage of this activation function is, unlike linear function, the output of the activation function is always going to be in range (0,1) compared to (-inf, inf) of linear function. So we have our activations bound in a range. Nice, it won’t blow up the activations then.
+				<br/><br/>This is great. Sigmoid functions are one of the most widely used activation functions today. Then what are the problems with this?
+				<br/><br/>If you notice, towards either end of the sigmoid function, the Y values tend to respond very less to changes in X. What does that mean? The gradient at that region is going to be small. It gives rise to a problem of “vanishing gradients”. Hmm. So what happens when the activations reach near the “near-horizontal” part of the curve on either sides?
+				<br/><br/>Gradient is small or has vanished ( cannot make significant change because of the extremely small value ). The network refuses to learn further or is drastically slow ( depending on use case and until gradient /computation gets hit by floating point value limits ). There are ways to work around this problem and sigmoid is still very popular in classification problems.
+			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Tanh Function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn5.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn6.png" alt="sigmoid f" style="margin-left: 10%;">
+				<img class='imgPos' src="../static/views/nn7.png" alt="sigmoid f" style="margin-left: 2%;">
+				Ok, now this has characteristics similar to sigmoid that we discussed above. It is nonlinear in nature, so great we can stack layers! It is bound to range (-1, 1) so no worries of activations blowing up. One point to mention is that the gradient is stronger for tanh than sigmoid ( derivatives are steeper). Deciding between the sigmoid or tanh will depend on your requirement of gradient strength. Like sigmoid, tanh also has the vanishing gradient problem.
+				<br/><br/>Tanh is also a very popular and widely used activation function.
+			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. ReLu Function:</span>
+				<br/><br/>Later, comes the ReLu function,
+				<br/><br/>A(x) = max(0,x)
+				<br/><br/>The ReLu function is as shown above. It gives an output x if x is positive and 0 otherwise.
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn9.jpeg" alt="sigmoid f" style="margin-left: 2%;">
+				<br/><br/>At first look this would look like having the same problems of linear function, as it is linear in positive axis. First of all, ReLu is nonlinear in nature. And combinations of ReLu are also non linear! ( in fact it is a good approximator. Any function can be approximated with combinations of ReLu). Great, so this means we can stack layers. It is not bound though. The range of ReLu is [0, inf). This means it can blow up the activation.
+				<br/><br/>Another point that I would like to discuss here is the sparsity of the activation. Imagine a big neural network with a lot of neurons. Using a sigmoid or tanh will cause almost all neurons to fire in an analog way. That means almost all activations will be processed to describe the output of a network. In other words the activation is dense. This is costly. We would ideally want a few neurons in the network to not activate and thereby making the activations sparse and efficient.
+				<br/><br/>ReLu give us this benefit. Imagine a network with random initialized weights ( or normalised ) and almost 50% of the network yields 0 activation because of the characteristic of ReLu ( output 0 for negative values of x ). This means a fewer neurons are firing ( sparse activation ) and the network is lighter. Woah, nice! ReLu seems to be awesome! Yes it is, but nothing is flawless.. Not even ReLu.
+				<br/><br/>Because of the horizontal line in ReLu( for negative X ), the gradient can go towards 0. For activations in that region of ReLu, gradient will be 0 because of which the weights will not get adjusted during descent. That means, those neurons which go into that state will stop responding to variations in error/ input ( simply because gradient is 0, nothing changes ). This is called dying ReLu problem. This problem can cause several neurons to just die and not respond making a substantial part of the network passive. There are variations in ReLu to mitigate this issue by simply making the horizontal line into non-horizontal component . for example y = 0.01x for x < 0 will make it a slightly inclined line rather than horizontal line. This is leaky ReLu. There are other variations too. The main idea is to let the gradient be non zero and recover during training eventually.
+				<span style="font-weight: bold; font-size: 1.1vw;">ReLu is less computationally expensive than tanh and sigmoid because it involves simpler mathematical operations.</span> That is a good point to consider when we are designing deep neural nets.
+			</p>
+
 		</div>
 	</section>
 </body>
