@@ -488,8 +488,9 @@
 			</p>
 			<p class="basicText">
 				<br/><span style="font-weight: bold; font-size: 1.1vw;">4. Sparse Categorical Crossentropy:</span>
-				<br/><br/>When you have a multi-class classification task, one of the loss function you can go ahead is this one. If you are using CCE loss function, there must be the same number of output nodes as the classes. And the final layer output should be passed through a softmax activation so that each node output a probability value between (0–1).
-				<br/><br/><img class='imgPos' src="../static/views/loss3.jpeg" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>This loss function is almost similar to CCE except for one change.
+				<br/><br/>When you are using SCCE loss function, you do not need to one hot encode the target vector. If the target image is of a cat, you simply pass 0, otherwise 1. Basically, whichever the class is you just pass the index of that class.
+				<br/><br/><img class='imgPos' src="../static/views/loss4.jpeg" alt="loss f" style="margin-left: 10%;">
 			</p>
 		</div>
 	</section>
