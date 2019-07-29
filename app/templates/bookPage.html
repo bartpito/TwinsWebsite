@@ -492,6 +492,16 @@
 				<br/><br/>When you are using SCCE loss function, you do not need to one hot encode the target vector. If the target image is of a cat, you simply pass 0, otherwise 1. Basically, whichever the class is you just pass the index of that class.
 				<br/><br/><img class='imgPos' src="../static/views/loss4.jpeg" alt="loss f" style="margin-left: 10%;">
 			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Optimization</h2>
+			<p class="basicText">
+				Optimization is a process of searching for parameters that minimize or maximize our functions. When we train machine learning model, we usually use indirect optimization. We choose a certain metric — like accuracy, precision or recall — which indicates how well our model solves a given problem. However, we are optimizing a different cost function J(θ) and hope that minimizing its value 
+				will improve metric we care about. Of course, the choice of the cost function is usually related to the specific problem that we aim to tackle. Essentially, it’s deliberately designed to indicate how far from an ideal solution we are. As you can imagine, this topic is quite complicated and is a great topic for a separate article.
+				</br><br/><span style="font-weight: bold; font-size: 1.1vw;">Traps along the way</span>
+				<br/>It turns out though, that very often finding a minimum of non-convex cost functions is not easy, and we have to use advanced optimization strategies to locate them. If you have learned differential calculus, you certainly know the concept of local minimum — these are some of the biggest traps that our optimizer can fall into. For those who have not yet come across this wonderful part of the mathematics, I will only say that these are the points where function takes a minimum value, but only in a given region. An example of such a situation is shown on the left hand side of the figure above. We can clearly see that the point located by the optimizer is not the most optimal solution overall.
+				<br/><br/>Overcoming the so-called saddle points is often considered to be even more challenging. These are plateaus, where the value of the cost function is almost constant. This situation is illustrated on the right-hand side of the same figure. At these points the gradient is almost zeroed in all directions making it impossible to escape.
+				<br/><br/>Sometimes, especially in the case of multi-layer networks, we may have to deal with regions where the cost function is very steep. In such places the value of the gradient drastically increases — the exploding gradient — what leads to taking huge steps, often ruining the entire previous optimization. However, this problem can be easily avoided by gradient clipping — defining the maximum allowed gradient value.
+				
+			</p>
 		</div>
 	</section>
 </body>
