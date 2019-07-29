@@ -12,6 +12,7 @@ from keras.models import load_model
 from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 from flask_nav import Nav
 from flask import Flask, render_template, url_for, request
+from flask_socketio import SocketIO, send
 
 
 
@@ -20,6 +21,8 @@ tf.logging.set_verbosity(tf.logging.ERROR)
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY']
+socketio = SocketIO(app)
 nav = Nav(app)
 
 
@@ -90,5 +93,14 @@ def learningPage():
     return render_template('learningPage.html')
 
 
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
+@socketio.on('message')
+def handleMessage(msg):
+    print(f'Message: {msg}')
+    send(msg, broadcast=True)
+
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    socketio.run(app, host='0.0.0.0', port=5000)
