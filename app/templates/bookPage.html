@@ -519,11 +519,18 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Momentum</span>
 				<br/>Momentum is like a ball rolling downhill. The ball will gain momentum as it rolls down the hill.
 				<br/><br/><img class='imgPos' src="../static/views/mom1.png" alt="momentum f" style="margin-left: 10%;">
-				<br/><br/><br/><br/>Momentum helps accelerate Gradient Descent(GD) when we have surfaces that curve more steeply in one direction than in another direction. It also dampens the oscillation as shown above
+				<br/><br/>Momentum helps accelerate Gradient Descent(GD) when we have surfaces that curve more steeply in one direction than in another direction. It also dampens the oscillation as shown above
 				<br/><br/>For updating the weights it takes the gradient of the current step as well as the gradient of the previous time steps. This helps us move faster towards convergence.
 				<br/><br/>Convergence happens faster when we apply momentum optimizer to surfaces with curves.
 				<br/><br/><img class='imgPos' src="../static/views/mom2.png" alt="momentum f" style="margin-left: 10%;">	
-				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Momentum</span>
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Nesterov accelerated gradient(NAG)</span>
+				<br/>Nesterov acceleration optimization is like a ball rolling down the hill but knows exactly when to slow down before the gradient of the hill increases again.
+				<br/><br/>We calculate the gradient not with respect to the current step but with respect to the future step. We evaluate the gradient of the looked ahead and based on the importance then update the weights.
+				<br/><br/><img class='imgPos' src="../static/views/mom3.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>NAG is like you are going down the hill where we can look ahead in the future. This way we can optimize our descent faster. Works slightly better than standard Momentum.
+				<br/><br/><img class='imgPos' src="../static/views/mom4.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adagrad — Adaptive Gradient Algorithm</span>
+				<br/>
 			</p>	
 		</div>
 	</section>
