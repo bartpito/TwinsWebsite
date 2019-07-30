@@ -530,7 +530,27 @@
 				<br/><br/>NAG is like you are going down the hill where we can look ahead in the future. This way we can optimize our descent faster. Works slightly better than standard Momentum.
 				<br/><br/><img class='imgPos' src="../static/views/mom4.png" alt=" f" style="margin-left: 10%;">
 				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adagrad — Adaptive Gradient Algorithm</span>
+				<br/>We need to tune the learning rate in Momentum and NAG which is an expensive process.
+				<br/><br/>Adagrad is an adaptive learning rate method. In Adagrad we adopt the learning rate to the parameters. We perform larger updates for infrequent parameters and smaller updates for frequent parameters.
+				<br/><br/>It is well suited when we have sparse data as in large scale neural networks. GloVe word embedding uses adagrad where infrequent words required a greater update and frequent words require smaller updates.
+				<br/><br/>For SGD, Momentum, and NAG we update for all parameters θ at once. We also use the same learning rate η. In Adagrad we use different learning rate for every parameter θ for every time step t
+				<br/><br/><img class='imgPos' src="../static/views/mom5.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adagrad eliminates the need to manually tune the learning rate.</span>
+				<br/><br/>In the denominator, we accumulate the sum of the square of the past gradients. Each term is a positive term so it keeps on growing to make the learning rate η infinitesimally small to the point that algorithm is no longer able learning. Adadelta, RMSProp, and adam tries to resolve Adagrad’s radically diminishing learning rates.
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
+				<br/>Adadelta is an extension of Adagrad and it also tries to reduce Adagrad’s aggressive, monotonically reducing the learning rate
+				<br/><br/>It does this by restricting the window of the past accumulated gradient to some fixed size of w. Running average at time t then depends on the previous average and the current gradient
+				<br/><br/>In Adadelta we do not need to set the default learning rate as we take the ratio of the running average of the previous time steps to the current gradient
+				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">RMSProp</span>
 				<br/>
+				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
+				<br/>
+				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
+				<br/>
+				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
 			</p>	
 		</div>
 	</section>
