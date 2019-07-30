@@ -543,14 +543,31 @@
 				<br/><br/>In Adadelta we do not need to set the default learning rate as we take the ratio of the running average of the previous time steps to the current gradient
 				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
 				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">RMSProp</span>
-				<br/>
-				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
-				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
-				<br/>
-				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
-				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
-				<br/>
-				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
+				<br/>RMSProp is Root Mean Square Propagation. It was devised by Geoffrey Hinton.
+				<br/><br/>RMSProp tries to resolve Adagrad’s radically diminishing learning rates by using a moving average of the squared gradient. It utilizes the magnitude of the recent gradient descents to normalize the gradient.
+				<br/><br/>In RMSProp learning rate gets adjusted automatically and it chooses a different learning rate for each parameter.
+				<br/><br/>RMSProp divides the learning rate by the average of the exponential decay of squared gradients
+				<br/><br/><img class='imgPos' src="../static/views/mom7.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adam — Adaptive Moment Estimation</span>
+				<br/>Another method that calculates the individual adaptive learning rate for each parameter from estimates of first and second moments of the gradients.
+				<br/><br/>It also reduces the radically diminishing learning rates of Adagrad
+				<br/><br/>Adam can be viewed as a combination of Adagrad, which works well on sparse gradients and RMSprop which works well in online and nonstationary settings.
+				<br/><br/>Adam implements the exponential moving average of the gradients to scale the learning rate instead of a simple average as in Adagrad. It keeps an exponentially decaying average of past gradients
+				<br/><br/>Adam is computationally efficient and has very little memory requirement
+				<br/><br/>Adam optimizer is one of the most popular gradient descent optimization algorithms
+				<br/><br/>Adam algorithm first updates the exponential moving averages of the gradient(mt) and the squared gradient(vt) which is the estimates of the first and second moment.
+				<br/><br/>Hyper-parameters β1, β2 ∈ [0, 1) control the exponential decay rates of these moving averages as shown below
+				<br/><br/><img class='imgPos' src="../static/views/mom8.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>Moving averages are initialized as 0 leading to moment estimates that are biased around 0 especially during the initial timesteps. This initialization bias can be easily counteracted resulting in bias-corrected estimates
+				<br/><br/><img class='imgPos' src="../static/views/mom9.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>Finally, we update the parameter as shown below
+				<br/><br/><img class='imgPos' src="../static/views/mom10.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Nadam - Nesterov-accelerated Adaptive Moment Estimation</span>
+				<br/>Nadam combines NAG and Adam
+				<br/><br/>Nadam is employed for noisy gradients or for gradients with high curvatures
+				<br/><br/>The learning process is accelerated by summing up the exponential decay of the moving averages for the previous and current gradient
+				<br/><br/>In the diagram below we see can see how different optimizer will converge to the minimum. Adagrad, Adadelta, and RMSprop headed off immediately in the right direction and converge. Momentum and NAG were led off-track, evoking the image of a ball rolling down the hill. NAG corrected itself quickly
+				<br/><br/><img class='imgPos' src="../static/views/mom11.png" alt=" f" style="margin-left: 10%;">
 			</p>	
 		</div>
 	</section>
