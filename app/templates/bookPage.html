@@ -568,17 +568,30 @@
 				<br/><br/>The learning process is accelerated by summing up the exponential decay of the moving averages for the previous and current gradient
 				<br/><br/>In the diagram below we see can see how different optimizer will converge to the minimum. Adagrad, Adadelta, and RMSprop headed off immediately in the right direction and converge. Momentum and NAG were led off-track, evoking the image of a ball rolling down the hill. NAG corrected itself quickly
 				<br/><br/><img class='imgPos' src="../static/views/mom11.png" alt=" f" style="margin-left: 10%;">
-				<br/><br/><br/><h2 class="basicText" style="font-size: 1.3vw;">Parameters and hyperparameters:</h2>
-				<p class="basicText">
-					<br/><span style="font-weight: bold; font-size: 1.1vw;">Parameters vs hyperparameters:</span>
-					<br/>So far, for simplicity, we have not paid explicit attention to differentiating between parameters and hyperparameters, but I think the time has come. In general, we consider a parameter of the model as a configuration variable that is internal to the model and whose value can be estimated from the data. 
-					In contrast, by hyperparameter we refer to configuration variables that are external to the model itself and whose value in general cannot be estimated from the data, and are specified by the programmer to adjust the learning algorithms.
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1. Epochs:</span>
-					<br/>Epochs tells us the number of times all the training data have passed through the neural network in the training process. A good clue is to increase the number of epochs until the accuracy metric with the validation data starts to decrease, even when the accuracy of the training data continues to increase 
-					(this is when we detect a potential overfitting).
-
-				</p>
 			</p>	
+			<br/><br/><br/><h2 class="basicText" style="font-size: 1.3vw;">Parameters and hyperparameters:</h2>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">Parameters vs hyperparameters:</span>
+				<br/>So far, for simplicity, we have not paid explicit attention to differentiating between parameters and hyperparameters, but I think the time has come. In general, we consider a parameter of the model as a configuration variable that is internal to the model and whose value can be estimated from the data. 
+				In contrast, by hyperparameter we refer to configuration variables that are external to the model itself and whose value in general cannot be estimated from the data, and are specified by the programmer to adjust the learning algorithms.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1. Epochs:</span>
+				<br/>Epochs tells us the number of times all the training data have passed through the neural network in the training process. A good clue is to increase the number of epochs until the accuracy metric with the validation data starts to decrease, even when the accuracy of the training data continues to increase 
+				(this is when we detect a potential overfitting).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Batch size:</span>
+				<br/>As we have said before, we can partition the training data in mini batches to pass them through the network. In Keras, the batch_size is the argument that indicates the size of these batches that will be used in the fit() method in an iteration of the training to update the gradient. The optimal size will
+				depend on many factors, including the memory capacity of the computer that we use to do the calculations.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Learning rate:</span>
+				<br/>The gradient vector has a direction and a magnitude. Gradient descent algorithms multiply the magnitude of the gradient by a scalar known as learning rate (also sometimes called step size) to determine the next point.
+				<br/><br/>In a more formal way, the backpropagation algorithm computes how the error changes with respect to each weight:
+				<br/><br/><img class='imgPos' src="../static/views/mom12.png">
+				<br/><br/>In order to update each weight of the network using a simple update rule:
+				<br/><br/><img class='imgPos' src="../static/views/mom13.png">
+				<br/><br/>Where α is the learning rate.
+				<br/><br/>For example, if the magnitude of the gradient is 1.5 and the learning rate is 0.01, then the gradient descent algorithm will select the next point at 0.015 from the previous point.
+				<br/><br/>The proper value of this hyperparameter is very dependent on the problem in question, but in general, if this is too big, huge steps are being made, which could be good to go faster in the learning process. But in this case, we may skip the minimum and make it difficult for the learning process to stop because, when searching for the next point, it perpetually bounces randomly at the bottom of the “well”. Visually we can see in this figure the effect that can occur, where the minimum value is never reached (indicated with a small arrow in the drawing):
+				<br/><br/><img class='imgPos' src="../static/views/mom14.png">
+				<br/><br/>Contrarily, if the learning rate is small, small advances will be made, having a better chance of reaching a local minimum, but this can cause the learning process to be very slow. In general, a good rule is to decrease the learning rate if our learning model does not work. If we know that the gradient of the loss function is small, then it is safe to test that it compensates the gradient with the learning rate.
+			</p>
 		</div>
 	</section>
 </body>
