@@ -591,6 +591,8 @@
 				<br/><br/>The proper value of this hyperparameter is very dependent on the problem in question, but in general, if this is too big, huge steps are being made, which could be good to go faster in the learning process. But in this case, we may skip the minimum and make it difficult for the learning process to stop because, when searching for the next point, it perpetually bounces randomly at the bottom of the “well”. Visually we can see in this figure the effect that can occur, where the minimum value is never reached (indicated with a small arrow in the drawing):
 				<br/><br/><img class='imgPos' src="../static/views/mom14.png">
 				<br/><br/>Contrarily, if the learning rate is small, small advances will be made, having a better chance of reaching a local minimum, but this can cause the learning process to be very slow. In general, a good rule is to decrease the learning rate if our learning model does not work. If we know that the gradient of the loss function is small, then it is safe to test that it compensates the gradient with the learning rate.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. Learning rate decay:</span>
+				<br/>But the best learning rate in general is one that decreases as the model approaches a solution. To achieve this effect, we have another hyperparameter, the learning rate decay, which is used to decrease the learning rate as epochs go by to allow learning to advance faster at the beginning with larger learning rates. As progress is made, smaller and smaller adjustments are made to facilitate the convergence of the training process to the minimum of the loss function.
 			</p>
 		</div>
 	</section>
