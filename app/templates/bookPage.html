@@ -647,6 +647,20 @@
 				<br/>nD tensor with shape: (batch_size, ..., input_dim). The most common situation would be a 2D input with shape (batch_size, input_dim).
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
 				<br/>nD tensor with shape: (batch_size, ..., units). For instance, for a 2D input with shape (batch_size, input_dim), the output would have shape (batch_size, units).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Activation:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Activation</span>(activation)
+				<br/><br/>Applies an activation function to an output.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">activation:</span> name of activation function to use (see: activations), or alternatively, a Theano or TensorFlow operation.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/>Same shape as input.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Dropout:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Dropout</span>(rate, noise_shape=None, seed=None)
+				<br/><br/>Applies Dropout to the input.
+				<br/><br/>Dropout consists in randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
+				<br/>Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
+				
 			</p>
 		</div>
 	</section>
