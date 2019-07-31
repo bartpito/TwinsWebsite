@@ -609,8 +609,29 @@
 					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_config():</span> returns a dictionary containing the configuration of the layer. The layer can be reinstantiated from its config via:</li>
 				</ul>
 			</p>
+			<p class="basicText"> 
+				<br/>If a layer has a single node (i.e. if it isn't a shared layer), you can get its input tensor, output tensor, input shape and output shape via:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.input</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.output:</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.input_shape</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.output_shape</span></li>
+				</ul>
+			</p>
+			<p class="basicText"> 
+				<br/>If the layer has multiple nodes (see: the concept of layer node and shared layers), you can use the following methods:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_input_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_output_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_input_shape_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_output_shape_at(node_index)</span></li>
+				</ul>
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Core Layers:</h2>
+			<p>
+				<span style="font-weight: bold; font-size: 1.1vw;">keras.layers.Dense</span>(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+			</p>
 		</div>
-
 	</section>
 </body>
 </html>
