@@ -660,7 +660,18 @@
 				<br/><br/>Applies Dropout to the input.
 				<br/><br/>Dropout consists in randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
 				<br/>Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
-				
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. Flatten:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Flatten</span>(data_format=None)
+				<br/><br/>Flattens the input. Does not affect the batch size.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Input:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.engine.input_layer.Input()</span>
+				<br/><br/>Flattens the input. Does not affect the batch size.
+				<br/><br/>Input() is used to instantiate a Keras tensor. Returns a tensor.
+				<br/><br/>A Keras tensor is a tensor object from the underlying backend (Theano, TensorFlow or CNTK), which we augment with certain attributes that allow us to build a Keras model just by knowing the inputs and outputs of the model.
+				<br/><br/>For instance, if a, b and c are Keras tensors, it becomes possible to do: model = Model(input=[a, b], output=c). 
+				<br/><br/>x = Input(shape=(32,))
+				<br/>y = Dense(16, activation='softmax')(x)
+				<br/>model = Model(x, y)
 			</p>
 		</div>
 	</section>
