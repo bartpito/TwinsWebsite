@@ -599,7 +599,16 @@
 			</p>
 		</div>
 		<div id="section12">
-			<br/><br/><br/><h2 class="basicText" style="font-size: 1.3vw;">Keras Layers:</h2>
+			<a class="topic" style="text-decoration: underline;">Keras Layers:</a><br/>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">About Keras Layers:</h2>
+			<p class="basicText">
+				<br/>All Keras layers have a number of methods in common:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_weights():</span> returns the weights of the layer as a list of Numpy arrays.</li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.set_weights(weights):</span> sets the weights of the layer from a list of Numpy arrays (with the same shapes as the output of get_weights).</li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_config():</span> returns a dictionary containing the configuration of the layer. The layer can be reinstantiated from its config via:</li>
+				</ul>
+			</p>
 		</div>
 
 	</section>
