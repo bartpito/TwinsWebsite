@@ -628,8 +628,25 @@
 				</ul>
 			</p>
 			<br/><h2 class="basicText" style="font-size: 1.1vw;">Core Layers:</h2>
-			<p>
-				<span style="font-weight: bold; font-size: 1.1vw;">keras.layers.Dense</span>(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+			<p class="basicText2">
+				<span style="font-weight: bold; font-size: 1.1vw;">1. Dense:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">keras.layers.Dense</span>(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">units:</span> Positive integer, dimensionality of the output space.
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">activation:</span> Activation function to use (see activations). If you don't specify anything, no activation is applied (ie. "linear" activation: a(x) = x).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Dense implements the operation:</span> output = activation(dot(input, kernel) + bias) where activation is the element-wise activation function passed as the activation argument, kernel is a weights matrix created by the layer, and bias is a bias vector created by the layer (only applicable if use_bias is True).
+				<br/><br/><i style="font-weight: bold;">Example</i>
+				<br/># as first layer in a sequential model:
+				<br/><span style="font-weight: bold; font-size: 1.0vw;">model = Sequential()</span>
+				<br/><span style="font-weight: bold; font-size: 1.0vw;">model.add(Dense(32, input_shape=(16,)))</span>
+				<br/># now the model will take as input arrays of shape (*, 16)
+				<br/># and output arrays of shape (*, 32)
+				<br/># after the first layer, you don't need to specify
+				<br/># the size of the input anymore:
+				<br/><span style="font-weight: bold; font-size: 1.0vw;">model.add(Dense(32))</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/>nD tensor with shape: (batch_size, ..., input_dim). The most common situation would be a 2D input with shape (batch_size, input_dim).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/>nD tensor with shape: (batch_size, ..., units). For instance, for a 2D input with shape (batch_size, input_dim), the output would have shape (batch_size, units).
 			</p>
 		</div>
 	</section>
