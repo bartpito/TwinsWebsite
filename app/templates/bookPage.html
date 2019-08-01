@@ -690,7 +690,8 @@
 				<br/># now: model.output_shape == (None, 64, 10)
 				<br/># note: `None` is the batch dimension
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. RepeatVector</span>
-				<br/>Repeats the input n times.
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.RepeatVector</span>(n)
+				<br/><br/>Repeats the input n times.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
 				<br/>model = Sequential()
 				<br/>model.add(Dense(32, input_dim=32))
@@ -703,7 +704,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>3D tensor of shape (num_samples, n, features).
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. ActivityRegularization</span>
-				<br/>keras.layers.ActivityRegularization(l1=0.0, l2=0.0)
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.ActivityRegularization</span>(l1=0.0, l2=0.0)
 				<br/><br/>Layer that applies an update to the cost function based input activity.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">l1:</span> L1 regularization factor (positive float).
 				<br/><span style="font-weight: bold; font-size: 0.9vw;">l2:</span> L2 regularization factor (positive float).
@@ -712,7 +713,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>Same shape as input.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. Masking</span>
-				<br/>keras.layers.Masking(mask_value=0.0)
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Masking</span>(mask_value=0.0)
 				<br/><br/>Masks a sequence by using a mask value to skip timesteps.
 				<br/><br/>If all features for a given sample timestep are equal to mask_value, then the sample timestep will be masked (skipped) in all downstream layers (as long as they support masking).
 				<br/><br/>If any downstream layer does not support masking yet receives such an input mask, an exception will be raised.
@@ -723,7 +724,15 @@
 				<br/>model = Sequential()
 				<br/>model.add(Masking(mask_value=0., input_shape=(timesteps, features)))
 				<br/>model.add(LSTM(32))
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. Masking</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">10. SpatialDropout1D</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout1D</span>(rate)
+				<br/><br/>Spatial 1D version of Dropout.
+				<br/><br/>This version performs the same function as Dropout, however it drops entire 1D feature maps instead of individual elements. If adjacent frames within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout1D will help promote independence between feature maps and should be used instead.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>3D tensor with shape: (samples, timesteps, channels)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>same as Input
+			</p>
 		</div>
 	</section>
 </body>
