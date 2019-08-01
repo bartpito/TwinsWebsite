@@ -769,7 +769,7 @@
 				<br/>4D tensor with shape: (batch, channels, rows, cols) if data_format is "channels_first" or 4D tensor with shape: (batch, rows, cols, channels) if data_format is "channels_last".
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>4D tensor with shape: (batch, filters, new_rows, new_cols) if data_format is "channels_first" or 4D tensor with shape: (batch, new_rows, new_cols, filters) if data_format is "channels_last". rows and cols values might have changed due to padding.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Conv3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Conv3D:</span>
 				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Conv3D</span>(filters, kernel_size, strides=(1, 1, 1), padding='valid', data_format=None, dilation_rate=(1, 1, 1), activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
 				<br/><br/>3D convolution layer (e.g. spatial convolution over volumes).
 				<br/><br/>This layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs. If use_bias is True, a bias vector is created and added to the outputs. Finally, if activation is not None, it is applied to the outputs as well.
@@ -778,6 +778,19 @@
 				<br/>5D tensor with shape: (batch, channels, conv_dim1, conv_dim2, conv_dim3) if data_format is "channels_first" or 5D tensor with shape: (batch, conv_dim1, conv_dim2, conv_dim3, channels) if  data_format is "channels_last".
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>5D tensor with shape: (batch, filters, new_conv_dim1, new_conv_dim2, new_conv_dim3) if data_format is "channels_first" or 5D tensor with shape: (batch, new_conv_dim1, new_conv_dim2, new_conv_dim3, filters) if data_format is "channels_last". new_conv_dim1, new_conv_dim2 and new_conv_dim3 values might have changed due to padding.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Pooling Layers:</h2></p>
+			<p class="basicText2">
+					<br/><span style="font-weight: bold; font-size: 1.1vw;">1. MaxPooling1D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+					<br/>Max pooling operation for temporal data.
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+			</p>
 			</p>
 		</div>
 	</section>
