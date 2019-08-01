@@ -703,13 +703,27 @@
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>3D tensor of shape (num_samples, n, features).
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. ActivityRegularization</span>
-				<br/>Layer that applies an update to the cost function based input activity.
+				<br/>keras.layers.ActivityRegularization(l1=0.0, l2=0.0)
+				<br/><br/>Layer that applies an update to the cost function based input activity.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">l1:</span> L1 regularization factor (positive float).
 				<br/><span style="font-weight: bold; font-size: 0.9vw;">l2:</span> L2 regularization factor (positive float).
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
 				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>Same shape as input.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. Masking</span>
+				<br/>keras.layers.Masking(mask_value=0.0)
+				<br/><br/>Masks a sequence by using a mask value to skip timesteps.
+				<br/><br/>If all features for a given sample timestep are equal to mask_value, then the sample timestep will be masked (skipped) in all downstream layers (as long as they support masking).
+				<br/><br/>If any downstream layer does not support masking yet receives such an input mask, an exception will be raised.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/>Consider a Numpy data array x of shape (samples, timesteps, features), to be fed to an LSTM layer. You want to mask sample #0 at timestep #3, and sample #2 at timestep #5, because you lack features for these sample timesteps. You can do:
+				<br/><br/>set x[0, 3, :] = 0. and x[2, 5, :] = 0.
+				<br/>insert a Masking layer with mask_value=0. before the LSTM layer:
+				<br/>model = Sequential()
+				<br/>model.add(Masking(mask_value=0., input_shape=(timesteps, features)))
+				<br/>model.add(LSTM(32))
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. Masking</span>
 		</div>
 	</section>
 </body>
