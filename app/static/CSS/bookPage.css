@@ -163,7 +163,7 @@ ul > li:hover .nav-flyout {
     background-color: white;
 }
 #section12 {
-    height: 1000%;
+    height: 2000%;
     background-color: white;
 }
 p {
@@ -188,7 +188,7 @@ h2.basicText {
     font-weight: bold;
 }
 .basicText2 {
-    margin-left: 20%%; 
+    margin-left: 20%; 
     margin-right: 15%; 
     text-align: left;
     font-size: 1vw;

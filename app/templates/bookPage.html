@@ -790,8 +790,56 @@
 					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
 					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
-			</p>
-			</p>
+
+					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. MaxPooling2D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+					<br/>Max pooling operation for spatial data.
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+
+					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. MaxPooling3D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+					<br/>Max pooling operation for 3D data (spatial or spatio-temporal).
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)				
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
+
+					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. AveragePooling1D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+					<br/>Average pooling for temporal data.
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+					
+					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. AveragePooling2D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+					<br/>Average pooling operation for spatial data.
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+
+					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. AveragePooling3D:</span>
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+					<br/>Average pooling operation for 3D data (spatial or spatio-temporal).
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
+					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
 		</div>
 	</section>
 </body>
