@@ -733,19 +733,19 @@
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>same as Input
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. SpatialDropout2D</span>
-				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout1D</span>(rate)
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout2D</span>(rate, data_format=None)
 				<br/><br/>Spatial 2D version of Dropout.
 				<br/><br/>This version performs the same function as Dropout, however it drops entire 2D feature maps instead of individual elements. If adjacent pixels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout2D will help promote independence between feature maps and should be used instead.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
 				<br/>4D tensor with shape: (samples, channels, rows, cols) if data_format='channels_first' or 4D tensor with shape: (samples, rows, cols, channels) if data_format='channels_last'.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>same as Input
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. SpatialDropout2D</span>
-				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout1D</span>(rate)
-				<br/><br/>Spatial 2D version of Dropout.
-				<br/><br/>This version performs the same function as Dropout, however it drops entire 2D feature maps instead of individual elements. If adjacent pixels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout2D will help promote independence between feature maps and should be used instead.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">12. SpatialDropout3D</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout3D</span>(rate, data_format=None)
+				<br/><br/>Spatial 3D version of Dropout.
+				<br/><br/>This version performs the same function as Dropout, however it drops entire 3D feature maps instead of individual elements. If adjacent voxels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout3D will help promote independence between feature maps and should be used instead.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-				<br/>4D tensor with shape: (samples, channels, rows, cols) if data_format='channels_first' or 4D tensor with shape: (samples, rows, cols, channels) if data_format='channels_last'.
+				<br/>5D tensor with shape: (samples, channels, dim1, dim2, dim3) if data_format='channels_first' or 5D tensor with shape: (samples, dim1, dim2, dim3, channels) if data_format='channels_last'.
 				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>same as Input
 			</p>
