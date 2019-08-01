@@ -672,6 +672,23 @@
 				<br/><br/>x = Input(shape=(32,))
 				<br/>y = Dense(16, activation='softmax')(x)
 				<br/>model = Model(x, y)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Reshape:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Reshape</span>(target_shape)
+				Reshapes an output to a certain shape.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">target_shape:</span>Target shape. Tuple of integers. Does not include the batch axis.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/>Arbitrary, although all dimensions in the input shaped must be fixed. Use the keyword argument input_shape (tuple of integers, does not include the batch axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/>(batch_size,) + target_shape
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. Permute:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Permute</span>(dims)
+				<br/><br/>Permutes the dimensions of the input according to a given pattern.
+				<br/>Useful for e.g. connecting RNNs and convnets together.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Example:</span>
+				<br/>model = Sequential()
+				<br/>model.add(Permute((2, 1), input_shape=(10, 64)))
+				<br/># now: model.output_shape == (None, 64, 10)
+				<br/># note: `None` is the batch dimension
 			</p>
 		</div>
 	</section>
