@@ -636,35 +636,35 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Dense implements the operation:</span> output = activation(dot(input, kernel) + bias) where activation is the element-wise activation function passed as the activation argument, kernel is a weights matrix created by the layer, and bias is a bias vector created by the layer (only applicable if use_bias is True).
 				<br/><br/><i style="font-weight: bold;">Example</i>
 				<br/># as first layer in a sequential model:
-				<br/><span style="font-weight: bold; font-size: 1.0vw;">model = Sequential()</span>
-				<br/><span style="font-weight: bold; font-size: 1.0vw;">model.add(Dense(32, input_shape=(16,)))</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model = Sequential()</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model.add(Dense(32, input_shape=(16,)))</span>
 				<br/># now the model will take as input arrays of shape (*, 16)
 				<br/># and output arrays of shape (*, 32)
 				<br/># after the first layer, you don't need to specify
 				<br/># the size of the input anymore:
-				<br/><span style="font-weight: bold; font-size: 1.0vw;">model.add(Dense(32))</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model.add(Dense(32))</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
 				<br/>nD tensor with shape: (batch_size, ..., input_dim). The most common situation would be a 2D input with shape (batch_size, input_dim).
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>nD tensor with shape: (batch_size, ..., units). For instance, for a 2D input with shape (batch_size, input_dim), the output would have shape (batch_size, units).
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Activation:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Activation</span>(activation)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Activation</span>(activation)
 				<br/><br/>Applies an activation function to an output.
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">activation:</span> name of activation function to use (see: activations), or alternatively, a Theano or TensorFlow operation.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">activation:</span> name of activation function to use (see: activations), or alternatively, a Theano or TensorFlow operation.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
 				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>Same shape as input.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Dropout:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Dropout</span>(rate, noise_shape=None, seed=None)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Dropout</span>(rate, noise_shape=None, seed=None)
 				<br/><br/>Applies Dropout to the input.
 				<br/><br/>Dropout consists in randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
 				<br/>Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. Flatten:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Flatten</span>(data_format=None)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Flatten</span>(data_format=None)
 				<br/><br/>Flattens the input. Does not affect the batch size.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Input:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.engine.input_layer.Input()</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.engine.input_layer.Input()</span>
 				<br/><br/>Flattens the input. Does not affect the batch size.
 				<br/><br/>Input() is used to instantiate a Keras tensor. Returns a tensor.
 				<br/><br/>A Keras tensor is a tensor object from the underlying backend (Theano, TensorFlow or CNTK), which we augment with certain attributes that allow us to build a Keras model just by knowing the inputs and outputs of the model.
@@ -673,23 +673,43 @@
 				<br/>y = Dense(16, activation='softmax')(x)
 				<br/>model = Model(x, y)
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Reshape:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Reshape</span>(target_shape)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Reshape</span>(target_shape)
 				Reshapes an output to a certain shape.
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">target_shape:</span>Target shape. Tuple of integers. Does not include the batch axis.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Input shape</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">target_shape:</span>Target shape. Tuple of integers. Does not include the batch axis.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
 				<br/>Arbitrary, although all dimensions in the input shaped must be fixed. Use the keyword argument input_shape (tuple of integers, does not include the batch axis) when using this layer as the first layer in a model.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Output shape</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
 				<br/>(batch_size,) + target_shape
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. Permute:</span>
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">keras.layers.Permute</span>(dims)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Permute</span>(dims)
 				<br/><br/>Permutes the dimensions of the input according to a given pattern.
 				<br/>Useful for e.g. connecting RNNs and convnets together.
-				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Example:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
 				<br/>model = Sequential()
 				<br/>model.add(Permute((2, 1), input_shape=(10, 64)))
 				<br/># now: model.output_shape == (None, 64, 10)
 				<br/># note: `None` is the batch dimension
-			</p>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. RepeatVector</span>
+				<br/>Repeats the input n times.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/>model = Sequential()
+				<br/>model.add(Dense(32, input_dim=32))
+				<br/># now: model.output_shape == (None, 32)
+				<br/># note: `None` is the batch dimension
+				<br/>model.add(RepeatVector(3))
+				<br/># now: model.output_shape == (None, 3, 32)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>2D tensor of shape (num_samples, features).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>3D tensor of shape (num_samples, n, features).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. ActivityRegularization</span>
+				<br/>Layer that applies an update to the cost function based input activity.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">l1:</span> L1 regularization factor (positive float).
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">l2:</span> L2 regularization factor (positive float).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>Same shape as input.
 		</div>
 	</section>
 </body>
