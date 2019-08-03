@@ -1015,6 +1015,22 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">More information about RNN in Keras Layers -> RNN, LSTM, GRU</span>
 			</p>
 		</div>
+		<div id="section15">
+			<br/><a class="topic" style="text-decoration: underline;">Generative Adversary Network</a><br/>
+			<br/><h2 class="basicText">What does GAN do?</h2>
+			<p class="basicText">
+				The main focus for GAN (Generative Adversarial Networks) is to generate data from scratch, mostly images but other domains including music have been done. But the scope of application is far bigger than this.
+			</p>
+			<br/><h2 class="basicText">Generator and discriminator:</h2>
+			<p class="basicText">
+				GAN composes of two deep networks, the generator, and the discriminator. We will first look into how a generator creates images before learning how to train it.
+				First, we sample some noise z using a normal or uniform distribution. With z as an input, we use a generator G to create an image x (x=G(z)).
+				<br/><br/><img img class='imgPos' src="../static/views/gan0.jpeg" alt="gan" style="margin-left: 20%; width: 40%;">
+				<br/><br/>So what is this magic generator G? The following is the DCGAN which is one of the most popular designs for the generator network. It performs multiple transposed convolutions to upsample z to generate the image x. We can view it as the deep learning classifier in the reverse direction.
+				<br/><br/><img img class='imgPos' src="../static/views/gan1.png" alt="gan" style="margin-left: 20%; width: 40%;">
+				<br/><br/>But a generator alone will just create random noise. Conceptually, the discriminator in GAN provides guidance to the generator on what images to create.
+			</p>
+		</div>
 	</section>
 </body>
 </html>
