@@ -940,6 +940,29 @@
 				<br/>The reset gate is another gate is used to decide how much past information to forget.
 				And that’s a GRU. GRU’s has fewer tensor operations; therefore, they are a little speedier to train then LSTM’s. There isn’t a clear winner which one is better. Researchers and engineers usually try both to determine which one works better for their use case.
 			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Embedding Layers:</h2></p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Embedding:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Embedding</span>(input_dim, output_dim, embeddings_initializer='uniform', embeddings_regularizer=None, activity_regularizer=None, embeddings_constraint=None, mask_zero=False, input_length=None)
+				<br/><br/>Turns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]]
+				<br/><br/>This layer can only be used as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/><br/>model = Sequential()
+				<br/>model.add(Embedding(1000, 64, input_length=10))
+				<br/># the model will take as input an integer matrix of size (batch, input_length).
+				<br/># the largest integer (i.e. word index) in the input should be
+				<br/># no larger than 999 (vocabulary size).
+				<br/># now model.output_shape == (None, 10, 64), where None is the batch dimension.
+				<br/><br/>input_array = np.random.randint(1000, size=(32, 10))
+				<br/><br/>model.compile('rmsprop', 'mse')
+				<br/>output_array = model.predict(input_array)
+				<br/>assert output_array.shape == (32, 10, 64)
+
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>2D tensor with shape: (batch_size, sequence_length).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, sequence_length).
+			</p>
 		</div>
 	</section>
 </body>
