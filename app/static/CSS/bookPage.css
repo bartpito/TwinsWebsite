@@ -163,7 +163,15 @@ ul > li:hover .nav-flyout {
     background-color: white;
 }
 #section12 {
-    height: 2000%;
+    height: 1870%;
+    background-color: white;
+}
+#section13 {
+    height: 100%;
+    background-color: white;
+}
+#section14 {
+    height: 100%;
     background-color: white;
 }
 p {
