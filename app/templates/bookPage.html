@@ -978,9 +978,27 @@
 				<br/><br/><img img class='imgPos' src="../static/views/cnn1.png" alt="cnn" style="margin-left: 20%; width: 40%;">
 				<br/><br/>Then the convolution of 5 x 5 image matrix multiplies with 3 x 3 filter matrix which is called “Feature Map” as output shown in below
 				<br/><br/><img img class='imgPos' src="../static/views/cnn2.gif" alt="cnn" style="margin-left: 20%; width: 40%;">
-				
-				
-			
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Strides</span>
+				<br/><br/>Stride is the number of pixels shifts over the input matrix. When the stride is 1 then we move the filters to 1 pixel at a time. When the stride is 2 then we move the filters to 2 pixels at a time and so on.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Padding</span>
+				<br/><br/>Sometimes filter does not fit perfectly fit the input image. We have two options:
+				<br/><br/>1. Pad the picture with zeros (zero-padding) so that it fits
+				</br/>2. Drop the part of the image where the filter did not fit. This is called valid padding which keeps only valid part of the image.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Non Linearity (ReLU)</span>
+				<br/><br/>ReLU stands for Rectified Linear Unit for a non-linear operation. The output is ƒ(x) = max(0,x).
+				<br/><br/>Why ReLU is important : ReLU’s purpose is to introduce non-linearity in our ConvNet. Since, the real world data would want our ConvNet to learn would be non-negative linear values.
+				<br/><br/>There are other non linear functions such as tanh or sigmoid can also be used instead of ReLU. Most of the data scientists uses ReLU since performance wise ReLU is better than other two.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Pooling Layer</span>
+				<br/><br/>Pooling layers section would reduce the number of parameters when the images are too large. Spatial pooling also called subsampling or downsampling which reduces the dimensionality of each map but retains the important information. Spatial pooling can be of different types:
+				<br/><br/>1. Max Pooling
+				<br/>2. Average Pooling
+				<br/>3. Sum Pooling
+				<br/>4. Max pooling take the largest element from the rectified feature map. Taking the largest element could also take the average pooling. Sum of all elements in the feature map call as sum pooling.
+				<br/><br/><img img class='imgPos' src="../static/views/cnn3.png" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Fully Connected Layer</span>
+				<br/><br/>The layer we call as FC layer, we flattened our matrix into vector and feed it into a fully connected layer like neural network.
+				<br/><br/><img img class='imgPos' src="../static/views/cnn4.png" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/>In the above diagram, feature map matrix will be converted as vector (x1, x2, x3, …). With the fully connected layers, we combined these features together to create a model. Finally, we have an activation function such as softmax or sigmoid to classify the outputs as cat, dog, car, truck etc.,
 			</p>
 		</div>
 		<div id="section14">
