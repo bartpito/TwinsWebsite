@@ -967,10 +967,23 @@
 		<div id="section13">
 			<br/><a class="topic" style="text-decoration: underline;">Convolutional Neural Network</a><br/>
 			<br/><h2 class="basicText">Introduction:</h2>
+			<p class="basicText">
+
+			</p>
 		</div>
 		<div id="section14">
 			<br/><a class="topic" style="text-decoration: underline;">Recurrent Neural Network</a><br/>
 			<br/><h2 class="basicText">Introduction:</h2>
+			<p class="basicText">
+				Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs. This makes them applicable to tasks such as unsegmented, connected handwriting recognition or speech recognition.
+				<br/><br/>Recurrent Neural Network comes into the picture when any model needs context to be able to provide the output based on the input.
+				<br/><br/>Sometimes the context is the single most important thing for the model to predict the most appropriate output.
+				<br/><br/>Let’s understand this by an analogy. Suppose you are watching a movie, you keep watching the movie as at any point in time, you have the context because you have seen the movie until that point, then only you are able to relate everything correctly. It means that you remember everything that you have watched.
+				<br/><br/>Similarly, RNN remembers everything. In other neural networks, all the inputs are independent of each other. But in RNN, all the inputs are related to each other. Let’s say you have to predict the next word in a given sentence, in that case, the relation among all the previous words helps in predicting the better output. The RNN remembers all these relations while training itself.
+				<br/><br/>In order to achieve it, the<span style="font-weight: bold; font-size: 0.9vw;"> RNN creates the networks with loops in them, which allows it to persist the information.</span>
+				<br/><br/><img img class='imgPos' src="../static/views/rnn0.png" alt="rnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">More information about RNN in Keras Layers -> RNN, LSTM, GRU</span>
+			</p>
 		</div>
 	</section>
 </body>
