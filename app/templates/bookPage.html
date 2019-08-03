@@ -781,119 +781,142 @@
 			</p>
 			<br/><h2 class="basicText" style="font-size: 1.1vw;">Pooling Layers:</h2></p>
 			<p class="basicText2">
-					<br/><span style="font-weight: bold; font-size: 1.1vw;">1. MaxPooling1D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
-					<br/>Max pooling operation for temporal data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. MaxPooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+				<br/>Max pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. MaxPooling2D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
-					<br/>Max pooling operation for spatial data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
-					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
-					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. MaxPooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Max pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. MaxPooling3D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
-					<br/>Max pooling operation for 3D data (spatial or spatio-temporal).
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)				
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. MaxPooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Max pooling operation for 3D data (spatial or spatio-temporal).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)				
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. AveragePooling1D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
-					<br/>Average pooling for temporal data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. AveragePooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+				<br/>Average pooling for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
 					
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. AveragePooling2D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
-					<br/>Average pooling operation for spatial data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
-					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
-					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. AveragePooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Average pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. AveragePooling3D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
-					<br/>Average pooling operation for 3D data (spatial or spatio-temporal).
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. AveragePooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Average pooling operation for 3D data (spatial or spatio-temporal).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. GlobalMaxPooling1D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling1D</span>(data_format='channels_last')
-					<br/>Global max pooling operation for temporal data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, features)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. GlobalMaxPooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling1D</span>(data_format='channels_last')
+				<br/>Global max pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. GlobalMaxPooling2D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling2D</span>(data_format=None)
-					<br/>Global max pooling operation for spatial data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
-					If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, channels)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. GlobalMaxPooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling2D</span>(data_format=None)
+				<br/>Global max pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, channels)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. GlobalMaxPooling3D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling3D</span>(data_format='channels_last')
-					<br/>Global Max pooling operation for 3D data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, channels)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. GlobalMaxPooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling3D</span>(data_format='channels_last')
+				<br/>Global Max pooling operation for 3D data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, channels)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">10. GlobalAveragePooling1D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling1D</span>(data_format='channels_last')
-					<br/>Global average pooling operation for temporal data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
-					<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, features)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">10. GlobalAveragePooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling1D</span>(data_format='channels_last')
+				<br/>Global average pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
 					
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. GlobalAveragePooling2D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling2D</span>(data_format=None)
-					<br/>Global average pooling operation for spatial data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
-					<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, features)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. GlobalAveragePooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling2D</span>(data_format=None)
+				<br/>Global average pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
 
-					<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">12. GlobalAveragePooling3D:</span>
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling3D</span>(data_format='channels_last')
-					<br/>Global Average pooling operation for 3D data.
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
-					<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
-					<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)					
-					<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
-					<br/>2D tensor with shape: (batch_size, features)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">12. GlobalAveragePooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling3D</span>(data_format='channels_last')
+				<br/>Global Average pooling operation for 3D data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Recurrent Layers:</h2></p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. RNN:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.RNN</span>(cell, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)
+				<br/><br/>Base class for recurrent layers. 
+				<br/><br/><img img class='imgPos' src="../static/views/rnn0.png" alt="rmm" style="margin-left: 20%; width: 40%;">
+				<br/><br/>First, the input and previous hidden state are combined to form a vector. That vector now has information on the current input and previous inputs. The vector goes through the tanh activation, and the output is the new hidden state, or the memory of the network.
+				<br/><br/><img img class='imgPos' src="../static/views/rnn1.gif" alt="rmm" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>3D tensor with shape (batch_size, timesteps, input_dim).					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>if return_state: a list of tensors. The first tensor is the output. The remaining tensors are the last states, each with shape (batch_size, units). For example, the number of state tensors is 1 (for RNN and GRU) or 2 (for LSTM).
+				<br/>if return_sequences: 3D tensor with shape  (batch_size, timesteps, units).
+				<br/>else, 2D tensor with shape (batch_size, units).
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. LSTM:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.LSTM</span>(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', unit_forget_bias=True, kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, implementation=1, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)
+				<br/><br/>Long Short-Term Memory layer.
+				<br/><br/><img img class='imgPos' src="../static/views/rnn0.png" alt="rmm" style="margin-left: 20%; width: 40%;">
+				<br/><br/>First, the input and previous hidden state are combined to form a vector. That vector now has information on the current input and previous inputs. The vector goes through the tanh activation, and the output is the new hidden state, or the memory of the network.
+				<br/><br/><img img class='imgPos' src="../static/views/rnn1.gif" alt="rmm" style="margin-left: 20%; width: 40%;">
+			</p>
 		</div>
 	</section>
 </body>
