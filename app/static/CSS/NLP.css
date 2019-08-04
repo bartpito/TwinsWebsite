@@ -40,7 +40,17 @@ a:hover{
     border-right: solid 3px darkgray;
     width: 100%;
     display: block;
-    padding: 0.8em 1.6em;
+    padding: 0.8em ;
+    font-weight: bold;
+    color: white;
+}
+
+.sidebar h2 {
+    background-color: #000000;
+    border-bottom: solid 3px darkgray;
+    width: 100%;
+    display: block;
+    padding: 0.3em ;
     font-weight: bold;
     color: white;
 }
@@ -74,7 +84,7 @@ a:hover{
 .sidebar-nav ul li a {
     color: white;
     font-size: 0.75em;
-    padding: 0.80em 1em;
+    padding: 0.5em 1em;
     position: relative;
     display: block;
 }

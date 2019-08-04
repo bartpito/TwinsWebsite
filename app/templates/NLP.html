@@ -36,8 +36,8 @@
 <body>
 	<section class="app">
 		<aside class="sidebar">
-			<header style="font-weight: 999;">
-				Natural Language Processing (NLP)
+			<header style="font-weight: 999;" class="sidebar-navig">
+				Natural Language Processing
 			</header>
 			<nav class="sidebar-nav">
 				<ul>
@@ -102,6 +102,9 @@
 							</li>
 					 </ul>
 					</li>
+				</ul>
+				<ul>
+					<h2></h2>
 					<li>
 						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
 					</li>
@@ -118,10 +121,8 @@
 						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Learning Page</span></a>
 					</li>
 				</ul>
-				<ul>
-					<li><a style="bottom: 10%;" href="#">XDD</a></li>
-				</ul>
 			</nav>
 		</aside>
+	</section>
 </body>
 </html>
