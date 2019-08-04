@@ -88,6 +88,11 @@ def book():
     return render_template('bookPage.html')
 
 
+@app.route('/NLP')
+def NLP():
+    return render_template('NLP.html')
+
+
 @app.route('/Learning')
 def learningPage():
     return render_template('learningPage.html')

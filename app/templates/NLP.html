@@ -6,8 +6,118 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ url_for('static', filename='CSS/NLP.css') }}" rel="stylesheet" type="text/css">
+	<script>
+		$(document).ready(function(){
+		// Add smooth scrolling to all links
+		$("a").on('click', function(event) {
+ 
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+			// Prevent default anchor click behavior
+			event.preventDefault();
+ 
+			// Store hash
+			var hash = this.hash;
+ 
+			// Using jQuery's animate() method to add smooth page scroll
+			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function(){
+		
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			});
+			} // End if
+		});
+		});
+	</script>
 </head>
 <body>
-   <h1>NLP</h1> 
+	<section class="app">
+		<aside class="sidebar">
+			<header>
+				Twins
+			</header>
+			<nav class="sidebar-nav">
+				<ul>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Classification Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Decision Tree</a>
+							</li>
+							<li>
+								<a href="#section2"><i class="ion-ios-clock-outline"></i>Naive Bayes</a>
+							</li>
+							<li>
+								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>KNN</a>
+							</li>
+						 	<li>
+								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
+							</li>
+							<li>
+								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
+							</li>
+							<li>
+								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
+							</li>
+						</ul>
+					 </li>
+					 <li>
+						<a href="#"><i class="ion-bag"></i> <span>Regression Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section7"><i class="ion-ios-color-filter-outline"></i>Linear Regression</a>
+							</li>
+							<li>
+								<a href="#section8"><i class="ion-ios-clock-outline"></i>Polynomial Regression</a>
+							</li>
+							<li>
+								<a href="#section9"><i class="ion-ios-color-filter-outline"></i>L1 Regularization (Lasso Regression)</a>
+							</li>
+							<li>
+								<a href="#section10"><i class="ion-ios-clock-outline"></i>L2 Regularization (Ridge Regression)</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						 <a href="#"><i class="ion-bag"></i> <span>Neural Networks</span></a>
+						 <ul class="nav-flyout">
+							<li>
+								<a href="#section11"><i class="ion-ios-clock-outline"></i>Learning process of Neural Network (NN)</a>
+							</li>
+							<li>
+								<a href="#section12"><i class="ion-ios-color-filter-outline"></i>Keras Layers</a>
+							</li>
+							<li>
+								<a href="#section13"><i class="ion-ios-clock-outline"></i>Convolutional NN</a>
+							</li>
+							<li>
+								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>Recurrent NN</a>
+							</li>
+							<li>
+								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>GANs</a>
+							</li>
+					 </ul>
+					</li>
+					<li>
+						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span class="">About Pito</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span class="">About Bart</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Projects Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Learning Page</span></a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
 </body>
 </html>
