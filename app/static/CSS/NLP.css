@@ -36,8 +36,8 @@ a:hover{
 }
 .sidebar header {
     background-color: #000000;
-    border-bottom: solid 3px white;
-    border-right: solid 3px grey;
+    border-bottom: solid 3px darkgray;
+    border-right: solid 3px darkgray;
     width: 100%;
     display: block;
     padding: 0.8em 1.6em;
@@ -56,7 +56,7 @@ a:hover{
     z-index: 9;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-    border-right: 3px solid goldenrod;
+    border-right: 3px solid darkgray;
 }
 .sidebar-nav ul {
     list-style: none;
@@ -112,13 +112,13 @@ a:hover{
     transform: translateX(100%);
 }
 .sidebar-nav .nav-flyout a:hover {
-    background-color: #FDEE30;
+    background-color: black;
 }
 ul > li:hover .nav-flyout {
     transition: all 0.5s ease;
     transform: translateX(0);
 }
 .topic-decoration {
-    color: goldenrod;
+    color: darkorange;
     font-weight: bold;
 }
