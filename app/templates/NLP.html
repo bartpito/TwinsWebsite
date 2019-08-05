@@ -42,7 +42,30 @@
 			<nav class="sidebar-nav">
 				<ul>
 					<li>
-						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">NLTK</span></a>
+						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Basic NLP</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Data Augmentation</a>
+							</li>
+							<li>
+								<a href="#section2"><i class="ion-ios-clock-outline"></i>Naive Bayes</a>
+							</li>
+							<li>
+								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>KNN</a>
+							</li>
+						 	<li>
+								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
+							</li>
+							<li>
+								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
+							</li>
+							<li>
+								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; NLTK</span></a>
 						<ul class="nav-flyout">
 							<li>
 								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Data Augmentation</a>
@@ -64,25 +87,8 @@
 							</li>
 						</ul>
 					 </li>
-					 <li>
-						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">Regression Algorithms</span></a>
-						<ul class="nav-flyout">
-							<li>
-								<a href="#section7"><i class="ion-ios-color-filter-outline"></i>Linear Regression</a>
-							</li>
-							<li>
-								<a href="#section8"><i class="ion-ios-clock-outline"></i>Polynomial Regression</a>
-							</li>
-							<li>
-								<a href="#section9"><i class="ion-ios-color-filter-outline"></i>L1 Regularization (Lasso Regression)</a>
-							</li>
-							<li>
-								<a href="#section10"><i class="ion-ios-clock-outline"></i>L2 Regularization (Ridge Regression)</a>
-							</li>
-						</ul>
-					</li>
 					<li>
-						 <a href="#"><i class="ion-bag"></i> <span class="topic-decoration">Neural Networks</span></a>
+						 <a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Neural Networks</span></a>
 						 <ul class="nav-flyout">
 							<li>
 								<a href="#section11"><i class="ion-ios-clock-outline"></i>Learning process of Neural Network (NN)</a>
@@ -105,19 +111,19 @@
 				<ul>
 					<h2></h2>
 					<li>
-						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
+						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>&#8227 Home Page</span></a>
 					</li>
 					<li>
-						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span class="">About Pito</span></a>
+						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span class="">&#8227 About Pito</span></a>
 					</li>
 					<li>
-						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span class="">About Bart</span></a>
+						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span class="">&#8227 About Bart</span></a>
 					</li>
 					<li>
-						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Projects Page</span></a>
+						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span class="">&#8227 Projects Page</span></a>
 					</li>
 					<li>
-						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Learning Page</span></a>
+						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">&#8227 Learning Page</span></a>
 					</li>
 				</ul>
 			</nav>
@@ -132,6 +138,7 @@
 				<br/><br/>&bull; <span style="font-weight: bold; font-size: 1.0vw;">Random Deletion:</span> <br/>Randomly remove each word in the sentence with probability p.
 				<br/><br/><a href="https://github.com/jasonwei20/eda_nlp/blob/master/code/eda.py" style="font-weight: bold; text-decoration: underline; color: black; font-size: 1.2vw;">Code Implementation</a>
 			</p>
+			<br/><h2 class="basicText">2. :</h2>
 		</div>
 	</section>
 </body>
