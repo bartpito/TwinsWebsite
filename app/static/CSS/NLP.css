@@ -42,7 +42,7 @@ a:hover{
     display: block;
     padding: 0.8em ;
     font-weight: bold;
-    color: white;
+    color: #AAF200;
 }
 
 .sidebar h2 {
@@ -129,7 +129,7 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 .topic-decoration {
-    color: darkorange;
+    color: #FF8000;
     font-weight: bold;
 }
 .topic {
