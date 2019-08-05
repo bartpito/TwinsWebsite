@@ -132,3 +132,53 @@ ul > li:hover .nav-flyout {
     color: darkorange;
     font-weight: bold;
 }
+.topic {
+    font-weight: 999;
+    position: relative;
+    margin-left: 16%;
+    font-size: 1.5vw;
+}
+.basicText {
+    margin-left: 17%; 
+    margin-right: 15%; 
+    text-align: left;
+    font-size: 1vw;
+    position: relative
+}
+h2.basicText {
+    font-size:1vw;
+    font-weight: bold;
+}
+.basicText2 {
+    margin-left: 20%; 
+    margin-right: 15%; 
+    text-align: left;
+    font-size: 1vw;
+    position: relative
+}
+h2.basicText2 {
+    font-size:1vw;
+} 
+.imgPos {
+    position: relative;
+}
+#section1 {
+    height: 90%;
+    background-color: white;
+}
+#section2 {
+    height: 70%;
+    background-color: white;
+}
+#section3 {
+    height: 75%;
+    background-color: white;
+}
+#section4 {
+    height: 125%;
+    background-color: white;
+}
+#section5 {
+    height: 150%;
+    background-color: white;
+}
