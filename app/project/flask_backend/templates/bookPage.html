@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+	<link href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='CSS/bookPage.css') }}" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+	   $(document).ready(function(){
+	   // Add smooth scrolling to all links
+	   $("a").on('click', function(event) {
+
+	       // Make sure this.hash has a value before overriding default behavior
+	       if (this.hash !== "") {
+	       // Prevent default anchor click behavior
+	       event.preventDefault();
+
+	       // Store hash
+	       var hash = this.hash;
+
+	       // Using jQuery's animate() method to add smooth page scroll
+	       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	       $('html, body').animate({
+	           scrollTop: $(hash).offset().top
+	       }, 800, function(){
+	   
+	           // Add hash (#) to URL when done scrolling (default click behavior)
+	           window.location.hash = hash;
+	       });
+	       } // End if
+	   });
+	   });
+	</script>
+</head>
+<body>
+	<section class="app">
+		<aside class="sidebar">
+			<header>
+				Twins
+			</header>
+			<nav class="sidebar-nav">
+				<ul>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Classification Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Decision Tree</a>
+							</li>
+							<li>
+								<a href="#section2"><i class="ion-ios-clock-outline"></i>Naive Bayes</a>
+							</li>
+							<li>
+								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>KNN</a>
+							</li>
+							<li>
+								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
+							</li>
+							<li>
+								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
+							</li>
+							<li>
+								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Regression Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section7"><i class="ion-ios-color-filter-outline"></i>Linear Regression</a>
+							</li>
+							<li>
+								<a href="#section8"><i class="ion-ios-clock-outline"></i>Polynomial Regression</a>
+							</li>
+							<li>
+								<a href="#section9"><i class="ion-ios-color-filter-outline"></i>L1 Regularization (Lasso Regression)</a>
+							</li>
+							<li>
+								<a href="#section10"><i class="ion-ios-clock-outline"></i>L2 Regularization (Ridge Regression)</a>
+							</li>
+							
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Neural Networks</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section11"><i class="ion-ios-clock-outline"></i>Learning process of Neural Network (NN)</a>
+							</li>
+							<li>
+								<a href="#section12"><i class="ion-ios-color-filter-outline"></i>Recurrent NN</a>
+							</li>
+							<li>
+								<a href="#section13"><i class="ion-ios-clock-outline"></i>Convolutional NN</a>
+							</li>
+							<li>
+								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>GANs</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>RL</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section14"><i class="ion-ios-clock-outline"></i>Models</a>
+							</li>
+							<li>
+								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>Agent</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
+				  	</li>
+					<li>
+						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span class="">About Pito</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span class="">About Bart</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Projects Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Learning Page</span></a>
+					</li>
+    			</ul>
+			</nav>
+		</aside>
+		<div id="section1">
+			<br/><a class="topic" style="text-decoration: underline;">Decision Tree</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The goal is to create a model that predicts the value of a target variable based on several input variables. An example is shown in the 
+				diagram. Each interior node corresponds to one of the input variables; there are edges to children for each of the possible 
+				values of that input variable. Each leaf represents a value of the target variable given the values of the input variables represented 
+				by the path from the root to the leaf. 
+			</p>
+			<br/><h2 class="basicText">Split</h2>
+			<p class="basicText">	
+				In the first split or the root, all attributes/features are considered and the training data is divided into groups based on this split. 
+				We have X features, so will have X candidate splits. Now we will calculate how much accuracy each split will cost us, using a function. 
+				The split that costs least is chosen. This algorithm is recursive in nature as the groups formed can be sub-divided using same strategy. 
+				Due to this procedure, this algorithm is also known as the greedy algorithm, as we have an excessive desire of lowering the cost. This 
+				makes the root node as best predictor/classifier.
+			</p>
+			<img src="../static/views/DTree.png" alt="Decision Tree" style="margin-left: 20%">
+		</div>
+		<div id="section2">
+			<a class="topic" style="text-decoration: underline;">Naive Bayes</a><br/>
+			<br/><h2 class="basicText">Principle of Naive Bayes Classifier</h2>
+			<p class="basicText">
+				A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the classifier is 
+				based on the Bayes theorem. 
+			</p>
+			<br/><h2 class="basicText">Bayes Theorem</h2>
+			<p class="basicText">	
+				Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, B is the evidence and A is the 
+				hypothesis. The assumption made here is that the predictors/features are independent. That is presence of one particular feature does 
+				not affect the other. Hence it is called naive. Another assumption made here is that all the predictors have an equal effect on the outcome.
+			</p>
+			<img src="../static/views/bayes.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+			<img src="../static/views/bayes2.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+		</div>	
+		<div id="section3">
+			<a class="topic" style="text-decoration: underline;">K-Nearest Neighbors</a><br/>
+			<br/><h2 class="basicText">KNN steps:</h2>
+			<p class="basicText">
+				1. Receive an unclassified data;
+				<br/>2. Measure the distance (Euclidian, Manhattan, Minkowski or Weighted) from the new data to all others data that is already classified;
+				<br/>3. Gets the K(K is a parameter that you difine) smaller distances;
+				<br/>4. Check the list of classes had the shortest distance and count the amount of each class that appears;
+				<br/>5. Takes as correct class the class that appeared the most times;
+				<br/>6. Classifies the new data with the class that you took in step 5;
+			</p>
+			<br/><h2 class="basicText">Euclidean distance</h2>
+			<p class="basicText">
+				The Euclidean distance between points p and q is the length of the line segment connecting them.
+			</p>
+			<img src="../static/views/euclideanFormula.png" alt="euclidean Formula" style="margin-left: 20%; width:25%">
+			<br/><br/><br/><h2 class="basicText">What is K?</h2>
+			<p class="basicText">
+				K represents the number of training data points lying in proximity to the test data point which we are going to use to find the class.
+			</p>
+		</div>
+		<div id="section4">
+			<a class="topic" style="text-decoration: underline;">Support Vector Machine</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space (N — the number of features) that 
+				distinctly classifies the data points.
+			</p>
+			<br/><img src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%"><br/>
+			<br/><p class="basicText">
+				To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
+				that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
+				reinforcement so that future data points can be classified with more confidence.
+			</p>
+			<br/><p class="basicText">
+					In machine learning, the hinge loss is a loss function used for training classifiers. The hinge loss is used for "maximum-margin" 
+					classification, most notably for support vector machines.
+			</p>
+			<img src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
+			<br/><br/><h2 class="basicText">Loss Function for SVM : </h2>
+			<p class="basicText">
+				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
+				regularization term is that we increase the cost penalty if the values for the weights are high. So while trying to minimize the cost, we not
+				only adjust the weights, we also try to minimize the value of the weights and thereby reduce over fitting to the training data and make the 
+				model less sensitive to outliers. So with the added regularization term, the total cost function finally looks like:	
+				<h2 class="basicText" style="margin-left: 22%;">Total cost = ||w²||/2 + C*(Sum of all losses for each observation)</h2>
+			</p>
+			<br/><br/><p class="basicText" style="font-weight: bold;">Two great articles about SVM:</p>
+			<a href="https://towardsdatascience.com/support-vector-machines-intuitive-understanding-part-1-3fb049df4ba1" style="margin-left: 18%;">Support vector machines (intuitive understanding)</a>
+			<br/><a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47" style="margin-left: 18%;">Support Vector Machine — Introduction to Machine Learning Algorithms</a>
+		</div>
+		<div id="section5">
+			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a><br/>
+			<br/><h2 class="basicText">What is Gradient Descent?</h2>
+			<p class="basicText">
+				Gradient descent is an iterative machine learning optimization algorithm to reduce the cost function so that we have models that makes 
+				accurate predictions. We get optimized weights using gradient descent. <br/><br/><span style="font-weight: bold;">Cost function(C) </span>or <span style="font-weight: bold;">Loss function </span> 
+				measures the difference between the actual output and predicted output from the model. Cost function are a convex function.
+			</p>
+			<br/><h2 class="basicText">How can we find the optimized weights?</h2>
+			<p class="basicText">
+				We randomly initialize all the weights for a neural network to a value close to zero but not zero.
+				<br/>We calculate the gradient, ∂c/∂ω which is a partial derivative of cost with respect to weight.
+				<br/>α is learning rate, helps adjust the weights with respect to gradient descent. 
+			</p>
+			<br/><img src="../static/views/sgd1.png" alt="sgd" style="margin-left: 20%; width:25%;"><br/>
+			<p style="margin-left: 20%; font-size: 75%">w is the weights for the neurons, α is learning rate, C is the cost and ∂c/∂ω is the gradient</p>
+			<br/><p class="basicText">
+				We need to update the weights for all the neurons simultaneously.
+			</p>
+			<br/><h2 class="basicText">Stochastic Gradient Descent</h2>
+			<p class="basicText">
+				Stochastic Gradient Descent just picks one instance from training set at every step and update gradient only based
+				on that single record. The advantage of Stochastic Gradient Descent is that the algorithm is much faster at every iteration. 
+				However, the algorithm produces less regular and stable learning path compared to Batch Gradient Descent. Instead of decreasing 
+				smoothly, the cost function will bounce up and down. After rounds of iterations, the algorithm may find a good parameter, but the
+				final result is not necessary global optimal.
+			</p>
+			<br/><img src="../static/views/sgd2.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
+		</div>
+		<div id="section6">
+			<a class="topic" style="text-decoration: underline;">Logistic Regression</a><br/>
+			<br/><h2 class="basicText">What is Logistic Regression?</h2>
+			<p class="basicText">
+				Logistic regression is a classification algorithm used to assign observations to a discrete set of classes. Some of the examples
+				of classification problems are Email spam or not spam, Online transactions Fraud or not Fraud, Tumor Malignant or Benign. Logistic
+				regression transforms its output using the logistic sigmoid function to return a probability value.
+			</p>
+			<br/><h2 class="basicText">Types of Logistic Regression:</h2>
+			<p class="basicText">
+				1. Binary Logistic Regression: The categorical response has only two 2 possible outcomes. E.g.: Spam or Not
+				<br/>2. Multinomial Logistic Regression: Three or more categories without ordering. E.g.: Predicting which food is preferred more (Veg, Non-Veg, Vegan)
+				<br/>3. Ordinal Logistic Regression: Three or more categories with ordering. E.g.: Movie rating from 1 to 5
+			</p>
+			<br/><h2 class="basicText">What is the Sigmoid Function?</h2>
+			<p class="basicText">
+				In order to map predicted values to probabilities, we use the Sigmoid function. The function maps any real value into another value 
+				between 0 and 1. In machine learning, we use sigmoid to map predictions to probabilities.
+
+			</p>
+			<br/><p class="basicText" style="font-weight: bold;">
+				Logistic Function: 
+			</p>
+			<br/><img src="../static/views/logit.png" alt="logit" style="margin-left: 20%; width:25%"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Sigmoid Function Graph:
+			</p>
+			<img src="../static/views/sigmoid.png" alt="sigmoid" style="margin-left: 20%; width:25%"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Formula of a sigmoid function:
+			</p>
+			<img src="../static/views/sigmoid2.png" alt="sigmoid2" style="margin-left: 20%; width: 12%; height: 6%;"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Cost Function: 
+			</p>
+			<br/><img src="../static/views/lr1.png" alt="lr1" style="margin-left: 20%;"><br/>
+		</div>
+		<div id="section7">
+			<a class="topic" style="text-decoration: underline;">Linear Regression</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The goal of <span style="font-weight: bold;">Regression</span> is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
+			</p>
+			<br/><h2 class="basicText">Multiple regression Equation:</h2>
+			<br/><img src="../static/views/lr2.png" alt="lr2" style="margin-left: 20%; width: 40%;"><br/>
+			<br/><p style="font-size: 0.8em;"> 
+				f(x) = Y = Predicted value/Target Value
+				<br/>x = Input
+				<br/>w = Gradient/slope/Weight
+				<br/>b = Bias
+			</p>Polynomial Regression
+			<br/><h2 class="basicText">Bias</h2>
+			<p class="basicText">
+				Bias refers to <span style="font-weight: bold;">the error due to the model’s simplistic assumptions in fitting the data</span>. A high bias means that the model is unable to capture the patterns in the data and this results in under-fitting.
+			</p>
+			<br/><h2 class="basicText">How do we determine the weights?</h2>
+			<p class="basicText">
+				The weights are are measured by <span style="font-weight: bold;">MSE (Mean Squared Error)</span> and adjusting them to get a best possible Linear line.
+			</p>
+			<br/><img src="../static/views/lr3.png" alt="lr3" style="margin-left: 20%; width: 40%;"><br/>
+			<p class="basicText">
+				The ‘red line’ is our <span style="font-weight: bold;">linear regression line or our predicted value(y’)</span>. And the ‘blue’ points are our <span style="font-weight: bold;">given data or actual value</span>. The average of square of distance from the 
+				blue points(actual value) to the red line(predicted value) must be minimum to get the best fit regression line.
+				<br/><br/>Thus can be represented as: 
+			</p>
+			<br/><img src="../static/views/lr2.gif" alt="lr2" style="margin-left: 20%; width: 8%;"><br/>
+			<br/><br/><p class="basicText">
+				To gain optimal result we need to <span style="font-weight: bold;">minimize MSE</span>.
+				<br/>So to minimize this error or MSE we use gradient descent to find the weights after MSE or error rate calculation. <span style="font-weight: bold;">Gradient Descent can be Equated as</span> :
+			</p>
+			<br/><img src="../static/views/lr3.gif" alt="lr3" style="margin-left: 20%; width: 17%;"><br/>
+			<br/><br/>	<p class="basicText">
+				Now after we get the Gradient descent <span style="font-weight: bold;">we need to update the weight every time until we get the best fitted value</span>.
+			</p>
+			<br/><img src="../static/views/lr4.gif" alt="lr4" style="margin-left: 20%; width: 10%;"><br/>
+		</div>
+		<div id="section8">
+			<a class="topic" style="text-decoration: underline;">Polynomial Regression</a><br/>
+			<br/><h2 class="basicText">What is Regression?</h2>
+			<p class="basicText">
+				Regression analysis is a form of predictive modelling technique which <span style="font-weight: bold;">investigates the relationship between a dependent and independent variable.</span>
+				<br/><br/>The above definition is a bookish definition, in simple terms the regression can be defined as, “Using the relationship between variables to find the best fit line or the regression equation that can be used to 
+				make predictions”.
+			</p>
+			<br/><br/><p class="basicText">
+				What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
+			</p>
+			<br/><img src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
+			<img src="../static/views/pr2.gif" alt="lr4" style="margin-left: 10%;">
+			<br/><br/><p class="basicText">
+				Hence If we try to use a simple linear regression in the above graph then the linear regression line won’t fit very well. It is very difficult to fit a linear regression line in the above graph with a low value of error. Hence we can try to use the polynomial
+				regression to fit a polynomial line so that we can achieve a minimum error or minimum cost function. <span style="font-weight: bold;">The general equation of a polynomial regression is:</span>
+				<br/><br/><span style="font-weight: bold; margin-left: 30%;">Y=θo + θ₁X + θ₂X² + … + θₘXᵐ + residual error</span>
+			</p>
+			<br/><br/><h2 class="basicText">Advantages of using Polynomial Regression:</h2>
+			<p class="basicText">
+				Polynomial provides the best approximation of the relationship between the dependent and independent variable.
+				<br/>A Broad range of function can be fit under it.
+				<br/>Polynomial basically fits a wide range of curvature.
+			</p>
+			<br/><h2 class="basicText">Disadvantages of using Polynomial Regression:</h2>
+			<p class="basicText">
+				The presence of one or two outliers in the data can seriously affect the results of the nonlinear analysis.
+				<br/>These are too sensitive to the outliers.
+				<br/>In addition, there are unfortunately fewer model validation tools for the detection of outliers in nonlinear regression than there are for linear regression.
+			</p>
+		</div>
+		<div id="section9">
+			<a class="topic" style="text-decoration: underline;">L1 Regularization</a><br/>
+			<br/><h2 class="basicText">Explanation:</h2>
+			<p class="basicText">
+				If your linear model contains many predictor variables or if these variables are correlated, the traditional OLS parameter estimates have large variance, thus making the model unreliable. This leads to an over-fitted model. A penalty term causes the regression 
+				coefficients for these unimportant variables to shrink towards zero. This process allows the model to identify the variables strongly associated with the output variable, thereby reducing the variance.
+				<br/><br/><span style="font-weight: bold;">Lasso Regression</span> (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
+				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
+			<br/><img src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><br/><p class="basicText">
+				If lambda is zero then we will get back OLS (Ordinary Least Squares) whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
+		</div>
+		<div id="section10">
+			<a class="topic" style="text-decoration: underline;">L2 Regularization</a><br/>
+			<br/><h2 class="basicText">Explanation:</h2>
+			<p class="basicText">
+				<span style="font-weight: bold;">Ridge regression</span> adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
+			</p>
+			<br/><img src="../static/views/ridge.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><br/><p class="basicText">
+				If <span style="font-weight: bold;">lambda is zero then you can imagine we get back OLS</span>. However, if <span style="font-weight: bold;">lambda is very large then it will add too much weight and it will lead to under-fitting</span>. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
+			</p>
+		</div>
+		<div id="section11">
+			<a class="topic" style="text-decoration: underline;">Learning process of Neural Network</a><br/>
+		</div>
+		<div id="section14">
+			<a class="topic" style="text-decoration: underline;">MODELS</a><br/>
+			<p class="basicText">
+				<span style="font-weight: bold;">Hello</span> What is oging on?
+			</p>
+		</div>
+		<div id="section15">
+			<a class="topic" style="text-decoration: underline;">Agents</a><br/>
+			<p class="basicText">
+				<span style="font-weight: bold;">Agents</span>I have a lot of agents 
+			</p>
+		</div>
+	</section>
+</body>
+</html>
+
+
+
+  

@@ -1,0 +1,66 @@
+html {
+  background: url('image1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+body {
+  color: rgb(251, 251, 255);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+section {
+  padding: 30vh 0;
+}
+.two {
+  background: hsl(189, 10%, 16%);
+  position: relative;
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0,100% calc(100% - 10vw), 0 100%);
+  margin-bottom: -10vw;
+}
+.two__image {
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+#particles-js {
+  background-image: url('image1.jpg');
+  height: 100%;
+  width: 100%px;
+  margin: 0px;
+  align-items: center;
+}
+
+.btn {
+  width: 240px;
+  height: 60px;
+  background-color: transparent;
+  font-size: 2.1em;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px;
+  transition: all .6s;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 19px;
+}
+.btn:hover {
+  background-color: white;
+}
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+}
