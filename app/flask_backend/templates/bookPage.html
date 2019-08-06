@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Book</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='CSS/bookPage.css') }}" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+	   $(document).ready(function(){
+	   // Add smooth scrolling to all links
+	   $("a").on('click', function(event) {
+
+	       // Make sure this.hash has a value before overriding default behavior
+	       if (this.hash !== "") {
+	       // Prevent default anchor click behavior
+	       event.preventDefault();
+
+	       // Store hash
+	       var hash = this.hash;
+
+	       // Using jQuery's animate() method to add smooth page scroll
+	       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	       $('html, body').animate({
+	           scrollTop: $(hash).offset().top
+	       }, 800, function(){
+	   
+	           // Add hash (#) to URL when done scrolling (default click behavior)
+	           window.location.hash = hash;
+	       });
+	       } // End if
+	   });
+	   });
+	</script>
+</head>
+<body>
+	<section class="app">
+		<aside class="sidebar">
+			<header>
+				Twins
+			</header>
+			<nav class="sidebar-nav">
+				<ul>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Classification Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Decision Tree</a>
+							</li>
+							<li>
+								<a href="#section2"><i class="ion-ios-clock-outline"></i>Naive Bayes</a>
+							</li>
+							<li>
+								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>KNN</a>
+							</li>
+							<li>
+								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
+							</li>
+							<li>
+								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
+							</li>
+							<li>
+								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Regression Algorithms</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section7"><i class="ion-ios-color-filter-outline"></i>Linear Regression</a>
+							</li>
+							<li>
+								<a href="#section8"><i class="ion-ios-clock-outline"></i>Polynomial Regression</a>
+							</li>
+							<li>
+								<a href="#section9"><i class="ion-ios-color-filter-outline"></i>L1 Regularization (Lasso Regression)</a>
+							</li>
+							<li>
+								<a href="#section10"><i class="ion-ios-clock-outline"></i>L2 Regularization (Ridge Regression)</a>
+							</li>
+							
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="ion-bag"></i> <span>Neural Networks</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section11"><i class="ion-ios-clock-outline"></i>Learning process of Neural Network (NN)</a>
+							</li>
+							<li>
+								<a href="#section12"><i class="ion-ios-color-filter-outline"></i>Keras Layers</a>
+							</li>
+							<li>
+								<a href="#section13"><i class="ion-ios-clock-outline"></i>Convolutional NN</a>
+							</li>
+							<li>
+								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>Recurrent NN</a>
+							</li>
+							<li>
+								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>GANs</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
+				  	</li>
+					<li>
+						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span class="">About Pito</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span class="">About Bart</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Projects Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span class="">Learning Page</span></a>
+					</li>
+    			</ul>
+			</nav>
+		</aside>
+		<div id="section1">
+			<br/><a class="topic" style="text-decoration: underline;">Decision Tree</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The goal is to create a model that predicts the value of a target variable based on several input variables. An example is shown in the 
+				diagram. Each interior node corresponds to one of the input variables; there are edges to children for each of the possible 
+				values of that input variable. Each leaf represents a value of the target variable given the values of the input variables represented 
+				by the path from the root to the leaf. 
+			</p>
+			<br/><h2 class="basicText">Split</h2>
+			<p class="basicText">	
+				In the first split or the root, all attributes/features are considered and the training data is divided into groups based on this split. 
+				We have X features, so will have X candidate splits. Now we will calculate how much accuracy each split will cost us, using a function. 
+				The split that costs least is chosen. This algorithm is recursive in nature as the groups formed can be sub-divided using same strategy. 
+				Due to this procedure, this algorithm is also known as the greedy algorithm, as we have an excessive desire of lowering the cost. This 
+				makes the root node as best predictor/classifier.
+			</p>
+			<img img class='imgPos' src="../static/views/DTree.png" alt="Decision Tree" style="margin-left: 20%">
+		</div>
+		<div id="section2">
+			<a class="topic" style="text-decoration: underline;">Naive Bayes</a><br/>
+			<br/><h2 class="basicText">Principle of Naive Bayes Classifier</h2>
+			<p class="basicText">
+				A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the classifier is 
+				based on the Bayes theorem. 
+			</p>
+			<br/><h2 class="basicText">Bayes Theorem</h2>
+			<p class="basicText">	
+				Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, B is the evidence and A is the 
+				hypothesis. The assumption made here is that the predictors/features are independent. That is presence of one particular feature does 
+				not affect the other. Hence it is called naive. Another assumption made here is that all the predictors have an equal effect on the outcome.
+			</p>
+			<img img class='imgPos' src="../static/views/bayes.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+			<img img class='imgPos' src="../static/views/bayes2.png" alt="bayes rule" style="margin-left: 20%; width:25%">
+		</div>	
+		<div id="section3">
+			<a class="topic" style="text-decoration: underline;">K-Nearest Neighbors</a><br/>
+			<br/><h2 class="basicText">KNN steps:</h2>
+			<p class="basicText">
+				1. Receive an unclassified data;
+				<br/>2. Measure the distance (Euclidian, Manhattan, Minkowski or Weighted) from the new data to all others data that is already classified;
+				<br/>3. Gets the K(K is a parameter that you difine) smaller distances;
+				<br/>4. Check the list of classes had the shortest distance and count the amount of each class that appears;
+				<br/>5. Takes as correct class the class that appeared the most times;
+				<br/>6. Classifies the new data with the class that you took in step 5;
+			</p>
+			<br/><h2 class="basicText">Euclidean distance</h2>
+			<p class="basicText">
+				The Euclidean distance between points p and q is the length of the line segment connecting them.
+			</p>
+			<img img class='imgPos' src="../static/views/euclideanFormula.png" alt="euclidean Formula" style="margin-left: 20%; width:25%">
+			<br/><br/><br/><h2 class="basicText">What is K?</h2>
+			<p class="basicText">
+				K represents the number of training data points lying in proximity to the test data point which we are going to use to find the class.
+			</p>
+		</div>
+		<div id="section4">
+			<a class="topic" style="text-decoration: underline;">Support Vector Machine</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space (N — the number of features) that 
+				distinctly classifies the data points.
+			</p>
+			<br/><img img class='imgPos' src="../static/views/svm1.png" alt="svm" style="margin-left: 20%; width:25%"><br/>
+			<br/><p class="basicText">
+				To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane 
+				that has the maximum margin, i.e the maximum distance between data points of both classes. Maximizing the margin distance provides some 
+				reinforcement so that future data points can be classified with more confidence.
+			</p>
+			<br/><p class="basicText">
+					In machine learning, the hinge loss is a loss function used for training classifiers. The hinge loss is used for "maximum-margin" 
+					classification, most notably for support vector machines.
+			</p>
+			<img img class='imgPos' src="../static/views/hingeLoss.png" alt="svm" style="margin-left: 20%; width:25%">
+			<br/><br/><h2 class="basicText">Loss Function for SVM : </h2>
+			<p class="basicText">
+				Given this understanding of the hinge loss function for a SVM, lets add a regularization term (L2 norm) to the cost. The intuition behind the
+				regularization term is that we increase the cost penalty if the values for the weights are high. So while trying to minimize the cost, we not
+				only adjust the weights, we also try to minimize the value of the weights and thereby reduce over fitting to the training data and make the 
+				model less sensitive to outliers. So with the added regularization term, the total cost function finally looks like:	
+				<h2 class="basicText" style="margin-left: 22%;">Total cost = ||w²||/2 + C*(Sum of all losses for each observation)</h2>
+			</p>
+			<br/><br/><p class="basicText" style="font-weight: bold;">Two great articles about SVM:</p>
+			<a href="https://towardsdatascience.com/support-vector-machines-intuitive-understanding-part-1-3fb049df4ba1" style="margin-left: 18%;">Support vector machines (intuitive understanding)</a>
+			<br/><a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47" style="margin-left: 18%;">Support Vector Machine — Introduction to Machine Learning Algorithms</a>
+		</div>
+		<div id="section5">
+			<a class="topic" style="text-decoration: underline;">Stochastic Gradient Descent</a><br/>
+			<br/><h2 class="basicText">What is Gradient Descent?</h2>
+			<p class="basicText">
+				Gradient descent is an iterative machine learning optimization algorithm to reduce the cost function so that we have models that makes 
+				accurate predictions. We get optimized weights using gradient descent. <br/><br/><span style="font-weight: bold;">Cost function(C) </span>or <span style="font-weight: bold;">Loss function </span> 
+				measures the difference between the actual output and predicted output from the model. Cost function are a convex function.
+			</p>
+			<br/><h2 class="basicText">How can we find the optimized weights?</h2>
+			<p class="basicText">
+				We randomly initialize all the weights for a neural network to a value close to zero but not zero.
+				<br/>We calculate the gradient, ∂c/∂ω which is a partial derivative of cost with respect to weight.
+				<br/>α is learning rate, helps adjust the weights with respect to gradient descent. 
+			</p>
+			<br/><img img class='imgPos' src="../static/views/sgd1.png" alt="sgd" style="margin-left: 20%; width:25%;"><br/>
+			<p style="margin-left: 20%; font-size: 75%">w is the weights for the neurons, α is learning rate, C is the cost and ∂c/∂ω is the gradient</p>
+			<br/><p class="basicText">
+				We need to update the weights for all the neurons simultaneously.
+			</p>
+			<br/><h2 class="basicText">Stochastic Gradient Descent</h2>
+			<p class="basicText">
+				Stochastic Gradient Descent just picks one instance from training set at every step and update gradient only based
+				on that single record. The advantage of Stochastic Gradient Descent is that the algorithm is much faster at every iteration. 
+				However, the algorithm produces less regular and stable learning path compared to Batch Gradient Descent. Instead of decreasing 
+				smoothly, the cost function will bounce up and down. After rounds of iterations, the algorithm may find a good parameter, but the
+				final result is not necessary global optimal.
+			</p>
+			<br/><img img class='imgPos' src="../static/views/sgd2.png" alt="sgd" style="margin-left: 20%; width:25%"><br/>
+		</div>
+		<div id="section6">
+			<a class="topic" style="text-decoration: underline;">Logistic Regression730</a><br/>
+			<br/><h2 class="basicText">What is Logistic Regression?</h2>
+			<p class="basicText">
+				Logistic regression is a classification algorithm used to assign observations to a discrete set of classes. Some of the examples
+				of classification problems are Email spam or not spam, Online transactions Fraud or not Fraud, Tumor Malignant or Benign. Logistic
+				regression transforms its output using the logistic sigmoid function to return a probability value.
+			</p>
+			<br/><h2 class="basicText">Types of Logistic Regression:</h2>
+			<p class="basicText">
+				1. Binary Logistic Regression: The categorical response has only two 2 possible outcomes. E.g.: Spam or Not
+				<br/>2. Multinomial Logistic Regression: Three or more categories without ordering. E.g.: Predicting which food is preferred more (Veg, Non-Veg, Vegan)
+				<br/>3. Ordinal Logistic Regression: Three or more categories with ordering. E.g.: Movie rating from 1 to 5
+			</p>
+			<br/><h2 class="basicText">What is the Sigmoid Function?</h2>
+			<p class="basicText">
+				In order to map predicted values to probabilities, we use the Sigmoid function. The function maps any real value into another value 
+				between 0 and 1. In machine learning, we use sigmoid to map predictions to probabilities.
+
+			</p>
+			<br/><p class="basicText" style="font-weight: bold;">
+				Logistic Function: 
+			</p>
+			<br/><img src="../static/views/logit.png" alt="logit" style="margin-left: 20%; width:25%"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Sigmoid Function Graph:
+			</p>
+			<img img class='imgPos' src="../static/views/sigmoid.png" alt="sigmoid" style="margin-left: 20%; width:25%"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Formula of a sigmoid function:
+			</p>
+			<img img class='imgPos' src="../static/views/sigmoid2.png" alt="sigmoid2" style="margin-left: 20%; width: 12%; height: 6%;"><br/>
+			<br/><br/><p class="basicText" style="font-weight: bold;">
+				Cost Function: 
+			</p>
+			<br/><img img class='imgPos' src="../static/views/lr1.png" alt="lr1" style="margin-left: 20%;"><br/>
+		</div>
+		<div id="section7">
+			<a class="topic" style="text-decoration: underline;">Linear Regression</a><br/>
+			<br/><h2 class="basicText">Goal</h2>
+			<p class="basicText">
+				The goal of <span style="font-weight: bold;">Regression</span> is to explore the relation between the input Feature with that of the target Value and give us a continuous Valued output for the given unknown data.
+			</p>
+			<br/><h2 class="basicText">Multiple regression Equation:</h2>
+			<br/><img img class='imgPos' src="../static/views/lr2.png" alt="lr2" style="margin-left: 20%; width: 40%;"><br/>
+			<br/><p style="font-size: 0.8em;"> 
+				f(x) = Y = Predicted value/Target Value
+				<br/>x = Input
+				<br/>w = Gradient/slope/Weight
+				<br/>b = Bias
+			</p>Polynomial Regression
+			<br/><h2 class="basicText">Bias</h2>
+			<p class="basicText">
+				Bias refers to <span style="font-weight: bold;">the error due to the model’s simplistic assumptions in fitting the data</span>. A high bias means that the model is unable to capture the patterns in the data and this results in under-fitting.
+			</p>
+			<br/><h2 class="basicText">How do we determine the weights?</h2>
+			<p class="basicText">
+				The weights are are measured by <span style="font-weight: bold;">MSE (Mean Squared Error)</span> and adjusting them to get a best possible Linear line.
+			</p>
+			<br/><img img class='imgPos' src="../static/views/lr3.png" alt="lr3" style="margin-left: 20%; width: 40%;"><br/>
+			<p class="basicText">
+				The ‘red line’ is our <span style="font-weight: bold;">linear regression line or our predicted value(y’)</span>. And the ‘blue’ points are our <span style="font-weight: bold;">given data or actual value</span>. The average of square of distance from the 
+				blue points(actual value) to the red line(predicted value) must be minimum to get the best fit regression line.
+				<br/><br/>Thus can be represented as: 
+			</p>
+			<br/><img img class='imgPos' src="../static/views/lr2.gif" alt="lr2" style="margin-left: 20%; width: 8%;"><br/>
+			<br/><br/><p class="basicText">
+				To gain optimal result we need to <span style="font-weight: bold;">minimize MSE</span>.
+				<br/>So to minimize this error or MSE we use gradient descent to find the weights after MSE or error rate calculation. <span style="font-weight: bold;">Gradient Descent can be Equated as</span> :
+			</p>
+			<br/><img img class='imgPos' src="../static/views/lr3.gif" alt="lr3" style="margin-left: 20%; width: 17%;"><br/>
+			<br/><br/>	<p class="basicText">
+				Now after we get the Gradient descent <span style="font-weight: bold;">we need to update the weight every time until we get the best fitted value</span>.
+			</p>
+			<br/><img img class='imgPos' src="../static/views/lr4.gif" alt="lr4" style="margin-left: 20%; width: 10%;"><br/>
+		</div>
+		<div id="section8">
+			<a class="topic" style="text-decoration: underline;">Polynomial Regression</a><br/>
+			<br/><h2 class="basicText">What is Regression?</h2>
+			<p class="basicText">
+				Regression analysis is a form of predictive modelling technique which <span style="font-weight: bold;">investigates the relationship between a dependent and independent variable.</span>
+				<br/><br/>The above definition is a bookish definition, in simple terms the regression can be defined as, “Using the relationship between variables to find the best fit line or the regression equation that can be used to 
+				make predictions”.
+			</p>
+			<br/><br/><p class="basicText">
+				What happens if we know that our data is correlated, but the relationship doesn’t look linear? So hence depending on what the data looks like, <span style="font-weight: bold;">we can do a polynomial regression</span> on the data to fit a polynomial equation to it.
+			</p>
+			<br/><img img class='imgPos' src="../static/views/pr1.gif" alt="lr4" style="margin-left: 20%;">
+			<img src="../static/views/pr2.gif" alt="lr4" style="margin-left: 10%;">
+			<br/><br/><p class="basicText">
+				Hence If we try to use a simple linear regression in the above graph then the linear regression line won’t fit very well. It is very difficult to fit a linear regression line in the above graph with a low value of error. Hence we can try to use the polynomial
+				regression to fit a polynomial line so that we can achieve a minimum error or minimum cost function. <span style="font-weight: bold;">The general equation of a polynomial regression is:</span>
+				<br/><br/><span style="font-weight: bold; margin-left: 30%;">Y=θo + θ₁X + θ₂X² + … + θₘXᵐ + residual error</span>
+			</p>
+			<br/><br/><h2 class="basicText">Advantages of using Polynomial Regression:</h2>
+			<p class="basicText">
+				Polynomial provides the best approximation of the relationship between the dependent and independent variable.
+				<br/>A Broad range of function can be fit under it.
+				<br/>Polynomial basically fits a wide range of curvature.
+			</p>
+			<br/><h2 class="basicText">Disadvantages of using Polynomial Regression:</h2>
+			<p class="basicText">
+				The presence of one or two outliers in the data can seriously affect the results of the nonlinear analysis.
+				<br/>These are too sensitive to the outliers.
+				<br/>In addition, there are unfortunately fewer model validation tools for the detection of outliers in nonlinear regression than there are for linear regression.
+			</p>
+		</div>
+		<div id="section9">
+			<a class="topic" style="text-decoration: underline;">L1 Regularization</a><br/>
+			<br/><h2 class="basicText">Explanation:</h2>
+			<p class="basicText">
+				If your linear model contains many predictor variables or if these variables are correlated, the traditional OLS parameter estimates have large variance, thus making the model unreliable. This leads to an over-fitted model. A penalty term causes the regression 
+				coefficients for these unimportant variables to shrink towards zero. This process allows the model to identify the variables strongly associated with the output variable, thereby reducing the variance.
+				<br/><br/><span style="font-weight: bold;">Lasso Regression</span> (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
+				If lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
+			<br/><img class='imgPos'src="../static/views/lasso.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><br/><p class="basicText">
+				If lambda is zero then we will get back OLS (Ordinary Least Squares) whereas very large value will make coefficients zero hence it will under-fit.
+			</p>
+		</div>
+		<div id="section10">
+			<a class="topic" style="text-decoration: underline;">L2 Regularization</a><br/>
+			<br/><h2 class="basicText">Explanation:</h2>
+			<p class="basicText">
+				<span style="font-weight: bold;">Ridge regression</span> adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
+			</p>
+			<br/><img class='imgPos' src="../static/views/ridge.png" alt="lr4" style="margin-left: 25%; width: 14%;"><br/>
+			<br/><br/><p class="basicText">
+				If <span style="font-weight: bold;">lambda is zero then you can imagine we get back OLS</span>. However, if <span style="font-weight: bold;">lambda is very large then it will add too much weight and it will lead to under-fitting</span>. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
+			</p>
+		</div>
+		<div id="section11">
+			<a class="topic" style="text-decoration: underline;">Learning process of Neural Network</a><br/>
+			<br/><h2 class="basicText">Learning process of a neural network</h2>
+			<p class="basicText">
+				<span style="font-weight: bold;">Neural network</span> is made up of neurons connected to each other; at the same time, each connection of our neural network is associated with a weight that dictates the importance of this relationship in the neuron when multiplied by the input value.
+				<br/><br/>
+				Each neuron has an <span style="font-weight: bold;">activation function</span> that defines the output of the neuron. The activation function is used to introduce non-linearity in the modeling capabilities of the network.
+				<br/><br/>
+				Training our neural network, that is, learning the values of our parameters (weights wij and bj biases) is the most genuine part of Deep Learning and we can see this learning process in a neural network as an iterative process of “going and return” by the layers of neurons. <span style="font-weight: bold;">The “going” 
+				is a forwardpropagation of the information and the “return” is a backpropagation of the information.</span>
+				<br/><br/>
+				The first phase <span style="font-weight: bold;">forwardpropagation</span> occurs when the network is exposed to the training data and these cross the entire neural network for their predictions (labels) to be calculated. That is, passing the input data through the network in such a way that all the neurons apply their transformation 
+				to the information they receive from the neurons of the previous layer and sending it to the neurons of the next layer. When the data has crossed all the layers, and all its neurons have made their calculations, the final layer will be reached with a result of label prediction for those input examples.
+				<br/><br/>
+				Next, we will use a <span style="font-weight: bold;">loss function</span> to estimate the loss (or error) and to compare and measure how good/bad our prediction result was in relation to the correct result (remember that we are in a supervised learning environment and we have the label that tells us the expected value). Ideally, we want our cost to be zero, that is, without
+				divergence between estimated and expected value. Therefore, as the model is being trained, the weights of the interconnections of the neurons will gradually be adjusted until good predictions are obtained.
+				<br/><br/>
+				Once the loss has been calculated, this information is propagated ba730ckwards. Hence, its name: <span style="font-weight: bold;">backpropagation</span>. Starting from the output layer, that loss information propagates to all the neurons in the hidden layer that contribute directly to the output. However, the neurons of the hidden layer only receive a fraction of the total 
+				signal of the loss, based on the relative contribution that each neuron has contributed to the original output. This process is repeated, layer by layer, until all the neurons in the network have received a loss signal that describes their relative contribution to the total loss.
+			</p>
+			<br/><img class='imgPos' src="../static/views/nn1.png" alt="lr4" style="margin-left: 25%;"><br/>
+			<br/><br/><p class="basicText">
+				Now that we have spread this information back, we can adjust the weights of connections between neurons.What we are doing is making the loss as close as possible to zero the next time we go back to using the network for a prediction. For this, we will use a technique called <span style="font-weight: bold;">gradient descent</span>. This technique changes the weights in small increments with the help of the 
+				calculation of the derivative (or gradient) of the loss function, which allows us to see in which direction “to descend” towards the global minimum; this is done in general in batches of data in the successive iterations (epochs) of all the dataset that we pass to the network in each iteration.
+				<br/><br/><span style="font-weight: bold;">To recap, the learning algorithm consists of:</span>
+				<br/><br/><span style="font-weight: bold;">1. </span>Start with values (often random) for the network parameters (wij weights and bj biases).
+				<br/><br/><span style="font-weight: bold;">2. </span>Take a set of examples of input data and pass them through the network to obtain their prediction.
+				<br/><br/><span style="font-weight: bold;">3. </span>Compare these predictions obtained with the values of expected labels and calculate the loss with them.
+				<br/><br/><span style="font-weight: bold;">4. </span>Perform the backpropagation in order to propagate this loss to each and every one of the parameters that make up the model of the neural network.
+				<br/><br/><span style="font-weight: bold;">5. </span>Use this propagated information to update the parameters of the neural network with the gradient descent in a way that the total loss is reduced and a better model is obtained.
+				<br/><br/><span style="font-weight: bold;">6. </span>Continue iterating in the previous steps until we consider that we have a good model.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation function</h2>
+			<p class="basicText">
+				So what does an artificial neuron do? Simply put, it calculates a “weighted sum” of its input, adds a bias and then decides whether it should be “fired” or not.
+				<br/><br/>So consider a neuron.
+				<br/><br/><img class='imgPos' src="../static/views/nn8.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Now, the value of Y can be anything ranging from -inf to +inf. The neuron really doesn’t know the bounds of the value. So how do we decide whether the neuron should fire or not ( why this firing pattern? Because we learnt it from biology that’s the way brain works and brain is a working testimony of an awesome and intelligent system ).
+				We decided to add “activation functions” for this purpose. <span style="font-weight: bold; font-size: 1.1vw;">To check the Y value produced by a neuron and decide whether outside connections should consider this neuron as “fired” or not. Or rather let’s say — “activated” or not.</span>
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Activation functions:</h2>
+			<p class="basicText">
+				We use the activation functions to propagate the output of a neuron forward. This output is received by the neurons of the next layer to which this neuron is connected (up to the output layer included). As we have said, <span style="font-weight: bold;">the activation function serves to introduce non-linearity in the modeling capabilities of the network.</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1.Linear function:</span>
+				<br/><br/>A straight line function where activation is proportional to input ( which is the weighted sum from neuron ).
+				<br/><br/>This way, it gives a range of activations, so it is not binary activation. We can definitely connect a few neurons together and if more than 1 fires, we could take the max ( or softmax) and decide based on that. So that is ok too. Then what is the problem with this?
+				<br/><br/>If you are familiar with gradient descent for training, you would notice that for this function, derivative is a constant.
+				<br/><br/>A = cx, derivative with respect to x is c. That means, the gradient has no relationship with X. It is a constant gradient and the descent is going to be on constant gradient. If there is an error in prediction, the changes made by back propagation is constant and not depending on the change in input delta(x)!
+				<br/><br/>This is not that good!. There is another problem too. Think about connected layers. Each layer is activated by a linear function. That activation in turn goes into the next level as input and the second layer calculates weighted sum on that input and it in turn, fires based on another linear activation function.
+				<br/><br/>No matter how many layers we have, if all are linear in nature, the final activation function of last layer is nothing but just a linear function of the input of first layer! Pause for a bit and think about it.
+				<br/><br/>That means these two layers ( or N layers ) can be replaced by a single layer. Ah! We just lost the ability of stacking layers this way. No matter how we stack, the whole network is still equivalent to a single layer with linear activation ( a combination of linear functions in a linear manner is still another linear function ).
+			</p>
+			<br/><br/><br/><img class='imgPos' src="../static/views/nn2.png" alt="linear f" style="margin-left: 15%;"><br/>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Sigmoid function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn3.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn4.png" alt="sigmoid f" style="margin-left: 10%;">
+				<br/><br/>Well, this looks smooth and “step function like”. What are the benefits of this? Think about it for a moment. First things first, it is nonlinear in nature. Combinations of this function are also nonlinear! Great. Now we can stack layers. What about non binary activations? Yes, that too!. It will give an analog activation unlike step function. It has a smooth gradient too.
+				<br/><br/>And if you notice, between X values -2 to 2, Y values are very steep. Which means, any small changes in the values of X in that region will cause values of Y to change significantly. Ah, that means this function has a tendency to bring the Y values to either end of the curve.
+				<br/><br/>Looks like it’s good for a classifier considering its property? Yes ! It indeed is. It tends to bring the activations to either side of the curve ( above x = 2 and below x = -2 for example). Making clear distinctions on prediction.
+				<br/><br/>Another advantage of this activation function is, unlike linear function, the output of the activation function is always going to be in range (0,1) compared to (-inf, inf) of linear function. So we have our activations bound in a range. Nice, it won’t blow up the activations then.
+				<br/><br/>This is great. Sigmoid functions are one of the most widely used activation functions today. Then what are the problems with this?
+				<br/><br/>If you notice, towards either end of the sigmoid function, the Y values tend to respond very less to changes in X. What does that mean? The gradient at that region is going to be small. It gives rise to a problem of “vanishing gradients”. Hmm. So what happens when the activations reach near the “near-horizontal” part of the curve on either sides?
+				<br/><br/>Gradient is small or has vanished ( cannot make significant change because of the extremely small value ). The network refuses to learn further or is drastically slow ( depending on use case and until gradient /computation gets hit by floating point value limits ). There are ways to work around this problem and sigmoid is still very popular in classification problems.
+			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Tanh Function:</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn5.png" alt="sigmoid f" style="margin-left: 2%;">
+				<img class='imgPos' src="../static/views/nn6.png" alt="sigmoid f" style="margin-left: 10%;">
+				<img class='imgPos' src="../static/views/nn7.png" alt="sigmoid f" style="margin-left: 2%;">
+				Ok, now this has characteristics similar to sigmoid that we discussed above. It is nonlinear in nature, so great we can stack layers! It is bound to range (-1, 1) so no worries of activations blowing up. One point to mention is that the gradient is stronger for tanh than sigmoid ( derivatives are steeper). Deciding between the sigmoid or tanh will depend on your requirement of gradient strength. Like sigmoid, tanh also has the vanishing gradient problem.
+				<br/><br/>Tanh is also a very popular and widely used activation function.
+			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. ReLu Function:</span>
+				<br/><br/>A(x) = max(0,x)
+				<br/><br/>The ReLu function is as shown above. It gives an output x if x is positive and 0 otherwise.
+				<br/><br/><br/><img class='imgPos' src="../static/views/nn9.jpeg" alt="sigmoid f" style="margin-left: 2%;">
+				<br/><br/>At first look this would look like having the same problems of linear function, as it is linear in positive axis. First of all, ReLu is nonlinear in nature. And combinations of ReLu are also non linear! ( in fact it is a good approximator. Any function can be approximated with combinations of ReLu). Great, so this means we can stack layers. It is not bound though. The range of ReLu is [0, inf). This means it can blow up the activation.
+				<br/><br/>Another point that I would like to discuss here is the sparsity of the activation. Imagine a big neural network with a lot of neurons. Using a sigmoid or tanh will cause almost all neurons to fire in an analog way. That means almost all activations will be processed to describe the output of a network. In other words the activation is dense. This is costly. We would ideally want a few neurons in the network to not activate and thereby making the activations sparse and efficient.
+				<br/><br/>ReLu give us this benefit. Imagine a network with random initialized weights ( or normalised ) and almost 50% of the network yields 0 activation because of the characteristic of ReLu ( output 0 for negative values of x ). This means a fewer neurons are firing ( sparse activation ) and the network is lighter. Woah, nice! ReLu seems to be awesome! Yes it is, but nothing is flawless.. Not even ReLu.
+				<br/><br/>Because of the horizontal line in ReLu( for negative X ), the gradient can go towards 0. For activations in that region of ReLu, gradient will be 0 because of which the weights will not get adjusted during descent. That means, those neurons which go into that state will stop responding to variations in error/ input ( simply because gradient is 0, nothing changes ). This is called dying ReLu problem. This problem can cause several neurons to just die and not respond making a substantial part of the network passive. There are variations in ReLu to mitigate this issue by simply making the horizontal line into non-horizontal component . for example y = 0.01x for x < 0 will make it a slightly inclined line rather than horizontal line. This is leaky ReLu. There are other variations too. The main idea is to let the gradient be non zero and recover during training eventually.
+				<span style="font-weight: bold; font-size: 1.1vw;">ReLu is less computationally expensive than tanh and sigmoid because it involves simpler mathematical operations.</span> That is a good point to consider when we are designing deep neural nets.
+			</p>
+			<p class="basicText">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Softmax Function:</span>
+				<br/><br/>Softmax function, a wonderful activation function that turns numbers aka logits into probabilities that sum to one. Softmax function outputs a vector that represents the probability distributions of a list of potential outcomes.
+				</br/>Because Softmax function outputs numbers that represent probabilities, each number’s value is between 0 and 1 valid value range of probabilities. The range is denoted as [0,1]. The numbers are zero or positive. The entire output vector sums to 1. That is to say when all probabilities are accounted for, that’s 100%.
+				<span style="font-weight: bold; font-size: 1.1vw;">The essential goal of softmax is to turn numbers into probabilities.</span>
+				<br/><br/><br/><img class='imgPos' src="../static/views/ss1.png" alt="sigmoid f" style="margin-left: 2%; height: 20%; width: 80%;">
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Loss function</h2>
+			<p class="basicText">
+				Loss function helps in optimizing the parameters of the neural networks.<span style="font-weight: bold; font-size: 1.1vw;"> Our objective is to minimize the loss for a neural network by optimizing its parameters(weights)</span>. The loss is calculated using loss function by matching the target(actual) value and predicted value by a neural network. Then we use the gradient descent method to optimize the weights of the network such that the loss is minimized. This is how we train a neural network.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Loss functions:</h2>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Mean Squared Error:</span>
+				<br/><br/>When you have a regression task, one of the loss function you can go ahead is this one. As the name suggests, this loss is calculated by taking the mean of squared differences between actual(target) and predicted values.
+				For Example, you have a neural network with which takes some data related to house and predicts it’s price. In this case, you can use the MSE loss. Basically, in the case where the output is a real number, you should use this loss function.
+				<br/><br/><img class='imgPos' src="../static/views/loss1.jpeg" alt="loss f" style="margin-left: 10%;">
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">2. Binary Crossentropy:</span>
+				<br/><br/>When you have a binary classification task, one of the loss function you can go ahead is this one. If you are using BCE loss function, you just need one output node to classify the data into two classes. The output value should be passed through a sigmoid activation function so the output is in the range of (0–1).
+				<br/><br/>For example, you have a neural network which takes data related to atmosphere and predicts whether it will rain or not. If the output is greater than 0.5, the network classifies it as rain and if the output is less than 0.5, the network classifies it as not rain. (it could be opposite depending upon how you train the network). More the probability score value, more the chance of raining.
+				<br/><br/><img class='imgPos' src="../static/views/loss2.jpeg" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>While training the network, the target value fed to the network should be 1 if it is raining otherwise 0.
+				<br/><br/>One important thing, if you are using BCE loss function the output of the node should be between (0–1). It means you have to use sigmoid activation function on your final output. Since sigmoid converts any real value in the range between (0–1).
+				<br/><br/>What if you are not using sigmoid activation on the final layer? Then you can pass an argument called from logits as true to the loss function and it will internally apply the sigmoid to the output value.
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">3. Categorical Crossentropy:</span>
+				<br/><br/>When you have a multi-class classification task, one of the loss function you can go ahead is this one. If you are using CCE loss function, there must be the same number of output nodes as the classes. And the final layer output should be passed through a softmax activation so that each node output a probability value between (0–1).
+				<br/><br/>For example, you have a neural network which takes an image and classifies it into a cat or dog. If cat node has high probability score then the image is classified into cat otherwise dog. Basically, whichever class node has the highest probability score, the image is classified into that class.
+				<br/><br/><img class='imgPos' src="../static/views/loss3.jpeg" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>For feeding the target value at the time of training, you have to one hot encode them. If the image is of cat then target vector would be (1, 0) and if the image is of dog, target vector would be (0, 1). Basically, target vector would be of the same size as the number of classes and the index position corresponding to the actual class would be 1 and all other would be zero.
+				<br/><br/>What if you are not using softmax activation on the final layer? Then you can pass an argument called from logits as true to the loss function and it will internally apply the softmax to the output value. Same as in the above case.
+				
+			</p>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">4. Sparse Categorical Crossentropy:</span>
+				<br/><br/>This loss function is almost similar to CCE except for one change.
+				<br/><br/>When you are using SCCE loss function, you do not need to one hot encode the target vector. If the target image is of a cat, you simply pass 0, otherwise 1. Basically, whichever the class is you just pass the index of that class.
+				<br/><br/><img class='imgPos' src="../static/views/loss4.jpeg" alt="loss f" style="margin-left: 10%;">
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Optimization</h2>
+			<p class="basicText">
+				Optimization is a process of searching for parameters that minimize or maximize our functions. When we train machine learning model, we usually use indirect optimization. We choose a certain metric — like accuracy, precision or recall — which indicates how well our model solves a given problem. However, we are optimizing a different cost function J(θ) and hope that minimizing its value 
+				will improve metric we care about. Of course, the choice of the cost function is usually related to the specific problem that we aim to tackle. Essentially, it’s deliberately designed to indicate how far from an ideal solution we are. As you can imagine, this topic is quite complicated and is a great topic for a separate article.
+				</br><br/><span style="font-weight: bold; font-size: 1.1vw;">Traps along the way</span>
+				<br/>It turns out though, that very often finding a minimum of non-convex cost functions is not easy, and we have to use advanced optimization strategies to locate them. If you have learned differential calculus, you certainly know the concept of local minimum — these are some of the biggest traps that our optimizer can fall into. For those who have not yet come across this wonderful part of the mathematics, I will only say that these are the points where function takes a minimum value, but only in a given region. An example of such a situation is shown on the left hand side of the figure above. We can clearly see that the point located by the optimizer is not the most optimal solution overall.
+				<br/><br/>Overcoming the so-called saddle points is often considered to be even more challenging. These are plateaus, where the value of the cost function is almost constant. This situation is illustrated on the right-hand side of the same figure. At these points the gradient is almost zeroed in all directions making it impossible to escape.
+				<br/><br/>Sometimes, especially in the case of multi-layer networks, we may have to deal with regions where the cost function is very steep. In such places the value of the gradient drastically increases — the exploding gradient — what leads to taking huge steps, often ruining the entire previous optimization. However, this problem can be easily avoided by gradient clipping — defining the maximum allowed gradient value.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.3vw;">Optimizers:</h2>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Gradient descent</span>
+				<br/>Before we get to know more advanced algorithms, let’s take a look at some of basic strategies. Probably one of the most straightforward approaches is to simply go in direction opposite to the gradient. This strategy can be described by the following equation.
+				<br/><br/>Where α is a hyperparameter called learning rate, which translates into the length of the step that we will take in each iteration. Its selection expresses — in a certain extent — a compromise between the speed of learning and the accuracy of the result that can be obtained. Choosing too small step leads us to tedious calculations and the necessity of performing much more iterations. On the other hand, however, choosing too high value can effectively prevent us from finding the minimum. Such a situation is presented in the Figure 2 — we can see how in subsequent iterations we bounce around, not being able to stabilize. Meanwhile, the model where appropriate step was defined, found at a minimum almost immediately.
+				<br/><br/><img class='imgPos' src="../static/views/opti1.png" alt="loss f" style="margin-left: 10%;">
+				<br/><br/>In addition, this algorithm is vulnerable to previously described problems of saddle points. Since the size of the correction performed in subsequent iterations is proportional to the calculated gradient, we will not be able to escape from the plateau.
+				<br/><br/>Finally, to top it all off, the algorithm is ineffective — it requires the use of the entire training set in each iteration. This means that in every epoch we have to look at all the examples in order to perform next optimisation step. This may not be a problem when the training set consists of several thousand examples, but as I mentioned in one of my articles — neural networks work best when they have millions of records at their disposal. In that case, it is hard to imagine that in every iteration we use the whole set. It would be a waste of both time and computer memory. All these factors cause that gradient descent, in its purest form, does not work in most cases.
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1.1 Stochastic Gradient descent</span>
+				<br/>Go to classification algorithms -> SGD
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1.2 Mini-batch gradient descent</span>
+				<br/><br/>Mini-batch gradient is a variation of stochastic gradient descent where instead of single training example, mini-batch of samples is used.
+				<br/><br/>Mini batch gradient descent is widely used and converges faster and is more stable.
+				<br/><br/>Batch size can vary depending on the dataset.
+				<br/><br/>As we take a batch with different samples,it reduces the noise which is variance of the weight updates and that helps to have a more stable converge faster.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Momentum</span>
+				<br/>Momentum is like a ball rolling downhill. The ball will gain momentum as it rolls down the hill.
+				<br/><br/><img class='imgPos' src="../static/views/mom1.png" alt="momentum f" style="margin-left: 10%;">
+				<br/><br/>Momentum helps accelerate Gradient Descent(GD) when we have surfaces that curve more steeply in one direction than in another direction. It also dampens the oscillation as shown above
+				<br/><br/>For updating the weights it takes the gradient of the current step as well as the gradient of the previous time steps. This helps us move faster towards convergence.
+				<br/><br/>Convergence happens faster when we apply momentum optimizer to surfaces with curves.
+				<br/><br/><img class='imgPos' src="../static/views/mom2.png" alt="momentum f" style="margin-left: 10%;">	
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Nesterov accelerated gradient(NAG)</span>
+				<br/>Nesterov acceleration optimization is like a ball rolling down the hill but knows exactly when to slow down before the gradient of the hill increases again.
+				<br/><br/>We calculate the gradient not with respect to the current step but with respect to the future step. We evaluate the gradient of the looked ahead and based on the importance then update the weights.
+				<br/><br/><img class='imgPos' src="../static/views/mom3.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>NAG is like you are going down the hill where we can look ahead in the future. This way we can optimize our descent faster. Works slightly better than standard Momentum.
+				<br/><br/><img class='imgPos' src="../static/views/mom4.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adagrad — Adaptive Gradient Algorithm</span>
+				<br/>We need to tune the learning rate in Momentum and NAG which is an expensive process.
+				<br/><br/>Adagrad is an adaptive learning rate method. In Adagrad we adopt the learning rate to the parameters. We perform larger updates for infrequent parameters and smaller updates for frequent parameters.
+				<br/><br/>It is well suited when we have sparse data as in large scale neural networks. GloVe word embedding uses adagrad where infrequent words required a greater update and frequent words require smaller updates.
+				<br/><br/>For SGD, Momentum, and NAG we update for all parameters θ at once. We also use the same learning rate η. In Adagrad we use different learning rate for every parameter θ for every time step t
+				<br/><br/><img class='imgPos' src="../static/views/mom5.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adagrad eliminates the need to manually tune the learning rate.</span>
+				<br/><br/>In the denominator, we accumulate the sum of the square of the past gradients. Each term is a positive term so it keeps on growing to make the learning rate η infinitesimally small to the point that algorithm is no longer able learning. Adadelta, RMSProp, and adam tries to resolve Adagrad’s radically diminishing learning rates.
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adadelta</span>
+				<br/>Adadelta is an extension of Adagrad and it also tries to reduce Adagrad’s aggressive, monotonically reducing the learning rate
+				<br/><br/>It does this by restricting the window of the past accumulated gradient to some fixed size of w. Running average at time t then depends on the previous average and the current gradient
+				<br/><br/>In Adadelta we do not need to set the default learning rate as we take the ratio of the running average of the previous time steps to the current gradient
+				<br/><br/><img class='imgPos' src="../static/views/mom6.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">RMSProp</span>
+				<br/>RMSProp is Root Mean Square Propagation. It was devised by Geoffrey Hinton.
+				<br/><br/>RMSProp tries to resolve Adagrad’s radically diminishing learning rates by using a moving average of the squared gradient. It utilizes the magnitude of the recent gradient descents to normalize the gradient.
+				<br/><br/>In RMSProp learning rate gets adjusted automatically and it chooses a different learning rate for each parameter.
+				<br/><br/>RMSProp divides the learning rate by the average of the exponential decay of squared gradients
+				<br/><br/><img class='imgPos' src="../static/views/mom7.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Adam — Adaptive Moment Estimation</span>
+				<br/>Another method that calculates the individual adaptive learning rate for each parameter from estimates of first and second moments of the gradients.
+				<br/><br/>It also reduces the radically diminishing learning rates of Adagrad
+				<br/><br/>Adam can be viewed as a combination of Adagrad, which works well on sparse gradients and RMSprop which works well in online and nonstationary settings.
+				<br/><br/>Adam implements the exponential moving average of the gradients to scale the learning rate instead of a simple average as in Adagrad. It keeps an exponentially decaying average of past gradients
+				<br/><br/>Adam is computationally efficient and has very little memory requirement
+				<br/><br/>Adam optimizer is one of the most popular gradient descent optimization algorithms
+				<br/><br/>Adam algorithm first updates the exponential moving averages of the gradient(mt) and the squared gradient(vt) which is the estimates of the first and second moment.
+				<br/><br/>Hyper-parameters β1, β2 ∈ [0, 1) control the exponential decay rates of these moving averages as shown below
+				<br/><br/><img class='imgPos' src="../static/views/mom8.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>Moving averages are initialized as 0 leading to moment estimates that are biased around 0 especially during the initial timesteps. This initialization bias can be easily counteracted resulting in bias-corrected estimates
+				<br/><br/><img class='imgPos' src="../static/views/mom9.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/>Finally, we update the parameter as shown below
+				<br/><br/><img class='imgPos' src="../static/views/mom10.png" alt=" f" style="margin-left: 10%;">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Nadam - Nesterov-accelerated Adaptive Moment Estimation</span>
+				<br/>Nadam combines NAG and Adam
+				<br/><br/>Nadam is employed for noisy gradients or for gradients with high curvatures
+				<br/><br/>The learning process is accelerated by summing up the exponential decay of the moving averages for the previous and current gradient
+				<br/><br/>In the diagram below we see can see how different optimizer will converge to the minimum. Adagrad, Adadelta, and RMSprop headed off immediately in the right direction and converge. Momentum and NAG were led off-track, evoking the image of a ball rolling down the hill. NAG corrected itself quickly
+				<br/><br/><img class='imgPos' src="../static/views/mom11.png" alt=" f" style="margin-left: 10%;">
+			</p>	
+			<br/><br/><br/><h2 class="basicText" style="font-size: 1.3vw;">Parameters and hyperparameters:</h2>
+			<p class="basicText">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">Parameters vs hyperparameters:</span>
+				<br/>So far, for simplicity, we have not paid explicit attention to differentiating between parameters and hyperparameters, but I think the time has come. In general, we consider a parameter of the model as a configuration variable that is internal to the model and whose value can be estimated from the data. 
+				In contrast, by hyperparameter we refer to configuration variables that are external to the model itself and whose value in general cannot be estimated from the data, and are specified by the programmer to adjust the learning algorithms.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">1. Epochs:</span>
+				<br/>Epochs tells us the number of times all the training data have passed through the neural network in the training process. A good clue is to increase the number of epochs until the accuracy metric with the validation data starts to decrease, even when the accuracy of the training data continues to increase 
+				(this is when we detect a potential overfitting).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Batch size:</span>
+				<br/>As we have said before, we can partition the training data in mini batches to pass them through the network. In Keras, the batch_size is the argument that indicates the size of these batches that will be used in the fit() method in an iteration of the training to update the gradient. The optimal size will
+				depend on many factors, including the memory capacity of the computer that we use to do the calculations.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Learning rate:</span>
+				<br/>The gradient vector has a direction and a magnitude. Gradient descent algorithms multiply the magnitude of the gradient by a scalar known as learning rate (also sometimes called step size) to determine the next point.
+				<br/><br/>In a more formal way, the backpropagation algorithm computes how the error changes with respect to each weight:
+				<br/><br/><img class='imgPos' src="../static/views/mom12.png">
+				<br/><br/>In order to update each weight of the network using a simple update rule:
+				<br/><br/><img class='imgPos' src="../static/views/mom13.png">
+				<br/><br/>Where α is the learning rate.
+				<br/><br/>For example, if the magnitude of the gradient is 1.5 and the learning rate is 0.01, then the gradient descent algorithm will select the next point at 0.015 from the previous point.
+				<br/><br/>The proper value of this hyperparameter is very dependent on the problem in question, but in general, if this is too big, huge steps are being made, which could be good to go faster in the learning process. But in this case, we may skip the minimum and make it difficult for the learning process to stop because, when searching for the next point, it perpetually bounces randomly at the bottom of the “well”. Visually we can see in this figure the effect that can occur, where the minimum value is never reached (indicated with a small arrow in the drawing):
+				<br/><br/><img class='imgPos' src="../static/views/mom14.png">
+				<br/><br/>Contrarily, if the learning rate is small, small advances will be made, having a better chance of reaching a local minimum, but this can cause the learning process to be very slow. In general, a good rule is to decrease the learning rate if our learning model does not work. If we know that the gradient of the loss function is small, then it is safe to test that it compensates the gradient with the learning rate.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. Learning rate decay:</span>
+				<br/>But the best learning rate in general is one that decreases as the model approaches a solution. To achieve this effect, we have another hyperparameter, the learning rate decay, which is used to decrease the learning rate as epochs go by to allow learning to advance faster at the beginning with larger learning rates. As progress is made, smaller and smaller adjustments are made to facilitate the convergence of the training process to the minimum of the loss function.
+			</p>
+		</div>
+		<div id="section12">
+			<a class="topic" style="text-decoration: underline;">Keras Layers:</a><br/>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">About Keras Layers:</h2>
+			<p class="basicText">
+				<br/>All Keras layers have a number of methods in common:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_weights():</span> returns the weights of the layer as a list of Numpy arrays.</li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.set_weights(weights):</span> sets the weights of the layer from a list of Numpy arrays (with the same shapes as the output of get_weights).</li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_config():</span> returns a dictionary containing the configuration of the layer. The layer can be reinstantiated from its config via:</li>
+				</ul>
+			</p>
+			<p class="basicText"> 
+				<br/>If a layer has a single node (i.e. if it isn't a shared layer), you can get its input tensor, output tensor, input shape and output shape via:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.input</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.output:</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.input_shape</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.output_shape</span></li>
+				</ul>
+			</p>
+			<p class="basicText"> 
+				<br/>If the layer has multiple nodes (see: the concept of layer node and shared layers), you can use the following methods:
+				<ul class="basicText">
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_input_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_output_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_input_shape_at(node_index)</span></li>
+					<li><span style="font-weight: bold; font-size: 1.1vw;">layer.get_output_shape_at(node_index)</span></li>
+				</ul>
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Core Layers:</h2>
+			<p class="basicText2">
+				<span style="font-weight: bold; font-size: 1.1vw;">1. Dense:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">keras.layers.Dense</span>(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">units:</span> Positive integer, dimensionality of the output space.
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">activation:</span> Activation function to use (see activations). If you don't specify anything, no activation is applied (ie. "linear" activation: a(x) = x).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Dense implements the operation:</span> output = activation(dot(input, kernel) + bias) where activation is the element-wise activation function passed as the activation argument, kernel is a weights matrix created by the layer, and bias is a bias vector created by the layer (only applicable if use_bias is True).
+				<br/><br/><i style="font-weight: bold;">Example</i>
+				<br/># as first layer in a sequential model:
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model = Sequential()</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model.add(Dense(32, input_shape=(16,)))</span>
+				<br/># now the model will take as input arrays of shape (*, 16)
+				<br/># and output arrays of shape (*, 32)
+				<br/># after the first layer, you don't need to specify
+				<br/># the size of the input anymore:
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">model.add(Dense(32))</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>nD tensor with shape: (batch_size, ..., input_dim). The most common situation would be a 2D input with shape (batch_size, input_dim).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>nD tensor with shape: (batch_size, ..., units). For instance, for a 2D input with shape (batch_size, input_dim), the output would have shape (batch_size, units).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Activation:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Activation</span>(activation)
+				<br/><br/>Applies an activation function to an output.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">activation:</span> name of activation function to use (see: activations), or alternatively, a Theano or TensorFlow operation.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>Same shape as input.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Dropout:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Dropout</span>(rate, noise_shape=None, seed=None)
+				<br/><br/>Applies Dropout to the input.
+				<br/><br/>Dropout consists in randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
+				<br/>Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. Flatten:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Flatten</span>(data_format=None)
+				<br/><br/>Flattens the input. Does not affect the batch size.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Input:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.engine.input_layer.Input()</span>
+				<br/><br/>Flattens the input. Does not affect the batch size.
+				<br/><br/>Input() is used to instantiate a Keras tensor. Returns a tensor.
+				<br/><br/>A Keras tensor is a tensor object from the underlying backend (Theano, TensorFlow or CNTK), which we augment with certain attributes that allow us to build a Keras model just by knowing the inputs and outputs of the model.
+				<br/><br/>For instance, if a, b and c are Keras tensors, it becomes possible to do: model = Model(input=[a, b], output=c). 
+				<br/><br/>x = Input(shape=(32,))
+				<br/>y = Dense(16, activation='softmax')(x)
+				<br/>model = Model(x, y)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. Reshape:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Reshape</span>(target_shape)
+				Reshapes an output to a certain shape.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">target_shape:</span>Target shape. Tuple of integers. Does not include the batch axis.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>Arbitrary, although all dimensions in the input shaped must be fixed. Use the keyword argument input_shape (tuple of integers, does not include the batch axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>(batch_size,) + target_shape
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. Permute:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Permute</span>(dims)
+				<br/><br/>Permutes the dimensions of the input according to a given pattern.
+				<br/>Useful for e.g. connecting RNNs and convnets together.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/>model = Sequential()
+				<br/>model.add(Permute((2, 1), input_shape=(10, 64)))
+				<br/># now: model.output_shape == (None, 64, 10)
+				<br/># note: `None` is the batch dimension
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. RepeatVector</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.RepeatVector</span>(n)
+				<br/><br/>Repeats the input n times.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/>model = Sequential()
+				<br/>model.add(Dense(32, input_dim=32))
+				<br/># now: model.output_shape == (None, 32)
+				<br/># note: `None` is the batch dimension
+				<br/>model.add(RepeatVector(3))
+				<br/># now: model.output_shape == (None, 3, 32)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>2D tensor of shape (num_samples, features).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>3D tensor of shape (num_samples, n, features).
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. ActivityRegularization</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.ActivityRegularization</span>(l1=0.0, l2=0.0)
+				<br/><br/>Layer that applies an update to the cost function based input activity.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">l1:</span> L1 regularization factor (positive float).
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">l2:</span> L2 regularization factor (positive float).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the samples axis) when using this layer as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>Same shape as input.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. Masking</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Masking</span>(mask_value=0.0)
+				<br/><br/>Masks a sequence by using a mask value to skip timesteps.
+				<br/><br/>If all features for a given sample timestep are equal to mask_value, then the sample timestep will be masked (skipped) in all downstream layers (as long as they support masking).
+				<br/><br/>If any downstream layer does not support masking yet receives such an input mask, an exception will be raised.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/>Consider a Numpy data array x of shape (samples, timesteps, features), to be fed to an LSTM layer. You want to mask sample #0 at timestep #3, and sample #2 at timestep #5, because you lack features for these sample timesteps. You can do:
+				<br/><br/>set x[0, 3, :] = 0. and x[2, 5, :] = 0.
+				<br/>insert a Masking layer with mask_value=0. before the LSTM layer:
+				<br/>model = Sequential()
+				<br/>model.add(Masking(mask_value=0., input_shape=(timesteps, features)))
+				<br/>model.add(LSTM(32))
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">10. SpatialDropout1D</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout1D</span>(rate)
+				<br/><br/>Spatial 1D version of Dropout.
+				<br/><br/>This version performs the same function as Dropout, however it drops entire 1D feature maps instead of individual elements. If adjacent frames within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout1D will help promote independence between feature maps and should be used instead.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>3D tensor with shape: (samples, timesteps, channels)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>same as Input
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. SpatialDropout2D</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout2D</span>(rate, data_format=None)
+				<br/><br/>Spatial 2D version of Dropout.
+				<br/><br/>This version performs the same function as Dropout, however it drops entire 2D feature maps instead of individual elements. If adjacent pixels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout2D will help promote independence between feature maps and should be used instead.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>4D tensor with shape: (samples, channels, rows, cols) if data_format='channels_first' or 4D tensor with shape: (samples, rows, cols, channels) if data_format='channels_last'.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>same as Input
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">12. SpatialDropout3D</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.SpatialDropout3D</span>(rate, data_format=None)
+				<br/><br/>Spatial 3D version of Dropout.
+				<br/><br/>This version performs the same function as Dropout, however it drops entire 3D feature maps instead of individual elements. If adjacent voxels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout3D will help promote independence between feature maps and should be used instead.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>5D tensor with shape: (samples, channels, dim1, dim2, dim3) if data_format='channels_first' or 5D tensor with shape: (samples, dim1, dim2, dim3, channels) if data_format='channels_last'.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>same as Input
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Convolutional Layers:</h2>
+			<p class="basicText2">
+				<span style="font-weight: bold; font-size: 1.1vw;">1. Conv1D:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Conv1D</span>(filters, kernel_size, strides=1, padding='valid', data_format='channels_last', dilation_rate=1, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+				<br/><br/>1D convolution layer (e.g. temporal convolution).
+				<br/><br/>This layer creates a convolution kernel that is convolved with the layer input over a single spatial (or temporal) dimension to produce a tensor of outputs. If use_bias is True, a bias vector is created and added to the outputs. Finally, if activation is not None, it is applied to the outputs as well.
+				<br/><br/>When using this layer as the first layer in a model, provide an input_shape argument (tuple of integers or None, does not include the batch axis), e.g. input_shape=(10, 128) for time series sequences of 10 time steps with 128 features per step in data_format="channels_last", or (None, 128) for variable-length sequences with 128 features per step.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>3D tensor with shape: (batch, steps, channels)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>3D tensor with shape: (batch, new_steps, filters) steps value might have changed due to padding or strides.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. Conv2D:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Conv2D</span>(filters, kernel_size, strides=(1, 1), padding='valid', data_format=None, dilation_rate=(1, 1), activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+				<br/><br/>2D convolution layer (e.g. spatial convolution over images).
+				<br/><br/>This layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs. If use_bias is True, a bias vector is created and added to the outputs. Finally, if activation is not None, it is applied to the outputs as well.
+				<br/><br/>When using this layer as the first layer in a model, provide the keyword argument input_shape (tuple of integers, does not include the batch axis), e.g. input_shape=(128, 128, 3) for 128x128 RGB pictures in data_format="channels_last".
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>4D tensor with shape: (batch, channels, rows, cols) if data_format is "channels_first" or 4D tensor with shape: (batch, rows, cols, channels) if data_format is "channels_last".
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>4D tensor with shape: (batch, filters, new_rows, new_cols) if data_format is "channels_first" or 4D tensor with shape: (batch, new_rows, new_cols, filters) if data_format is "channels_last". rows and cols values might have changed due to padding.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. Conv3D:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Conv3D</span>(filters, kernel_size, strides=(1, 1, 1), padding='valid', data_format=None, dilation_rate=(1, 1, 1), activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+				<br/><br/>3D convolution layer (e.g. spatial convolution over volumes).
+				<br/><br/>This layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs. If use_bias is True, a bias vector is created and added to the outputs. Finally, if activation is not None, it is applied to the outputs as well.
+				<br/><br/>When using this layer as the first layer in a model, provide the keyword argument input_shape (tuple of integers, does not include the batch axis), e.g. input_shape=(128, 128, 128, 1) for 128x128x128 volumes with a single channel, in data_format="channels_last".
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>5D tensor with shape: (batch, channels, conv_dim1, conv_dim2, conv_dim3) if data_format is "channels_first" or 5D tensor with shape: (batch, conv_dim1, conv_dim2, conv_dim3, channels) if  data_format is "channels_last".
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>5D tensor with shape: (batch, filters, new_conv_dim1, new_conv_dim2, new_conv_dim3) if data_format is "channels_first" or 5D tensor with shape: (batch, new_conv_dim1, new_conv_dim2, new_conv_dim3, filters) if data_format is "channels_last". new_conv_dim1, new_conv_dim2 and new_conv_dim3 values might have changed due to padding.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Pooling Layers:</h2></p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. MaxPooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+				<br/>Max pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. MaxPooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Max pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. MaxPooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.MaxPooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Max pooling operation for 3D data (spatial or spatio-temporal).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)				
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">4. AveragePooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling1D</span>(pool_size=2, strides=None, padding='valid', data_format='channels_last')
+				<br/>Average pooling for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, downsampled_steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, downsampled_steps)
+					
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">5. AveragePooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling2D</span>(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Average pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, pooled_rows, pooled_cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, pooled_rows, pooled_cols)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">6. AveragePooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.AveragePooling3D</span>(pool_size=(2, 2, 2), strides=None, padding='valid', data_format=None)
+				<br/>Average pooling operation for 3D data (spatial or spatio-temporal).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, pooled_dim1, pooled_dim2, pooled_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, pooled_dim1, pooled_dim2, pooled_dim3)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">7. GlobalMaxPooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling1D</span>(data_format='channels_last')
+				<br/>Global max pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">8. GlobalMaxPooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling2D</span>(data_format=None)
+				<br/>Global max pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, channels)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">9. GlobalMaxPooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalMaxPooling3D</span>(data_format='channels_last')
+				<br/>Global Max pooling operation for 3D data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, channels)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">10. GlobalAveragePooling1D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling1D</span>(data_format='channels_last')
+				<br/>Global average pooling operation for temporal data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 3D tensor with shape:  (batch_size, steps, features)
+				<br/>If data_format='channels_first': 3D tensor with shape:  (batch_size, features, steps)
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
+					
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">11. GlobalAveragePooling2D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling2D</span>(data_format=None)
+				<br/>Global average pooling operation for spatial data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 4D tensor with shape:  (batch_size, rows, cols, channels)
+				<br/>If data_format='channels_first': 4D tensor with shape:  (batch_size, channels, rows, cols)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">12. GlobalAveragePooling3D:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GlobalAveragePooling3D</span>(data_format='channels_last')
+				<br/>Global Average pooling operation for 3D data.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>If data_format='channels_last': 5D tensor with shape:  (batch_size, spatial_dim1, spatial_dim2, spatial_dim3, channels)
+				<br/>If data_format='channels_first': 5D tensor with shape:  (batch_size, channels, spatial_dim1, spatial_dim2, spatial_dim3)					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, features)
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Recurrent Layers:</h2></p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. RNN:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.RNN</span>(cell, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)
+				<br/><br/>Base class for recurrent layers. 
+				<br/><br/><img img class='imgPos' src="../static/views/lstm0.png" alt="rnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/>First, the input and previous hidden state are combined to form a vector. That vector now has information on the current input and previous inputs. The vector goes through the tanh activation, and the output is the new hidden state, or the memory of the network.
+				<br/><br/><img img class='imgPos' src="../static/views/rnn1.gif" alt="rnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>3D tensor with shape (batch_size, timesteps, input_dim).					
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>if return_state: a list of tensors. The first tensor is the output. The remaining tensors are the last states, each with shape (batch_size, units). For example, the number of state tensors is 1 (for RNN and GRU) or 2 (for LSTM).
+				<br/>if return_sequences: 3D tensor with shape  (batch_size, timesteps, units).
+				<br/>else, 2D tensor with shape (batch_size, units).
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. LSTM:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.LSTM</span>(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', unit_forget_bias=True, kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, implementation=1, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)
+				<br/><br/>Long Short-Term Memory layer.
+				<br/><br/>An LSTM has a similar control flow as a recurrent neural network. It processes data passing on information as it propagates forward. The differences are the operations within the LSTM’s cells.
+				<br/><br/><img img class='imgPos' src="../static/views/lstm0.png" alt="lstm" style="margin-left: 20%; width: 40%;">
+				<br/><br/>These operations are used to allow the LSTM to keep or forget information
+				<br/><br/>First, the input and previous hidden state are combined to form a vector. That vector now has information on the current input and previous inputs. The vector goes through the tanh activation, and the output is the new hidden state, or the memory of the network.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Forget gate</span>
+				<br/>First, we have the forget gate. This gate decides what information should be thrown away or kept. Information from the previous hidden state and information from the current input is passed through the sigmoid function. Values come out between 0 and 1. The closer to 0 means to forget, and the closer to 1 means to keep.
+				<br/><br/><img img class='imgPos' src="../static/views/lstm1.gif" alt="lstm" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input Gate</span>
+				<br/>To update the cell state, we have the input gate. First, we pass the previous hidden state and current input into a sigmoid function. That decides which values will be updated by transforming the values to be between 0 and 1. 0 means not important, and 1 means important. You also pass the hidden state and current input into the tanh function to squish values between -1 and 1 to help regulate the network. Then you multiply the tanh output with the sigmoid output. The sigmoid output will decide which information is important to keep from the tanh output.
+				<br/><br/><img img class='imgPos' src="../static/views/lstm2.gif" alt="lstm" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Cell State </span>
+				<br/>Now we should have enough information to calculate the cell state. First, the cell state gets pointwise multiplied by the forget vector. This has a possibility of dropping values in the cell state if it gets multiplied by values near 0. Then we take the output from the input gate and do a pointwise addition which updates the cell state to new values that the neural network finds relevant. That gives us our new cell state.
+				<br/><br/><img img class='imgPos' src="../static/views/lstm3.gif" alt="lstm" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output Gate</span>
+				<br/>Last we have the output gate. The output gate decides what the next hidden state should be. Remember that the hidden state contains information on previous inputs. The hidden state is also used for predictions. First, we pass the previous hidden state and the current input into a sigmoid function. Then we pass the newly modified cell state to the tanh function. We multiply the tanh output with the sigmoid output to decide what information the hidden state should carry. The output is the hidden state. The new cell state and the new hidden is then carried over to the next time step.
+				<br/><br/><img img class='imgPos' src="../static/views/lstm4.gif" alt="lstm" style="margin-left: 20%; width: 40%;">
+
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">3. GRU:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.GRU</span>(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, implementation=1, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False, reset_after=False)
+				<br/><br/>Gated Recurrent Unit.The GRU is the newer generation of Recurrent Neural networks and is pretty similar to an LSTM. GRU’s got rid of the cell state and used the hidden state to transfer information. It also only has two gates, a reset gate and update gate.
+				<br/><br/><img img class='imgPos' src="../static/views/gru0.png" alt="GRU" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Update Gate</span>
+				<br/>The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Reset Gate</span>
+				<br/>The reset gate is another gate is used to decide how much past information to forget.
+				And that’s a GRU. GRU’s has fewer tensor operations; therefore, they are a little speedier to train then LSTM’s. There isn’t a clear winner which one is better. Researchers and engineers usually try both to determine which one works better for their use case.
+			</p>
+			<br/><h2 class="basicText" style="font-size: 1.1vw;">Embedding Layers:</h2></p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.1vw;">1. Embedding:</span>
+				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.Embedding</span>(input_dim, output_dim, embeddings_initializer='uniform', embeddings_regularizer=None, activity_regularizer=None, embeddings_constraint=None, mask_zero=False, input_length=None)
+				<br/><br/>Turns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]]
+				<br/><br/>This layer can only be used as the first layer in a model.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Example:</span>
+				<br/><br/>model = Sequential()
+				<br/>model.add(Embedding(1000, 64, input_length=10))
+				<br/># the model will take as input an integer matrix of size (batch, input_length).
+				<br/># the largest integer (i.e. word index) in the input should be
+				<br/># no larger than 999 (vocabulary size).
+				<br/># now model.output_shape == (None, 10, 64), where None is the batch dimension.
+				<br/><br/>input_array = np.random.randint(1000, size=(32, 10))
+				<br/><br/>model.compile('rmsprop', 'mse')
+				<br/>output_array = model.predict(input_array)
+				<br/>assert output_array.shape == (32, 10, 64)
+
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Input shape</span>
+				<br/>2D tensor with shape: (batch_size, sequence_length).
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Output shape</span>
+				<br/>2D tensor with shape: (batch_size, sequence_length).
+			</p>
+		</div>
+		<div id="section13">
+			<br/><a class="topic" style="text-decoration: underline;">Convolutional Neural Network</a><br/>
+			<br/><h2 class="basicText">Introduction:</h2>
+			<p class="basicText">
+				In neural networks, Convolutional neural network (ConvNets or CNNs) is one of the main categories to do images recognition, images classifications. Objects detections, recognition faces etc., are some of the areas where CNNs are widely used.
+				<br/><br/>CNN image classifications takes an input image, process it and classify it under certain categories (Eg., Dog, Cat, Tiger, Lion). Computers sees an input image as array of pixels and it depends on the image resolution. Based on the image resolution, it will see h x w x d( h = Height, w = Width, d = Dimension ). Eg., An image of 6 x 6 x 3 array of matrix of RGB (3 refers to RGB values) and an image of 4 x 4 x 1 array of matrix of grayscale image.
+				<br/><br/>Technically, deep learning CNN models to train and test, <span style="font-weight: bold; font-size: 1.0vw;">each input image will pass it through a series of convolution layers with filters (Kernals), Pooling, fully connected layers (FC) and apply Softmax function to classify an object with probabilistic values between 0 and 1</span>. The below figure is a complete flow of CNN to process an input image and classifies the objects based on values.
+				<br/><br/><img img class='imgPos' src="../static/views/cnn0.jpeg" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<span style="font-weight: bold; font-size: 1.0vw;">Convolution Layer</span>
+				<br/><br/>Convolution is the first layer to extract features from an input image. Convolution preserves the relationship between pixels by learning image features using small squares of input data. It is a mathematical operation that takes two inputs such as image matrix and a filter or kernal
+				<br/><br/>Consider a 5 x 5 whose image pixel values are 0, 1 and filter matrix 3 x 3 as shown in below
+				<br/><br/><img img class='imgPos' src="../static/views/cnn1.png" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/>Then the convolution of 5 x 5 image matrix multiplies with 3 x 3 filter matrix which is called “Feature Map” as output shown in below
+				<br/><br/><img img class='imgPos' src="../static/views/cnn2.gif" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Strides</span>
+				<br/><br/>Stride is the number of pixels shifts over the input matrix. When the stride is 1 then we move the filters to 1 pixel at a time. When the stride is 2 then we move the filters to 2 pixels at a time and so on.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Padding</span>
+				<br/><br/>Sometimes filter does not fit perfectly fit the input image. We have two options:
+				<br/><br/>1. Pad the picture with zeros (zero-padding) so that it fits
+				</br/>2. Drop the part of the image where the filter did not fit. This is called valid padding which keeps only valid part of the image.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Non Linearity (ReLU)</span>
+				<br/><br/>ReLU stands for Rectified Linear Unit for a non-linear operation. The output is ƒ(x) = max(0,x).
+				<br/><br/>Why ReLU is important : ReLU’s purpose is to introduce non-linearity in our ConvNet. Since, the real world data would want our ConvNet to learn would be non-negative linear values.
+				<br/><br/>There are other non linear functions such as tanh or sigmoid can also be used instead of ReLU. Most of the data scientists uses ReLU since performance wise ReLU is better than other two.
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Pooling Layer</span>
+				<br/><br/>Pooling layers section would reduce the number of parameters when the images are too large. Spatial pooling also called subsampling or downsampling which reduces the dimensionality of each map but retains the important information. Spatial pooling can be of different types:
+				<br/><br/>1. Max Pooling
+				<br/>2. Average Pooling
+				<br/>3. Sum Pooling
+				<br/>4. Max pooling take the largest element from the rectified feature map. Taking the largest element could also take the average pooling. Sum of all elements in the feature map call as sum pooling.
+				<br/><br/><img img class='imgPos' src="../static/views/cnn3.png" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/><span style="font-weight: bold; font-size: 0.9vw;">Fully Connected Layer</span>
+				<br/><br/>The layer we call as FC layer, we flattened our matrix into vector and feed it into a fully connected layer like neural network.
+				<br/><br/><img img class='imgPos' src="../static/views/cnn4.png" alt="cnn" style="margin-left: 20%; width: 40%;">
+				<br/><br/>In the above diagram, feature map matrix will be converted as vector (x1, x2, x3, …). With the fully connected layers, we combined these features together to create a model. Finally, we have an activation function such as softmax or sigmoid to classify the outputs as cat, dog, car, truck etc.,
+			</p>
+		</div>
+		<div id="section14">
+			<br/><a class="topic" style="text-decoration: underline;">Recurrent Neural Network</a><br/>
+			<br/><h2 class="basicText">Introduction:</h2>
+			<p class="basicText">
+				Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs. This makes them applicable to tasks such as unsegmented, connected handwriting recognition or speech recognition.
+				<br/><br/>Recurrent Neural Network comes into the picture when any model needs context to be able to provide the output based on the input.
+				<br/><br/>Sometimes the context is the single most important thing for the model to predict the most appropriate output.
+				<br/><br/>Let’s understand this by an analogy. Suppose you are watching a movie, you keep watching the movie as at any point in time, you have the context because you have seen the movie until that point, then only you are able to relate everything correctly. It means that you remember everything that you have watched.
+				<br/><br/>Similarly, RNN remembers everything. In other neural networks, all the inputs are independent of each other. But in RNN, all the inputs are related to each other. Let’s say you have to predict the next word in a given sentence, in that case, the relation among all the previous words helps in predicting the better output. The RNN remembers all these relations while training itself.
+				<br/><br/>In order to achieve it, the<span style="font-weight: bold; font-size: 0.9vw;"> RNN creates the networks with loops in them, which allows it to persist the information.</span>
+				<br/><br/><img img class='imgPos' src="../static/views/rnn0.png" alt="rnn" style="margin-left: 20%; width: 100%;">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">More information about RNN in Keras Layers -> RNN, LSTM, GRU</span>
+			</p>
+		</div>
+		<div id="section15">
+			<br/><a class="topic" style="text-decoration: underline;">Generative Adversary Network</a><br/>
+			<br/><h2 class="basicText">What does GAN do?</h2>
+			<p class="basicText">
+				The main focus for GAN (Generative Adversarial Networks) is to generate data from scratch, mostly images but other domains including music have been done. But the scope of application is far bigger than this.
+			</p>
+			<br/><h2 class="basicText">Generator and discriminator:</h2>
+			<p class="basicText">
+				GAN composes of two deep networks, the generator, and the discriminator. We will first look into how a generator creates images before learning how to train it.
+				First, we sample some noise z using a normal or uniform distribution. With z as an input, we use a generator G to create an image x (x=G(z)).
+				<br/><br/><img img class='imgPos' src="../static/views/gan0.jpeg" alt="gan" style="margin-left: 20%; width: 40%;">
+				<br/><br/>So what is this magic generator G? The following is the DCGAN which is one of the most popular designs for the generator network. It performs multiple transposed convolutions to upsample z to generate the image x. We can view it as the deep learning classifier in the reverse direction.
+				<br/><br/><img img class='imgPos' src="../static/views/gan1.png" alt="gan" style="margin-left: 20%; width: 40%;">
+				<br/><br/>But a generator alone will just create random noise. Conceptually, the discriminator in GAN provides guidance to the generator on what images to create.
+			</p>
+		</div>
+	</section>
+</body>
+</html>
