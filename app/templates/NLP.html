@@ -224,6 +224,12 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">m</span>(multi-line) when enabled ^ and $ will match the start and end of a line, instead of the whole string
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">i</span>(insensitive) makes the whole expression case-insensitive (for instance /aBc/i would match AbC)
 			</p>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Grouping and capturing:&nbsp;&nbsp; () </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(bc)</span>parentheses create a capturing group with value bc
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(?:bc)*</span>using ?: we disable the capturing group
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(?<foo>bc)</span>using ?<foo> we put a name to the group
+			</p>
 	</section>
 </body>
 </html>
