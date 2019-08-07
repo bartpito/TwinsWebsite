@@ -239,6 +239,11 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[^a-zA-Z]</span>a string that has not a letter from a to z or from A to Z. In this case the ^ is used as negation of the expression
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">Remember that inside bracket expressions all special characters (including the backslash \) lose their special powers: thus we will not apply the “escape rule”.</span>
 			</p>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Greedy and Lazy match:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;"><.+?></span> matches any character one or more times included inside < and >, expanding as needed
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;"><[^<>]+> =</span>matches any character except < or > one or more times included inside < and >
+			</p>
 	</section>
 </body>
 </html>
