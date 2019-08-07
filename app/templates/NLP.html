@@ -184,7 +184,7 @@
 			<br/><a class="topic" style="text-decoration: underline;">Regular Expressions:</a><br/>
 			<br/><h2 class="basicText">Basic Topics:</h2>
 			<p class="basicText2">
-				<br/><span style="font-weight: bold; font-size: 1.2vw;">Anchors:&nbsp;&nbsp;  ^ and $ : </span>
+				<br/><span style="font-weight: bold; font-size: 1.2vw;">Anchors:&nbsp;&nbsp;  ^ and $  </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">^The</span>matches any string that starts with The
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">end$</span>matches a string that ends with end
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">^The end$</span>exact string match (starts and ends with The end)
@@ -207,7 +207,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a[bc]</span>same as previous
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Character classes:&nbsp;&nbsp;  \d \w \s and .</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Character Classes:&nbsp;&nbsp;  \d \w \s and .</span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\d</span>matches a single character that is a digit
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\w</span>matches a word character (alphanumeric character plus underscore)
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\s</span>matches a whitespace character (includes tabs and line breaks)
@@ -225,10 +225,19 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">i</span>(insensitive) makes the whole expression case-insensitive (for instance /aBc/i would match AbC)
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Grouping and capturing:&nbsp;&nbsp; () </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Grouping and Capturing:&nbsp;&nbsp; () </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(bc)</span>parentheses create a capturing group with value bc
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(?:bc)*</span>using ?: we disable the capturing group
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(?<foo>bc)</span>using ?<foo> we put a name to the group
+			</p>
+			<p class="basicText2">
+				<br/><span style="font-weight: bold; font-size: 1.2vw;">Bracket Expressions:&nbsp;&nbsp;  []</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[abc]</span>matches a string that has either an a or a b or a c 
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[a-c]</span>same as previous
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[a-fA-F0-9]</span>a string that represents a single hexadecimal digit, case insensitively
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[0-9]%</span>a string that has a character from 0 to 9 before a % sign
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">[^a-zA-Z]</span>a string that has not a letter from a to z or from A to Z. In this case the ^ is used as negation of the expression
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">Remember that inside bracket expressions all special characters (including the backslash \) lose their special powers: thus we will not apply the “escape rule”.</span>
 			</p>
 	</section>
 </body>
