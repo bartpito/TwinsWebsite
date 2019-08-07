@@ -249,6 +249,12 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\babc\b</span> performs a "whole words only"</and>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\Babc\B</span>matches only if the pattern is fully surrounded by word characters
 			</p>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Back-references:&nbsp;&nbsp; \1 </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">([abc])\1</span> using \1 it matches the same text that was matched by the first capturing group
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">([abc])([de])\2\1 </span> we can use \2 (\3, \4, etc.) to identify the same text that was matched by the second (third, fourth, etc.) capturing group
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<foo>[abc])\k<foo></foo></span>we put the name foo to the group and we reference it later (\k<foo>). The result is the same of the first regex
+			</p>
 	</section>
 </body>
 </html>
