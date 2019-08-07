@@ -184,14 +184,14 @@
 			<br/><a class="topic" style="text-decoration: underline;">Regular Expressions:</a><br/>
 			<br/><h2 class="basicText">Basic Topics:</h2>
 			<p class="basicText2">
-				<br/><span style="font-weight: bold; font-size: 1.2vw;">Anchors:&nbsp;	&nbsp;  ^ and $ : </span>
+				<br/><span style="font-weight: bold; font-size: 1.2vw;">Anchors:&nbsp;&nbsp;  ^ and $ : </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">^The</span>matches any string that starts with The
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">end$</span>matches a string that ends with end
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">^The end$</span>exact string match (starts and ends with The end)
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">roar</span>matches any string that has the text roar in it
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Quantifiers:&nbsp;	&nbsp; * + ? and {} </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Quantifiers:&nbsp;&nbsp; * + ? and {} </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">abc*</span>matches a string that has ab followed by zero or more c
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">abc+</span>matches a string that has ab followed by one or more c
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">abc?</span>matches a string that has ab followed by zero or one c
@@ -202,9 +202,17 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(bc){2,5}</span>matches a string that has a followed by 2 up to 5 copies of the sequence bc
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">OR operator:&nbsp;	&nbsp; | or [] </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">OR operator:&nbsp;&nbsp; | or [] </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a(b|c)</span>matches a string that has a followed by b or c
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">a[bc]</span>same as previous
+			</p>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Character classes:&nbsp;&nbsp;  \d \w \s and .</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\d</span>matches a single character that is a digit
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\w</span>matches a word character (alphanumeric character plus underscore)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\s?</span>matches a whitespace character (includes tabs and line breaks)
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">\.</span>matches any character
+			</p>
 	</section>
 </body>
 </html>
