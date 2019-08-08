@@ -51,10 +51,17 @@
 								<a href="#section2"><i class="ion-ios-clock-outline"></i>Tokenization</a>
 							</li>
 							<li>
+
 								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>Text Preprocessing</a>
 							</li>
 						 	<li>
 								<a href="#section4"><i class="ion-ios-clock-outline"></i>Regular Expressions</a>
+
+								<a href="#section3"><i class="ion-ios-color-filter-outline">Text Preprocessing</i></a>
+							</li>
+						 	<li>
+								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
+
 							</li>
 							<li>
 								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>POS Tagging</a>
@@ -111,6 +118,7 @@
 				<ul>
 					<h2></h2>
 					<li>
+
 						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span style="color: #00FF00">&#8227 Home Page</span></a>
 					</li>
 					<li>
@@ -124,6 +132,21 @@
 					</li>
 					<li>
 						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #00FF00">&#8227 Learning Page</span></a>
+
+						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span style="color: #FFCF75">&#8227 Home Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 About Pito</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 About Bart</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 Projects Page</span></a>
+					</li>
+					<li>
+						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 Learning Page</span></a>
+
 					</li>
 				</ul>
 			</nav>
@@ -140,7 +163,11 @@
 			</p>
 		</div>
 		<div id="section2">
+
 			<br/><a class="topic" style="text-decoration: underline;">Tokenization</a><br/>
+
+			<br/><a class="topic" style="text-decoration: underline;">Tokenization:</a><br/>
+
 			<br/><h2 class="basicText">1. Description:</h2>
 			<p class="basicText2">
 				<br/>&bull; <span style="font-weight: bold; font-size: 1.0vw;">The process of segmenting running text into words and sentences.</span>
@@ -154,6 +181,7 @@
 		</div>
 		<div id="section3">
 			<br/><a class="topic" style="text-decoration: underline;">Text Preprocessing:</a><br/>
+
 			<br/><h2 class="basicText">What is text preprocessing?</h2>
 			<p class="basicText2">
 				<br/>&bull; To preprocess your text simply means to bring your text into a form that is <span style="font-weight: bold; font-size: 1.0vw;">predictable</span> and <span style="font-weight: bold; font-size: 1.0vw;">analyzable</span> for your task. A task here is a combination of approach and domain. For example, extracting 
@@ -262,6 +290,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">d(?!r)</span>matches a d only if is not followed by r, but r will not be part of the overall regex match
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?&lt;!r)d</span>matches a d only if is not preceded by an r, but r will not be part of the overall regex match
 			</p>
+
 		</div>
 		<div id="section5">
 			<br/><a class="topic" style="text-decoration: underline;">Part-Of-Speech (POS) Tagging:</a><br/>
@@ -285,6 +314,16 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Deep Learning Methods</span>  Recurrent Neural Networks can also be used for POS tagging.
 			</p>
 		</div>
+
+
+			<br/><h2 class="basicText">1. Description:</h2>
+			<p class="basicText2">
+				<br/>&bull; <span style="font-weight: bold; font-size: 1.0vw;">The process of segmenting running text into words and sentences.</span>
+				<br/><br/><a href="https://www.ibm.com/developerworks/community/blogs/nlp/entry/tokenization?lang=en" style="font-weight: bold; text-decoration: underline; color: black; font-size: 1.2vw;">The Art of Tokenization</a>
+			</p>
+		</div>
+
+
 	</section>
 </body>
 </html>

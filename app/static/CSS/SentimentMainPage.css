@@ -7,10 +7,10 @@ body {
 	color: black;
 }
 h2 {
-	font-size: 1.8em;
+	font-size: 3.0em;
 }
 p {
-	font-size: 0.8em;
+	font-size: 1.3em;
 }
 .ml-container {
 	align-items: center;
@@ -48,6 +48,7 @@ p {
 	color: #ffffff;
 	font-size: 15px;
 }
+
 .text {
 	height: 20px;
 	width: 140px;
@@ -70,7 +71,7 @@ p {
 	background-image: url("../views/newspaper.jpeg");
 	position: absolute;
 	bottom: 20%;
-	left: 25%;
+	left: 58%;
 	border-radius: 30px;
 	border-color: snow;
 }

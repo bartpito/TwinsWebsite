@@ -76,26 +76,27 @@ ul.a {
 	justify-content: center;
 }
 .service-box{
-	max-width: 33.33%;
+	max-width: 20%;
 	padding: 10px;
 	text-align: center;
 	color: white;
-	cursor: pointer;
+	cursor: default;
 }
 .service-icon{
 	display: inline-block;
-	width: 70px;
-	height: 70px;
+	width: 50px;
+	height: 50px;
 	border: 3px solid rgb(252, 207, 14);
 	color: rgb(252, 207, 14);
 	background-color: transparent;
 	transform: rotate(45deg);
 	margin-bottom: 30px;
 	margin-top: 16px;
+	cursor: default;
 	transition: 0.3s linear;
 }
 .service-icon i{
-	line-height: 70px;
+	line-height: 45px;
 	transform: rotate(-45deg);
 	font-size: 26px;
 }
