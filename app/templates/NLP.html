@@ -267,10 +267,22 @@
 			<br/><a class="topic" style="text-decoration: underline;">Part-Of-Speech (POS) Tagging:</a><br/>
 			<br/><h2 class="basicText">Generative VS Discriminative Models:</h2>
 			<p class="basicText2">
-					<br/><br/><img img class='imgPos' src="../static/views/gvsd.png" alt="gen vs disc model" style="margin-left: 20%">
-					<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Generative Algorithm</span> models how the data was generated in order to categorize a signal. It asks the question: based on my generation 
-					assumptions, which category is most likely to generate this signal?
-					<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Discriminative Algorithm</span> does not care about how the data was generated, it simply categorizes a given signal.
+				<br/><br/><img img class='imgPos' src="../static/views/gvsd.png" alt="gen vs disc model" style="margin-left: 20%">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Generative Algorithm</span> models how the data was generated in order to categorize a signal. It asks the question: based on my generation 
+				assumptions, which category is most likely to generate this signal?
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Discriminative Algorithm</span> does not care about how the data was generated, it simply categorizes a given signal.
+			</p>
+			<br/><h2 class="basicText">Goal:</h2>
+			<p class="basicText2">
+				<br/>POS tagging is the process of marking up a word in a corpus to a corresponding part of a speech tag, based on its context and definition.
+			</p>
+			<br/><br/><h2 class="basicText">The Different POS Tagging Techniques</h2>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Lexical Based Methods</span>  Assigns the POS tag the most frequently occurring with a word in the training corpus.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Rule-Based Methods</span> Assigns POS tags based on rules. For example, we can have a rule that says, words ending 
+				with “ed” or “ing” must be assigned to a verb. Rule-Based Techniques can be used along with Lexical Based approaches to allow POS Tagging of words that are not present in the training corpus but are there in the testing data.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Probabilistic Methods</span>  This method assigns the POS tags based on the probability of a particular tag sequence occurring. Conditional Random Fields (CRFs) and Hidden Markov Models (HMMs) are probabilistic approaches to assign a POS Tag.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Deep Learning Methods</span>  Recurrent Neural Networks can also be used for POS tagging.
 			</p>
 		</div>
 	</section>
