@@ -5,6 +5,9 @@
 	<link href="{{ url_for('static', filename='CSS/SentimentResults.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<form action="{{ url_for('sentiment') }}">
+		<input id='btnBack' type='submit' value='BACK'>
+	</form>
 	<div class="results" style='margin: auto;'>
 		<h3><u>Topic Title:</u></h3>
 		{% if prediction == 1%}

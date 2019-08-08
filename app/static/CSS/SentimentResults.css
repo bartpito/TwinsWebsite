@@ -43,4 +43,14 @@ h3 {
 	background-image: url('../views/smile.jpg');
 }
 
+#btnBack {
+	width: 100px;
+	height: 32;
+	background-color: #ccc;
+	color: black;
+	border: 2px solid black;
+	border-radius: 13px;
+	font-size: 1.2em;
+}
+
 
