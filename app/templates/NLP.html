@@ -256,12 +256,18 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<foo>[abc])\k<foo></foo></span>we put the name foo to the group and we reference it later (\k<foo>). The result is the same of the first regex
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Look-ahead and Look-behind:&nbsp;&nbsp; (?=) and (?<=) </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Look-ahead and Look-behind:&nbsp;&nbsp; (?=) and (?&lt;=) </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">d(?=r)</span>matches a d only if is followed by r, but r will not be part of the overall regex match
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<=r)d</span>matches a d only if is preceded by an r, but r will not be part of the overall regex match
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?&lt;=r)d</span>matches a d only if is preceded by an r, but r will not be part of the overall regex match
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">d(?!r)</span>matches a d only if is not followed by r, but r will not be part of the overall regex match
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<!r)d</span>matches a d only if is not preceded by an r, but r will not be part of the overall regex match
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?&lt;!r)d</span>matches a d only if is not preceded by an r, but r will not be part of the overall regex match
 			</p>
+			<div id="section5">
+				<br/><a class="topic" style="text-decoration: underline;">Part-Of-Speech (POS) Tagging:</a><br/>
+				<br/><h2 class="basicText">Generative VS Discriminative Models:</h2>
+				<p class="basicText2">
+					<br/><br/><img img class='imgPos' src="../static/views/gvsd.png" alt="gen vs disc model" style="margin-left: 20%">
+				</p>
 	</section>
 </body>
 </html>
