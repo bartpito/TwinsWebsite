@@ -129,6 +129,7 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 .topic-decoration {
+    color: #00FF00;
     font-weight: bold;
 }
 .topic {
@@ -152,10 +153,10 @@ h2.basicText {
     margin-left: 20%; 
     margin-right: 15%; 
     text-align: left;
-    font-size: height: 75%;
-    position: rheight: 75%;
+    font-size: 1vw;
+    position: relative
 }
-h2.basicText2 {height: 75%;
+h2.basicText2 {
     font-size:1vw;
 } 
 .imgPos {
@@ -175,10 +176,6 @@ h2.basicText2 {height: 75%;
 }
 #section4 {
     height: 430%;
-    background-color: white;
-}
-#section4 {
-    height: 125%;
     background-color: white;
 }
 #section5 {
