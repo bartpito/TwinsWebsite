@@ -12,7 +12,11 @@ from keras.models import load_model
 from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 from flask_nav import Nav
 from flask import Flask, render_template, url_for, request
+<<<<<<< HEAD
 from flask_socketio import SocketIO, send
+=======
+from flask import request
+>>>>>>> react-front
 
 
 
@@ -42,10 +46,9 @@ global graph
 graph = tf.get_default_graph()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('mainpage.html')
-
 
 @app.route('/About/<name>')
 def about(name=None):
@@ -108,4 +111,8 @@ def handleMessage(msg):
     send(msg, broadcast=True)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     socketio.run(app, host='0.0.0.0', debug=True, port=5002)
+=======
+    app.run(debug=True, host='localhost', port=5002)
+>>>>>>> react-front

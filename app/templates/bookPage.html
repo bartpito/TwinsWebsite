@@ -105,6 +105,17 @@
 						</ul>
 					</li>
 					<li>
+						<a href="#"><i class="ion-bag"></i> <span>RL</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section14"><i class="ion-ios-clock-outline"></i>Models</a>
+							</li>
+							<li>
+								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>Agent</a>
+							</li>
+						</ul>
+					</li>
+					<li>
 						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span>Home Page</span></a>
 				  	</li>
 					<li>
@@ -598,6 +609,7 @@
 				<br/>But the best learning rate in general is one that decreases as the model approaches a solution. To achieve this effect, we have another hyperparameter, the learning rate decay, which is used to decrease the learning rate as epochs go by to allow learning to advance faster at the beginning with larger learning rates. As progress is made, smaller and smaller adjustments are made to facilitate the convergence of the training process to the minimum of the loss function.
 			</p>
 		</div>
+<<<<<<< HEAD
 		<div id="section12">
 			<a class="topic" style="text-decoration: underline;">Keras Layers:</a><br/>
 			<br/><h2 class="basicText" style="font-size: 1.1vw;">About Keras Layers:</h2>
@@ -909,6 +921,23 @@
 				<br/>if return_state: a list of tensors. The first tensor is the output. The remaining tensors are the last states, each with shape (batch_size, units). For example, the number of state tensors is 1 (for RNN and GRU) or 2 (for LSTM).
 				<br/>if return_sequences: 3D tensor with shape  (batch_size, timesteps, units).
 				<br/>else, 2D tensor with shape (batch_size, units).
+=======
+		<div id="section14">
+			<a class="topic" style="text-decoration: underline;">MODELS</a><br/>
+			<p class="basicText">
+				<span style="font-weight: bold;">Hello</span> What is oging on?
+			</p>
+		</div>
+		<div id="section15">
+			<a class="topic" style="text-decoration: underline;">Agents</a><br/>
+			<p class="basicText">
+				<span style="font-weight: bold;">Agents</span>I have a lot of agents 
+			</p>
+		</div>
+	</section>
+</body>
+</html>
+>>>>>>> react-front
 
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">2. LSTM:</span>
 				<br/><span style="font-weight: bold; font-size: 0.9vw;">keras.layers.LSTM</span>(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', unit_forget_bias=True, kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, implementation=1, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)

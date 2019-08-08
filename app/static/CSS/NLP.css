@@ -42,7 +42,11 @@ a:hover{
     display: block;
     padding: 0.8em ;
     font-weight: bold;
+<<<<<<< HEAD
     color: #00FF00;
+=======
+    color: #AAF200;
+>>>>>>> react-front
 }
 
 .sidebar h2 {
@@ -129,7 +133,11 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 .topic-decoration {
+<<<<<<< HEAD
     color: #00FF00;
+=======
+    color: #FF8000;
+>>>>>>> react-front
     font-weight: bold;
 }
 .topic {
@@ -171,11 +179,19 @@ h2.basicText2 {
     background-color: white;
 }
 #section3 {
+<<<<<<< HEAD
     height: 145%;
     background-color: white;
 }
 #section4 {
     height: 400%;
+=======
+    height: 75%;
+    background-color: white;
+}
+#section4 {
+    height: 125%;
+>>>>>>> react-front
     background-color: white;
 }
 #section5 {

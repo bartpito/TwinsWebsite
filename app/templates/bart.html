@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" style="background-color:hsl(189, 10%, 16%)">
   <head>
     <meta charset="utf-8">
-    <title>{{ name }}</title>
+    <title>Bart</title>
     <link rel="stylesheet"  href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/bart.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
     {% block navbar %}
     <nav class="navbar navbar-expand-sm" style="background-color: transparent; 
     color: pink; width: 400px; border:2px solid white; border-radius: 30px; margin-left: 20px; 
-    margin-top: 10px; font-size:0.8em;">
+    margin-top: 10px; margin-left: 39.4%;font-size:0.8em; ;">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav list-item", style='list-style-type: none;'>
           <li class="nav-item active list-item">
@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
             <div class="pito">
-              <a style="color:white;font-weight: bold" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
+              <a style="color:white;font-weight: bold;" class="nav-link" href="{{ url_for( 'about', name='pito' ) }}">About Pito</a>
             </div>
           </li>
           <li class="nav-item">
@@ -35,19 +35,23 @@
         </ul>
       </div>
     </nav>
-    {% endblock %}
-    <section class='one'>
+    {% endblock %} 
+    <section class='one', style='padding-top: 40px;'>
+        <p style="text-align:center;">I am 21 years old studdent of mathematical analysis and data analysis currently<br> enrolled in University of Gdansk in Poland.</p>
     <div class="services-section">
+
       <div class="inner-width">
-        <h1 class="section-title">I am interested in</h1>
+
+        <h1 class="section-title" style='background-image: linear-gradient(to left, blue, green, yellow, orange, red);
+         color:transparent; -webkit-background-clip: text;'>I am interested in</h1>
         <div class="border"></div>
         <div class="services-container">
 
           <div class="service-box">
             <div class="service-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-robot"style='color:rgb(210, 26, 26)'></i>
             </div>
-            <div class="service-title">AI / ML</div>
+            <div class="service-title" style='color:rgb(210, 26, 26)'>AI / ML</div>
             <div class="service-desc">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
             </div>
@@ -55,9 +59,9 @@
 
           <div class="service-box">
             <div class="service-icon">
-              <i class="fas fa-edit"></i>
+              <i class="fas fa-edit" style='color:orange'></i>
             </div>
-            <div class="service-title">NLP</div>
+            <div class="service-title" style='color:orange'>NLP</div>
             <div class="service-desc">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
             </div>
@@ -65,9 +69,9 @@
 
           <div class="service-box">
             <div class="service-icon">
-              <i class="fas fa-cogs"></i>
+              <i class="fas fa-cogs" style='color:yellow'></i>
             </div>
-            <div class="service-title">RL</div>
+            <div class="service-title" style='color:yellow'>RL</div>
             <div class="service-desc">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
             </div>
@@ -75,9 +79,9 @@
 
           <div class="service-box">
             <div class="service-icon">
-              <i class="fab fa-python"></i>
+              <i class="fab fa-python" style='color: rgb(29, 56, 179)'></i>
             </div>
-            <div class="service-title">Python</div>
+            <div class="service-title" style='color: rgb(29, 56, 179)'>Python</div>
             <div class="service-desc">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque ratione rem porro, nihil.
             </div>
@@ -86,13 +90,42 @@
       </div>
     </div>
     <div class='img-section'>
-      <img src='../static/views/user.jpg', style='width:100%;'>
+      <img src='../static/views/user.jpg', style='width:100%; margin-left: -5%;'>
     </div>
     </section>
     <section class='two'>
-      <div class='about-section' >
-         <br/><br/><img src='../static/views/aboutme.png', style='width:100%;  border-radius: 2px;'>
+      <div class='about-section'>
+
+        <h2>Email</h2>
+        <textarea id="myText1" class='myText' rows="1" cols="35" spellcheck="false">bartek.szmelczynski@gmail.com</textarea><br/>
+        <button id='btn1' class="btnCopy" onclick="copyArea('btn1', 'myText1')">Copy</button>
+
+        <h2>LinkedIn</h2>
+        <textarea id="myText2" class='myText' rows="1" cols="35" spellcheck="false">www.LinkedIn.com/bartekkz</textarea><br/>
+        <button id='btn2' class="btnCopy" onclick="copyArea('btn2', 'myText2')">Copy</button>
+
+        <h2 class='rainbow-text'>Github</h2>
+        <textarea id="myText3" class='myText' rows="1" cols="35" spellcheck="false">www.Github.com/bartekkz</textarea><br/>
+        <button id='btn3' class="btnCopy" onclick="copyArea('btn3', 'myText3')">Copy</button>
+
       </div>
+      <script>
+        function copyArea(btn, text) {        
+          var button = document.getElementById(btn);
+          if (button.style.backgroundColor == 'black') {
+            button.style.backgroundColor = 'white';
+            button.style.color = 'black'
+          } else {
+            button.style.backgroundColor = 'black';
+            button.style.color = 'white'
+          }          
+          button.addEventListener("click", function() {
+            var copyText = document.getElementById(text);
+            copyText.select();
+            document.execCommand("Copy");
+        })};
+      </script>
     </section>
+
   </body>
 </html>

@@ -24,22 +24,23 @@ h3 {
 	line-height: -20px;
 	margin: auto;
 }
-.image-smile{
+
+
+.image {
 	height: 122px;
 	width: 122px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 60px;
-	background-image: url('../views/smile.jpg') ;
 }
-.image-angry{
-	height: 122px;
-	width: 122px;
-	bottom: 490px;
-	margin-left: 405px;
-	border-radius: 60px;
-	background-image: url('../views/mad.jpg') ;
-	overflow: hidden;
-	position: absolute;
+
+.angry {
+	background-image: url('../views/mad.jpg');
 }
+
+.smile {
+	background-image: url('../views/smile.jpg');
+}
+
+

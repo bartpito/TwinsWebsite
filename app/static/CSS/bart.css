@@ -1,11 +1,13 @@
 html {
   background-color: hsl(189, 10%, 16%);
+  -webkit-tap-highlight-color:transparent;
 }
 
 
 p {
-  color: black;
-  font-size: 1.0em;
+  color: #ccc;
+  font-size: 1.3em;
+
 }
 
 
@@ -13,6 +15,9 @@ section {
   padding: 54vh 0;
 }
 
+li a {
+  font-family: cursive;
+}
 
 .one {
   padding-top: 10px;
@@ -24,7 +29,6 @@ section {
 .two {
   background: hsl(189, 10%, 16%);
   padding-bottom: 40px;
-
 }
 
 img {
@@ -53,16 +57,27 @@ ul.a {
 .about-section {
   background: hsl(189, 10%, 16%);
   text-align: center;
-  height: 300px;
+  position: absolute;
+  height: 400px;
   width: 500px;
-  margin-top: -25%;
-  margin-left: 38%;
- 
+  margin-top: -27%;
+  margin-left: 36%;
+}
+
+.about-section h2 {
+  font-family: cursive;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+  color: transparent;
+  padding-top: 10px;
+
 }
 .services-section{
   background-size: cover;
   padding: 60px 0;
   background: hsl(189, 10%, 16%);
+  text-align: center;
+  display: inline-block;
+  margin-left: 17.3%;
 }
 .inner-width{
   width: 100%;
@@ -90,33 +105,34 @@ ul.a {
 }
 
 .service-box{
-  max-width: 33.33%;
+  max-width: 20%;
   padding: 10px;
   text-align: center;
   color: white;
-  cursor: pointer;
+  cursor: default;
+  margin-right: 50px;
 }
 
 .service-icon{
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border: 3px solid white;
   color: white;
   background-color: transparent;
   transform: rotate(45deg);
   margin-bottom: 30px;
   margin-top: 16px;
+  cursor: default;
   transition: 0.3s linear;
 }
 .service-icon i{
-  line-height: 70px;
+  line-height: 45px;
   transform: rotate(-45deg);
   font-size: 26px;
 }
 .service-box:hover .service-icon{
-  background: purple;
-  color: black;
+  background-color: black;
 }
 .service-title{
   font-size: 18px;
@@ -125,6 +141,23 @@ ul.a {
 }
 .service-desc{
   font-size: 14px;
+}
+
+.btnCopy {
+  color: black; 
+  width: 80px;
+  height: 24px;
+  line-height: 50%;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+.myText {
+  background-color: hsl(189, 10%, 16%);
+  color: #ccc;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 @media screen and (max-width:960px) {
@@ -144,3 +177,4 @@ ul.a {
     max-width: 100%;
   }
 }
+
