@@ -12,6 +12,7 @@ from keras.models import load_model
 from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 from flask_nav import Nav
 from flask import Flask, render_template, url_for, request
+from flask import request
 
 
 
@@ -39,10 +40,9 @@ global graph
 graph = tf.get_default_graph()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('mainpage_1.html')
-
+    return render_template('mainpage.html')
 
 @app.route('/About/<name>')
 def about(name=None):

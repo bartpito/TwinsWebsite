@@ -1,5 +1,5 @@
 html {
-  background: url(../views/image04.jpg) no-repeat center center fixed;
+  background: url('image1.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,20 +28,23 @@ section {
 }
 
 .btn {
-  width: 320px;
-  height: 80px;
+  width: 250px;
+  height: 60px;
   background-color: transparent;
-  font-size: 2.3em;
-  color: rgb(255, 185, 185);
+  font-size: 2.0em;
+  color:  #ccc;  
   font-family: 'Montserrat', sans-serif;
-  padding-top: px;
   transition: all .6s;
   cursor: pointer;
+  border: 3px solid #ccc;
+  border-radius: 15px;
+  margin-top: 15%;
   z-index: 1;
   display: inline-block;
 }
 .btn:hover {
-  background-color: white;
+  background-color: #ccc;
+  color: rgb(37, 37, 46);
 }
 .semi-transparent-button {
   display: block;
