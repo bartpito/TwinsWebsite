@@ -338,9 +338,25 @@
 		</div>
 		<div id="section7">
 			<br/><a class="topic" style="text-decoration: underline;">Named Entity Recognition (NER)</a><br/>
-			<br/><h2 class="basicText">&bull; What is Dependency parsing?</h2>
+			<br/><h2 class="basicText">&bull; Description</h2>
 			<p class="basicText2">
-				
+				In our sentence, we have the following nouns:
+				<br/><br/><img img class='imgPos' src="../static/views/ner1.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>Some of these nouns present real things in the world. For example, “London”, “England” and “United Kingdom” represent physical places on a map. It would be nice to be able to detect that! With that information, we could automatically extract a list of real-world places mentioned in a document using NLP.
+				<br/><br/>The goal of Named Entity Recognition, or NER, is to detect and label these nouns with the real-world concepts that they represent. Here’s what our sentence looks like after running each token through our NER tagging model:
+				<br/><br/><img img class='imgPos' src="../static/views/ner2.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>But NER systems aren’t just doing a simple dictionary lookup. Instead, they are using the context of how a word appears in the sentence and a statistical model to guess which type of noun a word represents. A good NER system can tell the difference between “Brooklyn Decker” the person and the place “Brooklyn” 
+				using context clues.
+				<br/><br/>Here are just some of the kinds of objects that a typical NER system can tag:
+				<ul class="basicText2">
+					<li>People’s names</li>
+					<li>Company names</li>
+					<li>Geographic locations (Both physical and political)</li>
+					<li>Product names</li>
+					<li>Dates and times</li>
+					<li>Amounts of money</li>
+					<li>Names of events</li>
+				</ul>
 			</p>
 		</div>
 	</section>
