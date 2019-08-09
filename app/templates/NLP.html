@@ -304,9 +304,27 @@
 		</div>
 		<div id="section7">
 			<br/><a class="topic" style="text-decoration: underline;">Dependency Parsing</a><br/>
-			<br/><h2 class="basicText">&bull; What are stop words?</h2>
+			<br/><h2 class="basicText">&bull; What is Dependency parsing?</h2>
+			<br/><p class="basicText2">
+				Dependency parsing figure out how all the words in a sentence relate to each other.
+			</p>
+			<br/><h2 class="basicText">&bull; GOAL:</h2>
 			<p class="basicText2">
-				
+					The goal is to build a tree that assigns a single parent word to each word in the sentence. The root of the tree will be the main verb in the sentence. 
+			</p>
+			<br/><br/><img img class='imgPos' src="../static/views/dp1.png" alt="dp1" style="margin-left: 20%">
+			<br/><br/><p class="basicText2">
+				But we can go one step further. In addition to identifying the parent word of each word, we can also predict the type of relationship that exists between those two words:
+				<br/><br/><img img class='imgPos' src="../static/views/dp2.png" alt="dp2" style="margin-left: 20%">
+			</p>
+			<br/><br/><h2 class="basicText">&bull; Finding Noun Phrases:</h2>
+			<p class="basicText2">
+				<br/>So far, we’ve treated every word in our sentence as a separate entity. But sometimes it makes more sense to group together the words that represent a single idea or thing. We can use the information from the dependency parse tree to automatically group together words that are all talking about the same thing.
+				<br/><br/>For example, instead of this:
+				<br/><br/><img img class='imgPos' src="../static/views/dp3.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>We can group the noun phrases to generate this:
+				<br/><br/><img img class='imgPos' src="../static/views/dp4.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>Whether or not we do this step depends on our end goal. But it’s often a quick and easy way to simplify the sentence if we don’t need extra detail about which words are adjectives and instead care more about extracting complete ideas.
 			</p>
 		</div>
 	</section>
