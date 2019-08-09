@@ -162,6 +162,10 @@ h2.basicText2 {
 .imgPos {
     position: relative;
 }
+#section0 {
+    height: 50%;
+    background-color: white;
+}
 #section1 {
     height: 70%;
     background-color: white;
@@ -183,7 +187,7 @@ h2.basicText2 {
     background-color: white;
 }
 #section6 {
-    height: 140%;
+    height: 70%;
     background-color: white;
 }
 #section7 {
