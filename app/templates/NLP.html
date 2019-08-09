@@ -69,7 +69,7 @@
 									<a href="#section8"><i class="ion-ios-clock-outline"></i>NER</a>
 							</li>
 							<li>
-										<a href="#section9"><i class="ion-ios-clock-outline"></i>Stop Words</a>
+										<a href="#section9"><i class="ion-ios-clock-outline"></i>SCoreference Resolution</a>
 							</li>
 						</ul>
 					</li>
@@ -336,7 +336,7 @@
 				<br/><br/>Whether or not we do this step depends on our end goal. But it’s often a quick and easy way to simplify the sentence if we don’t need extra detail about which words are adjectives and instead care more about extracting complete ideas.
 			</p>
 		</div>
-		<div id="section7">
+		<div id="section8">
 			<br/><a class="topic" style="text-decoration: underline;">Named Entity Recognition (NER)</a><br/>
 			<br/><h2 class="basicText">&bull; Description</h2>
 			<p class="basicText2">
@@ -348,7 +348,7 @@
 				<br/><br/>But NER systems aren’t just doing a simple dictionary lookup. Instead, they are using the context of how a word appears in the sentence and a statistical model to guess which type of noun a word represents. A good NER system can tell the difference between “Brooklyn Decker” the person and the place “Brooklyn” 
 				using context clues.
 				<br/><br/>Here are just some of the kinds of objects that a typical NER system can tag:
-				<ul class="basicText2">
+				<br/><br/><ul class="basicText2">
 					<li>People’s names</li>
 					<li>Company names</li>
 					<li>Geographic locations (Both physical and political)</li>
@@ -359,6 +359,16 @@
 				</ul>
 			</p>
 		</div>
+		<div id="section9">
+			<br/><a class="topic" style="text-decoration: underline;">Coreference Resolution</a><br/>
+			<br/><h2 class="basicText">&bull; Description</h2>
+			<p class="basicText2">
+					<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
+					<br/><br/>Let’s look at the third sentence in our document:
+					<br/><br/>“It was founded by the Romans, who named it Londinium.”
+					<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
+					<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
+			</p>
 	</section>
 </body>
 </html>
