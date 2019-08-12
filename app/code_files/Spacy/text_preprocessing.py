@@ -8,8 +8,9 @@ performs lexical analysis may be termed a lexer, tokenizer,[1] or scanner, thoug
 is also a term for the first stage of a lexer. A lexer is generally combined with a parser, 
 which together analyze the syntax of programming languages, web pages, and so forth.'''
 
+#Processing text with the nlp object returns a Doc object that holds all information about the tokens, their linguistic features and their relationships.
 doc = spacy_nlp(article)
+
+#Accessing token attributes
 tokens = [token.text for token in doc]
-print('Originl article: ',  article)
-print('\n\n')
-print(tokens)
+
