@@ -46,3 +46,11 @@ doc = spacy_nlp('First sentence. Second sentence.')
 sents = [sent.text for sent in doc.sents]
 
 #Base noun phrases (needs the tagger and parser)
+doc = spacy_nlp('I have a red car and I love football')
+chunks = [chunk.text for chunk in doc.noun_chunks]
+
+print(chunks)
+print()
+#Label explanations
+print(spacy.explain('RB'))
+print(spacy.explain('GPE'))
