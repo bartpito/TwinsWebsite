@@ -14,3 +14,20 @@ doc = spacy_nlp(article)
 #Accessing token attributes
 tokens = [token.text for token in doc]
 
+#Accessing spans
+span = doc[2:4]
+
+#Creating a span manually
+from spacy.tokens import Span
+
+# Span for "New York" with label GPE (geopolitical)
+doc = spacy_nlp('I live in New York')
+span = Span(doc, 3, 5, label="GPE")
+
+#Attributes return label IDs. For string labels, use the attributes with an underscore. For example, token.pos_.
+
+#Part-of-speech tags
+doc = spacy_nlp('this is a text')
+pos = [token.pos_ for token in doc]
+tag = [token.tag_ for token in doc]
+
