@@ -37,6 +37,12 @@ dep = [token.dep_ for token in doc]
 # Syntactic head token (governor)
 head = [token.head.text for token in doc]
 
-print(dep)
-print()
-print(head)
+#Named Entities
+doc = spacy_nlp('Larry Page founded Google')
+ne = [(ent.text, ent.label_) for ent in doc.ents]
+
+#Sentences (usually needs the dependency parser)
+doc = spacy_nlp('First sentence. Second sentence.')
+sents = [sent.text for sent in doc.sents]
+
+#Base noun phrases (needs the tagger and parser)
