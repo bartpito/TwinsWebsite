@@ -94,5 +94,29 @@ Doc.set_extension('reversed', getter=get_reversed)
 #print(doc._.reversed)
 
 #Method extensions (callable method)
-has_label = lambda span, label: span.label == label
+has_label = lambda span, label: span.label_ == label
 Span.set_extension('has_label', method=has_label)
+
+#Rule-based matching
+#Using the Matcher
+
+# Matcher is initialized with the shared vocab
+from spacy.matcher import Matcher
+matcher = Matcher(spacy_nlp.vocab)
+pattern = [{'LOWER': 'new'}, {'LOWER': 'york'}]
+matcher.add('CITIES', None, pattern)
+
+doc = spacy_nlp('I live in the New York')
+matches = matcher(doc)
+
+for match_id, start, end in matches:
+    span = doc[start:end]
+    #print(span.text)
+
+#Token patterns
+# "love cats", "loving cats", "loved cats"
+pattern1 = [{"LEMMA": "love"}, {"LOWER": "cats"}]
+# "10 people", "twenty people"
+pattern2 = [{"LIKE_NUM": True}, {"TEXT": "people"}]
+# "book", "a cat", "the sea" (noun + optional article)
+pattern3 = [{"POS": "DET", "OP": "?"}, {"POS": "NOUN"}]
