@@ -31,3 +31,12 @@ doc = spacy_nlp('this is a text')
 pos = [token.pos_ for token in doc]
 tag = [token.tag_ for token in doc]
 
+#Syntactic dependencies
+dep = [token.dep_ for token in doc]
+
+# Syntactic head token (governor)
+head = [token.head.text for token in doc]
+
+print(dep)
+print()
+print(head)
