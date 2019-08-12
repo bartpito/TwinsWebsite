@@ -65,6 +65,34 @@ doc = spacy_nlp('Larry Page founded Google')
 #To use word vectors, you need to install the larger models ending in md or lg , for example en_core_web_lg.
 
 #Pipeline information
-print(spacy_nlp.pipe_names)
-print()
-print(spacy_nlp.pipeline)
+#print(spacy_nlp.pipe_names)
+#print(spacy_nlp.pipeline)
+
+#Custom components
+def custom_component(doc):
+    print('Do something to the doc here')
+    return doc
+
+
+#Add the component first in the pipeline
+spacy_nlp.add_pipe(custom_component, first='true')
+
+#Components can be added first, last (default), or before or after an existing component.
+
+#Extension attributes
+#Custom attributes that are registered on the global Doc, Token and Span classes and become available as ._.
+from spacy.tokens import Doc, Token, Span
+doc = spacy_nlp("The sky over New York is blue")
+
+#Attribute extensions (with default value)
+Token.set_extension('is_color', default='False')
+doc[6]._.is_color = True
+
+#Property extensions (with getter & setter)
+get_reversed = lambda doc: doc.text[::-1]
+Doc.set_extension('reversed', getter=get_reversed)
+#print(doc._.reversed)
+
+#Method extensions (callable method)
+has_label = lambda span, label: span.label == label
+Span.set_extension('has_label', method=has_label)
