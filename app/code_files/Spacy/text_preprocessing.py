@@ -50,14 +50,21 @@ doc = spacy_nlp('I have a red car and I love football')
 chunks = [chunk.text for chunk in doc.noun_chunks]
 
 #Label explanations
-print(spacy.explain('RB'))
-print(spacy.explain('GPE'))
+#print(spacy.explain('RB'))
+#print(spacy.explain('GPE'))
 
 #Visualizing
 from spacy import displacy
 
 doc = spacy_nlp('this is a sentence')
-displacy.serve(doc, style='dep')
+#displacy.serve(doc, style='dep')
 
 doc = spacy_nlp('Larry Page founded Google')
-displacy.serve(doc, style='ent')
+#displacy.serve(doc, style='ent')
+
+#To use word vectors, you need to install the larger models ending in md or lg , for example en_core_web_lg.
+
+#Pipeline information
+print(spacy_nlp.pipe_names)
+print()
+print(spacy_nlp.pipeline)
