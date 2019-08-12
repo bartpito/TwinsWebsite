@@ -49,8 +49,15 @@ sents = [sent.text for sent in doc.sents]
 doc = spacy_nlp('I have a red car and I love football')
 chunks = [chunk.text for chunk in doc.noun_chunks]
 
-print(chunks)
-print()
 #Label explanations
 print(spacy.explain('RB'))
 print(spacy.explain('GPE'))
+
+#Visualizing
+from spacy import displacy
+
+doc = spacy_nlp('this is a sentence')
+displacy.serve(doc, style='dep')
+
+doc = spacy_nlp('Larry Page founded Google')
+displacy.serve(doc, style='ent')
