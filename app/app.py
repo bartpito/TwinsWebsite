@@ -48,7 +48,7 @@ graph = tf.get_default_graph()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('mainpage.html')
+    return render_template('landingPage.html')
 
 @app.route('/About/<name>')
 def about(name=None):
