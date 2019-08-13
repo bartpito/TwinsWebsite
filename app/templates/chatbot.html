@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>WeatherBot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/chatbot.css') }}">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
+    <form class='back' action="{{ url_for('projectsPage') }}">
+        <input id='btnBack' type='submit' value='<<< Projects Page'>
+    </form>
+
+    <div class='main'>
+        <button class='fullMode btnBot' type='button'  onclick="loadBot(true)">Full mode</button>
+        <button class='winMode btnBot' type='button'  onclick="loadBot(false)">Window mode</button>
+    </div>
+
 <div id="webchat">
 <script src="https://storage.googleapis.com/mrbot-cdn/webchat-0.4.1.js"></script>
 <script>
-    WebChat.default.init({
-        selector: "#webchat",
-        initPayload: "hello",
-        interval: 1000, // 1000 ms between each message
-        customData: {"hello": "hello"}, // arbitrary custom data. Stay minimal as this will be added to the socket
-        socketUrl: "http://localhost:5500",
-        socketPath: "/socket.io/",
-        title: "Your",
-        subtitle: "Bot",
-        profileAvatar: "../static/icon_bot.jpeg",
-    })
+    function loadBot(mode) {
+        if (mode == true) {
+            document.location.href = 'fullMode';
+        } else if (mode == false) {
+            document.location.href = 'winMode';
+        };
+    };
 </script>
 </body>
 </html>
 
-chatbot

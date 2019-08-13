@@ -36,11 +36,18 @@ cmdline:
 init_learning:
 	rasa run actions --actions actions&  rasa interactive -m models/20190716-155457.tar.gz \
 	  --endpoints endpoints.yml
-
-run_bot:
-	./app.py& \
+action:
 	rasa run actions --actions actions& \
 	rasa run --credentials ./chatbot/credentials.yml \
 	-m ./chatbot/models/20190719-122925.tar.gz \
+	-p 5500
+
+
+# change dir of rasa dependencies
+run_bot:
+	./app.py& \
+	rasa run actions --actions actions& \
+	rasa run --credentials credentials.yml \
+	-m ./models/20190719-122925.tar.gz \
 	-p 5500
 
