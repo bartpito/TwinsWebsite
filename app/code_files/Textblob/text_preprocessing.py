@@ -26,5 +26,16 @@ plural  = sentence.words.pluralize()
 from textblob import Word
 w = Word('went')
 lemm = w.lemmatize('v') # Pass in WordNet part of speech (verb)
-print(lemm)
+
+#WordNet Integration
+from textblob.wordnet import VERB
+word = Word("computer")
+synsets_computer =  word.synsets
+
+#You can also create synsets directly.
+from textblob.wordnet import Synset
+computer = Synset('pc.n.01')
+word = Word("computer")
+print(computer.synsets)
+
 
