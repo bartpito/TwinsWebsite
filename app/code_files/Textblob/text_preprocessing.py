@@ -35,7 +35,24 @@ synsets_computer =  word.synsets
 #You can also create synsets directly.
 from textblob.wordnet import Synset
 computer = Synset('pc.n.01')
-word = Word("computer")
-print(computer.synsets)
 
+#Spelling Correction
+sent = TextBlob("I haawve goood speling")
+correct_sent = sent.correct()
 
+w = Word("haave")
+spellcheck = w.spellcheck()
+
+#Get Word and Noun Phrase Frequencies
+words = TextBlob('We are no longer together. We are enemies now.')
+word_counts = words.word_counts
+#You can specify whether or not the search should be case-sensitive (default is False).
+
+#Translation and Language Detection
+en_blob = TextBlob("You are my best friend")
+pl_blob = en_blob.translate(to='pl')
+print(pl_blob)
+
+blob = TextBlob("Mam na imię Piotr")
+detected_lang = blob.detect_language()
+print(detected_lang)
