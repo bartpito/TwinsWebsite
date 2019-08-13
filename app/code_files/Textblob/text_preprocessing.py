@@ -51,8 +51,19 @@ word_counts = words.word_counts
 #Translation and Language Detection
 en_blob = TextBlob("You are my best friend")
 pl_blob = en_blob.translate(to='pl')
-print(pl_blob)
 
 blob = TextBlob("Mam na imię Piotr")
 detected_lang = blob.detect_language()
-print(detected_lang)
+
+#Parsing
+text = TextBlob('I know You')
+text_parse = text.parse()
+
+#string
+text = TextBlob("Hello World")
+upper_text = text.upper()
+find_world = text.find("World")
+
+#ngrams
+blob = TextBlob("Now is better than never.")
+ngram = blob.ngrams(n=3)
