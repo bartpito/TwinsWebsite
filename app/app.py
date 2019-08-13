@@ -42,7 +42,6 @@ network = Network(
     None,
     False,
     'data/my_model_3.h5')
-
 global graph
 graph = tf.get_default_graph()
 

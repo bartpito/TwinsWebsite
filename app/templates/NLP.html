@@ -45,55 +45,46 @@
 						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Basic NLP</span></a>
 						<ul class="nav-flyout">
 							<li>
+								<a href="#section0"><i class="ion-ios-color-filter-outline"></i>NLP pipeline</a>
+							</li>
+							<li>
 								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Data Augmentation</a>
 							</li>
 							<li>
 								<a href="#section2"><i class="ion-ios-clock-outline"></i>Tokenization</a>
 							</li>
 							<li>
-
 								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>Text Preprocessing</a>
 							</li>
 						 	<li>
 								<a href="#section4"><i class="ion-ios-clock-outline"></i>Regular Expressions</a>
-
-								<a href="#section3"><i class="ion-ios-color-filter-outline">Text Preprocessing</i></a>
 							</li>
 						 	<li>
-								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
-
+								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>POS Tagging</a>
 							</li>
 							<li>
-								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
+								<a href="#section6"><i class="ion-ios-clock-outline"></i>Stop Words</a>
 							</li>
 							<li>
-								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
+									<a href="#section7"><i class="ion-ios-clock-outline"></i>Dependency Parsing</a>
+							</li>
+							<li>
+									<a href="#section8"><i class="ion-ios-clock-outline"></i>NER</a>
+							</li>
+							<li>
+								<a href="#section9"><i class="ion-ios-clock-outline"></i>Coreference Resolution</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; NLTK</span></a>
-						<ul class="nav-flyout">
-							<li>
-								<a href="#section1"><i class="ion-ios-color-filter-outline"></i>Data Augmentation</a>
-							</li>
-							<li>
-								<a href="#section2"><i class="ion-ios-clock-outline"></i>Naive Bayes</a>
-							</li>
-							<li>
-								<a href="#section3"><i class="ion-ios-color-filter-outline"></i>KNN</a>
-							</li>
-						 	<li>
-								<a href="#section4"><i class="ion-ios-clock-outline"></i>SVM</a>
-							</li>
-							<li>
-								<a href="#section5"><i class="ion-ios-color-filter-outline"></i>SGD</a>
-							</li>
-							<li>
-								<a href="#section6"><i class="ion-ios-clock-outline"></i>Logistic Regression</a>
-							</li>
-						</ul>
-					 </li>
+						<a href="#section10"><i class="ion-bag"></i> <span class="topic-decoration">&bull; NLTK (+BeautifulSoup, Inflect, Contractions)</span></a>
+					</li>
+					<li>
+						<a href="#section11"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Spacy</span></a>
+					</li>
+					<li>
+						<a href="#section12"><i class="ion-bag"></i> <span class="topic-decoration">&bull; TextBlob</span></a>
+					</li>
 					<li>
 						 <a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Neural Networks</span></a>
 						 <ul class="nav-flyout">
@@ -132,25 +123,19 @@
 					</li>
 					<li>
 						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #00FF00">&#8227 Learning Page</span></a>
-
-						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span style="color: #FFCF75">&#8227 Home Page</span></a>
-					</li>
-					<li>
-						<a href="{{ url_for( 'about', name='pito' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 About Pito</span></a>
-					</li>
-					<li>
-						<a href="{{ url_for( 'about', name='bart' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 About Bart</span></a>
-					</li>
-					<li>
-						<a href="{{ url_for( 'projectsPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 Projects Page</span></a>
-					</li>
-					<li>
-						<a href="{{ url_for( 'learningPage' ) }}"><i class="ion-ios-settings"></i> <span style="color: #FFCF75">&#8227 Learning Page</span></a>
-
 					</li>
 				</ul>
 			</nav>
 		</aside>
+		<div id="section0">
+			<br/><a class="topic" style="text-decoration: underline;">NLP pipeline</a><br/>
+			<br/><br/><img img class='imgPos' src="../static/views/pipl1.png" alt="cr1" style="margin-left: 20%">
+			<br/><br/><p class="basicText2">
+				Coreference resolution is an optional step that isn’t always done.	
+				<br/><br/>it’s worth mentioning that these are the steps in a typical NLP pipeline, but you will skip steps or re-order steps depending on what you want to do and how your NLP library is implemented. For example, some libraries like spaCy do sentence segmentation much later in the pipeline using the results of the 
+				dependency parse.
+			</p>
+		</div>
 		<div id="section1">
 			<br/><a class="topic" style="text-decoration: underline;">Data Augmentation</a><br/>
 			<br/><h2 class="basicText">1. Easiest Data Augmentation Techniques in Natural Language Processing:</h2>
@@ -163,11 +148,7 @@
 			</p>
 		</div>
 		<div id="section2">
-<<<<<<< HEAD
 			<br/><a class="topic" style="text-decoration: underline;">Tokenization</a><br/>
-
-			<br/><a class="topic" style="text-decoration: underline;">Tokenization:</a><br/>
-
 			<br/><h2 class="basicText">1. Description:</h2>
 			<p class="basicText2">
 				<br/>&bull; <span style="font-weight: bold; font-size: 1.0vw;">The process of segmenting running text into words and sentences.</span>
@@ -180,7 +161,7 @@
 			</p>
 		</div>
 		<div id="section3">
-			<br/><a class="topic" style="text-decoration: underline;">Text Preprocessing:</a><br/>
+			<br/><a class="topic" style="text-decoration: underline;">Text Preprocessing</a><br/>
 
 			<br/><h2 class="basicText">What is text preprocessing?</h2>
 			<p class="basicText2">
@@ -209,7 +190,7 @@
 			</p>
 		</div>
 		<div id="section4">
-			<br/><a class="topic" style="text-decoration: underline;">Regular Expressions:</a><br/>
+			<br/><a class="topic" style="text-decoration: underline;">Regular Expressions</a><br/>
 			<br/><h2 class="basicText">Basic Topics:</h2>
 			<p class="basicText2">
 				<br/><span style="font-weight: bold; font-size: 1.2vw;">Anchors:&nbsp;&nbsp;  ^ and $  </span>
@@ -284,20 +265,118 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<foo>[abc])\k<foo></foo></span>we put the name foo to the group and we reference it later (\k<foo>). The result is the same of the first regex
 			</p>
 			<p class="basicText2">
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Look-ahead and Look-behind:&nbsp;&nbsp; (?=) and (?<=) </span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Look-ahead and Look-behind:&nbsp;&nbsp; (?=) and (?&lt;=) </span>
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">d(?=r)</span>matches a d only if is followed by r, but r will not be part of the overall regex match
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<=r)d</span>matches a d only if is preceded by an r, but r will not be part of the overall regex match
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?&lt;=r)d</span>matches a d only if is preceded by an r, but r will not be part of the overall regex match
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">d(?!r)</span>matches a d only if is not followed by r, but r will not be part of the overall regex match
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?<!r)d</span>matches a d only if is not preceded by an r, but r will not be part of the overall regex match
-			</p>
-
-			<br/><h2 class="basicText">1. Description:</h2>
-			<p class="basicText2">
-				<br/>&bull; <span style="font-weight: bold; font-size: 1.0vw;">The process of segmenting running text into words and sentences.</span>
-				<br/><br/><a href="https://www.ibm.com/developerworks/community/blogs/nlp/entry/tokenization?lang=en" style="font-weight: bold; text-decoration: underline; color: black; font-size: 1.2vw;">The Art of Tokenization</a>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw; padding-right: 5em; margin-left:2%;">(?&lt;!r)d</span>matches a d only if is not preceded by an r, but r will not be part of the overall regex match
 			</p>
 		</div>
-
+		<div id="section5">
+			<br/><a class="topic" style="text-decoration: underline;">Part-Of-Speech (POS) Tagging</a><br/>
+			<br/><h2 class="basicText">Generative VS Discriminative Models:</h2>
+			<p class="basicText2">
+				<br/><br/><img img class='imgPos' src="../static/views/gvsd.png" alt="gen vs disc model" style="margin-left: 20%">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Generative Algorithm</span> models how the data was generated in order to categorize a signal. It asks the question: based on my generation 
+				assumptions, which category is most likely to generate this signal?
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Discriminative Algorithm</span> does not care about how the data was generated, it simply categorizes a given signal.
+			</p>
+			<br/><h2 class="basicText">Goal:</h2>
+			<p class="basicText2">
+				<br/>POS tagging is the process of marking up a word in a corpus to a corresponding part of a speech tag, based on its context and definition.
+			</p>
+			<br/><br/><h2 class="basicText">The Different POS Tagging Techniques</h2>
+			<p class="basicText2">
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Lexical Based Methods</span>  Assigns the POS tag the most frequently occurring with a word in the training corpus.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Rule-Based Methods</span> Assigns POS tags based on rules. For example, we can have a rule that says, words ending 
+				with “ed” or “ing” must be assigned to a verb. Rule-Based Techniques can be used along with Lexical Based approaches to allow POS Tagging of words that are not present in the training corpus but are there in the testing data.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Probabilistic Methods</span>  This method assigns the POS tags based on the probability of a particular tag sequence occurring. Conditional Random Fields (CRFs) and Hidden Markov Models (HMMs) are probabilistic approaches to assign a POS Tag.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Deep Learning Methods</span>  Recurrent Neural Networks can also be used for POS tagging.
+			</p>
+		</div>
+		<div id="section6">
+			<br/><a class="topic" style="text-decoration: underline;">Stop Words</a><br/>
+			<br/><h2 class="basicText">&bull; What are stop words?</h2>
+			<p class="basicText2">
+				<span style="font-weight: bold; font-size: 1.0vw;">“Stop words”</span> are the most common words in a language like “the”, “a”, “on”, “is”, “all”. These words do not carry important meaning and are usually removed from texts.
+			</p>
+			<br/><br/><h2 class="basicText">&bull; when should I remove stop words?</h2>
+			<br/><p class="basicText2">
+				Problems like sentiment analysis are much more sensitive to stop words removal than document classification.
+				<br/><br/>You should remove these tokens only if they don’t add any new information for your problem. Classification problems normally don’t need stop words because it’s possible to talk about the general idea of a text even if you 
+				remove stop words from it.
+				<br/><br/>So, for theme classification, stop words are useless. In any other case, it’s better to keep these words and do some tests with and without them so see how it affects the model. Anyway, you should <span style="font-weight: bold; font-size: 1.0vw;">never remove stop
+				words without thinking about the impact of these words on the problem you are trying to solve.</span>
+			</p>
+		</div>
+		<div id="section7">
+			<br/><a class="topic" style="text-decoration: underline;">Dependency Parsing</a><br/>
+			<br/><h2 class="basicText">&bull; What is Dependency parsing?</h2>
+			<br/><p class="basicText2">
+				Dependency parsing figure out how all the words in a sentence relate to each other.
+			</p>
+			<br/><h2 class="basicText">&bull; GOAL:</h2>
+			<p class="basicText2">
+					The goal is to build a tree that assigns a single parent word to each word in the sentence. The root of the tree will be the main verb in the sentence. 
+			</p>
+			<br/><br/><img img class='imgPos' src="../static/views/dp1.png" alt="dp1" style="margin-left: 20%">
+			<br/><br/><p class="basicText2">
+				But we can go one step further. In addition to identifying the parent word of each word, we can also predict the type of relationship that exists between those two words:
+				<br/><br/><img img class='imgPos' src="../static/views/dp2.png" alt="dp2" style="margin-left: 20%">
+			</p>
+			<br/><br/><h2 class="basicText">&bull; Finding Noun Phrases:</h2>
+			<p class="basicText2">
+				<br/>So far, we’ve treated every word in our sentence as a separate entity. But sometimes it makes more sense to group together the words that represent a single idea or thing. We can use the information from the dependency parse tree to automatically group together words that are all talking about the same thing.
+				<br/><br/>For example, instead of this:
+				<br/><br/><img img class='imgPos' src="../static/views/dp3.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>We can group the noun phrases to generate this:
+				<br/><br/><img img class='imgPos' src="../static/views/dp4.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>Whether or not we do this step depends on our end goal. But it’s often a quick and easy way to simplify the sentence if we don’t need extra detail about which words are adjectives and instead care more about extracting complete ideas.
+			</p>
+		</div>
+		<div id="section8">
+			<br/><a class="topic" style="text-decoration: underline;">Named Entity Recognition (NER)</a><br/>
+			<br/><h2 class="basicText">&bull; Description</h2>
+			<p class="basicText2">
+				In our sentence, we have the following nouns:
+				<br/><br/><img img class='imgPos' src="../static/views/ner1.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>Some of these nouns present real things in the world. For example, “London”, “England” and “United Kingdom” represent physical places on a map. It would be nice to be able to detect that! With that information, we could automatically extract a list of real-world places mentioned in a document using NLP.
+				<br/><br/>The goal of Named Entity Recognition, or NER, is to detect and label these nouns with the real-world concepts that they represent. Here’s what our sentence looks like after running each token through our NER tagging model:
+				<br/><br/><img img class='imgPos' src="../static/views/ner2.png" alt="dp1" style="margin-left: 20%">
+				<br/><br/>But NER systems aren’t just doing a simple dictionary lookup. Instead, they are using the context of how a word appears in the sentence and a statistical model to guess which type of noun a word represents. A good NER system can tell the difference between “Brooklyn Decker” the person and the place “Brooklyn” 
+				using context clues.
+				<br/><br/>Here are just some of the kinds of objects that a typical NER system can tag:
+				<br/><br/><ul class="basicText2">
+					<li>People’s names</li>
+					<li>Company names</li>
+					<li>Geographic locations (Both physical and political)</li>
+					<li>Product names</li>
+					<li>Dates and times</li>
+					<li>Amounts of money</li>
+					<li>Names of events</li>
+				</ul>
+			</p>
+		</div>
+		<div id="section9">
+			<br/><a class="topic" style="text-decoration: underline;">Coreference Resolution</a><br/>
+			<br/><h2 class="basicText">&bull; Description</h2>
+			<p class="basicText2">
+					<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
+					<br/><br/>Let’s look at the third sentence in our document:
+					<br/><br/>“It was founded by the Romans, who named it Londinium.”
+					<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
+					<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
+			</p>
+		</div>
+		<div id="section10">
+			<br/><a class="topic" style="text-decoration: underline;">NLTK</a><br/>
+		</div>
+		<div id="section11">
+			<br/><a class="topic" style="text-decoration: underline;">Spacy</a><br/>
+		</div>
+		<div id="section12">
+			<br/><a class="topic" style="text-decoration: underline;">Textblob</a><br/>
+		</div>
 	</section>
 </body>
 </html>

@@ -42,11 +42,7 @@ a:hover{
     display: block;
     padding: 0.8em ;
     font-weight: bold;
-<<<<<<< HEAD
     color: #00FF00;
-=======
-    color: #AAF200;
->>>>>>> react-front
 }
 
 .sidebar h2 {
@@ -133,11 +129,7 @@ ul > li:hover .nav-flyout {
     transform: translateX(0);
 }
 .topic-decoration {
-<<<<<<< HEAD
     color: #00FF00;
-=======
-    color: #FF8000;
->>>>>>> react-front
     font-weight: bold;
 }
 .topic {
@@ -170,6 +162,10 @@ h2.basicText2 {
 .imgPos {
     position: relative;
 }
+#section0 {
+    height: 50%;
+    background-color: white;
+}
 #section1 {
     height: 70%;
     background-color: white;
@@ -179,22 +175,42 @@ h2.basicText2 {
     background-color: white;
 }
 #section3 {
-<<<<<<< HEAD
     height: 145%;
     background-color: white;
 }
 #section4 {
-    height: 400%;
-=======
-    height: 75%;
-    background-color: white;
-}
-#section4 {
-    height: 125%;
->>>>>>> react-front
+    height: 420%;
     background-color: white;
 }
 #section5 {
-    height: 150%;
+    height: 130%;
+    background-color: white;
+}
+#section6 {
+    height: 70%;
+    background-color: white;
+}
+#section7 {
+    height: 250%;
+    background-color: white;
+}
+#section8 {
+    height: 110%;
+    background-color: white;
+}
+#section9 {
+    height: 80%;
+    background-color: white;
+}
+#section10 {
+    height: 120%;
+    background-color: white;
+}
+#section11 {
+    height: 120%;
+    background-color: white;
+}
+#section12 {
+    height: 120%;
     background-color: white;
 }
