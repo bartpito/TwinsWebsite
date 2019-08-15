@@ -343,11 +343,11 @@
 			<br/><a class="topic" style="text-decoration: underline;">Coreference Resolution</a><br/>
 			<br/><h2 class="basicText">&bull; Description</h2>
 			<p class="basicText2">
-					<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
-					<br/><br/>Let’s look at the third sentence in our document:
-					<br/><br/>“It was founded by the Romans, who named it Londinium.”
-					<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
-					<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
+				<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
+				<br/><br/>Let’s look at the third sentence in our document:
+				<br/><br/>“It was founded by the Romans, who named it Londinium.”
+				<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
+				<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
 			</p>
 		</div>
 		<div id="section10">
@@ -377,14 +377,14 @@
 			<br/><h2 class="basicText">&bull; One-Hot Encoding</h2>
 			<br/><p class="basicText2">
 				The second approach of word representation is one-hot encoding. The main idea is to create a vocabulary size vector with filled zeros except one. For a single word only corresponding column is filled with the value 1 and the rest are zero valued. The encoded tokens will consist of vector with dimension
-				 1 × (N+ 1), where N is the size of the dictionary and the extra 1 is added to N for the Out of Vocabulary token.
-				 The advantage of this encoding to ordinal representation is that it does not suffer from undesirable bias. However, its immense and sparse vector representation requires large memory for computation.
-				 <br/><br/><img img class='imgPos' src="../static/views/onehot1.jpeg" alt="onehot">
+				1 × (N+ 1), where N is the size of the dictionary and the extra 1 is added to N for the Out of Vocabulary token.
+				The advantage of this encoding to ordinal representation is that it does not suffer from undesirable bias. However, its immense and sparse vector representation requires large memory for computation.
+				<br/><br/><img img class='imgPos' src="../static/views/onehot1.jpeg" alt="onehot">
 			</p>
 			<br/><h2 class="basicText">&bull; Distributional Representation</h2>
 			<br/><p class="basicText2">
-				he main idea behind this approach is that words typically appearing in the similar context would have a similar meaning. The idea is to store the word-context co-occurrence matrix F in which rows represent words in the vocabulary and columns represent contexts. The context could be sliding windows over
-				 the training sentences, or even documents. The matrix entries consist a frequency counts or tf-idf (Term Frequency-Inverse Document Frequency) scores.
+				The main idea behind this approach is that words typically appearing in the similar context would have a similar meaning. The idea is to store the word-context co-occurrence matrix F in which rows represent words in the vocabulary and columns represent contexts. The context could be sliding windows over
+				the training sentences, or even documents. The matrix entries consist a frequency counts or tf-idf (Term Frequency-Inverse Document Frequency) scores.
 				<br/><br/>Sentence 1: Boston has available flights to major US cities.
 				<br/><br/>Sentence 2: Flights to Boston were cancelled due to bad weather conditions.
 				<br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
