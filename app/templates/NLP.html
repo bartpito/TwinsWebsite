@@ -374,8 +374,11 @@
 				<br/><br/>By treating tokens as integers, the model might incorrectly assume the existence of natural ordering. For example, the dictionary contains entries such as 1: “airport” and 2: “plane” . The token with greater ID value might be considered as more important by the Deep learning models than the tokens 
 				with less values which is a wrong assumption. Models which are trained with this type of data are prone to failure. On the contrary, data with ordinal values such as size measures 1: “small”, 2: “medium”, 3:“large” is suitable for this case. Because there is a natural ordering in the data.
 			</p>
-			<br/><h2 class="basicText">&bull; A simplified representation of word vectors</h2>
-			
+			<br/><h2 class="basicText">&bull; One-Hot Encoding</h2>
+			<br/><p class="basicText2">
+				The second approach of word representation is one-hot encoding. The main idea is to create a vocabulary size vector with filled zeros except one. For a single word only corresponding column is filled with the value 1 and the rest are zero valued. The encoded tokens will consist of vector with dimension
+				 1 × (N+ 1), where N is the size of the dictionary and the extra 1 is added to N for the Out of Vocabulary token.
+			</p>
 		</div>
 	</section>
 </body>
