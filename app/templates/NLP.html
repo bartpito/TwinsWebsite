@@ -378,6 +378,8 @@
 			<br/><p class="basicText2">
 				The second approach of word representation is one-hot encoding. The main idea is to create a vocabulary size vector with filled zeros except one. For a single word only corresponding column is filled with the value 1 and the rest are zero valued. The encoded tokens will consist of vector with dimension
 				 1 × (N+ 1), where N is the size of the dictionary and the extra 1 is added to N for the Out of Vocabulary token.
+				 The advantage of this encoding to ordinal representation is that it does not suffer from undesirable bias. However, its immense and sparse vector representation requires large memory for computation.
+				 <br/><br/><img img class='imgPos' src="../static/views/onehot1.jpeg" alt="onehot" style="margin-left: 20%">
 			</p>
 		</div>
 	</section>
