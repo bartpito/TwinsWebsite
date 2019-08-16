@@ -394,7 +394,15 @@
 			<p class="basicText2">
 				Collective term for models that learned to map a set of words or phrases in a vocabulary to vectors of numerical values.Word Embedding is really all about improving the ability of networks to learn from text data. By representing that data as lower dimensional vectors. These vectors are called Embedding.
 			</p>
-			<br/><h2 class="basicText">&bull; How is this done?</h2>
+			<br/><h2 class="basicText">&bull; How it is done?</h2>
+			<br/><p class="basicText2">
+				General approach for dealing with words in your text data is to one-hot encode your text. You will have tens of thousands of unique words in your text vocabulary. Computations with such one-hot encoded vectors for these words will be very inefficient because most values in your one-hot vector will be 0. 
+				So, the matrix calculation that will happen in between a one-hot vector and a first hidden layer will result in a output that will have mostly 0 values
+				<br/><br/><br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
+				<br/><br/>Now, instead of doing the matrix multiplication between the inputs and hidden layer we directly grab the values from embedding weight matrix. We can do this because the multiplication of one-hot vector with weight matrix returns the row of the matrix corresponding to the index of ‘1’ input unit
+				<br/><br/><br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
+				<br/><br/>
+			</p>
 		</div>
 	</section>
 </body>
