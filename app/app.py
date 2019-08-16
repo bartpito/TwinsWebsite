@@ -48,14 +48,14 @@ graph = tf.get_default_graph()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('mainpage.html')
+    return render_template('landingPage.html')
 
 @app.route('/About/<name>')
 def about(name=None):
     if name == 'pito':
         return render_template('pito.html')
     elif name == 'bart':
-        return render_template('bart.html')
+        return render_template('bart1.html')
 
 
 @app.route('/ProjectsPage')

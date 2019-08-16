@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/bart1.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bart</title>
+  </head>
+  <body>
+    <div class='wraper'>
+      <div class='navbar'>
+        <ul style='list-style-type: none'>
+          <li>
+            <a href="{{ url_for('index') }}"><<<  Home</a>
+          </li>
+         <li>
+            <a href="{{ url_for('about', name='pito') }}">Pito</a>
+          </li>
+          <li>
+            <a href="{{ url_for('projectsPage') }}">Projects</a>
+          </li>
+          <li>
+            <a href="{{ url_for('learningPage') }}">Learning  >>></a>
+          </li>
+       </ul>
+      </div>
+      <div class='img-box'>
+        <img src='../static/views/user.jpg' class='img-me'>
+      </div>
+      <div class='about-section'>
+        <h2>About me<br></h2>
+        <p><br><br>My name is Bartek Szmelczynski and I am 21 years old student of mathematical modelling
+          and data analysis on Univeristy of Gdansk in Poland. I have beed learning programming 
+          over year now. I am huge enthusiast of machine learning especially deep learning. Lately 
+          I mainly focused on NLP, but I am also super excited and reinforcment learning in game 
+          enviroments.
+          <br>
+        </p>
+        <h3 style='text-decoration: underline;'><br>INTERESTS</h3>
+      </div>
+
+        <div class='icons'>
+
+          <ul style='list-style-type: none'>
+            <li>
+              <h5>PYTHON</h5> 
+              <i class="fab fa-python" style='color: #e4e809'></i>
+            </li>
+            <li>
+              <h5 >AI/ML</h5> 
+              <i class='fas fa-robot' style='color:#04afc2'></i>
+            </li>
+            <li>
+              <h5>NLP</h5> 
+              <i class='fas fa-edit' style='color: #bfbfb4'></i>
+
+            </li>
+            <li>
+              <h5>RL</h5> 
+              <i class='fas fa-cogs' style='color:#8B4513'></i>
+            </li>
+        </ul>
+
+      </div>
+      <div class='contact'>
+        <h2 style='font-family: "Pacifico", cursive; color:#fff; border-bottom: 1px solid #fff;'>Contact</h2>
+        <div class='contact-box'>
+        <ul style='list-style-type: none; background: transparent;'>
+          <li style='cursor:default;'>
+            <a href='https://www.facebook.com/bartek.szmelczynski'>
+            <i class="fab fa-facebook-square fa-2x" style='color:#4287f5;'></i>
+            </a>
+          </li>
+          <li>
+            <a href='https://www.linkedin.com/in/bartosz-szmelczynski-babb3b182/'>
+            <i class="fab fa-linkedin fa-2x" style='color:#4287f5;'></i>
+            </a>
+          </li>
+          <li style='padding-bottom: 8%;'>
+            <a href='https://github.com/Bartekkz'>
+            <i class="fab fa-github fa-2x" style='color:black;'></i>
+            </a>
+          </li>
+          <li style='padding-bottom: 8%;'>
+            <address>
+              <a href='https://mail.google.com/mail/?view=cm&fs=1&to=bartek.szmelczynski@gmail.com'>
+              <i class="fas fa-envelope fa-2x" style='color:#e34040;'></i>
+              </a>
+            </address>
+          </li>
+        </div>
+        <h2>Email</h2>
+        <textarea id="myText1" rows="1" cols="29" spellcheck="false">bartek.szmelczynski@gmail.com</textarea><br/>
+        <button id='btn1' class="btnCopy" onclick="copyArea('btn1', 'myText1')">Copy</button>
+
+        <h2>LinkedIn</h2>
+        <textarea id="myText2" rows="1" cols="29" spellcheck="false">www.LinkedIn.com/bartekkz</textarea><br/>
+        <button id='btn2' class="btnCopy" onclick="copyArea('btn2', 'myText2')">Copy</button>
+
+        <h2>Github</h2>
+        <textarea id="myText3" rows="1" cols="29" spellcheck="false">https://www.linkedin.com/in/bartosz-szmelczynski-babb3b182/</textarea><br/>
+        <button id='btn3' onclick="copyArea('btn3', 'myText3')">Copy</button>
+
+      </div>
+      <script>
+        function copyArea(btn, text) {        
+          var button = document.getElementById(btn);
+          if (button.style.background == 'pink') {
+            button.style.background = 'transparent';
+          } else {
+            button.style.background = 'pink';
+          }          
+          button.addEventListener("click", function() {
+            var copyText = document.getElementById(text);
+            copyText.select();
+            document.execCommand("Copy");
+        })};
+      </script>
+      </div>
+    </div>
+  </body>
+</html>
