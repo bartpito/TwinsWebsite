@@ -66,10 +66,10 @@
 								<a href="#section6"><i class="ion-ios-clock-outline"></i>Stop Words</a>
 							</li>
 							<li>
-									<a href="#section7"><i class="ion-ios-clock-outline"></i>Dependency Parsing</a>
+								<a href="#section7"><i class="ion-ios-clock-outline"></i>Dependency Parsing</a>
 							</li>
 							<li>
-									<a href="#section8"><i class="ion-ios-clock-outline"></i>NER</a>
+								<a href="#section8"><i class="ion-ios-clock-outline"></i>NER</a>
 							</li>
 							<li>
 								<a href="#section9"><i class="ion-ios-clock-outline"></i>Coreference Resolution</a>
@@ -80,36 +80,18 @@
 						<a href="#section10"><i class="ion-bag"></i> <span class="topic-decoration">&bull; NLTK (+BeautifulSoup, Inflect, Contractions)</span></a>
 					</li>
 					<li>
-						<a href="#section11"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Spacy</span></a>
+						<a href="#section11"><i class="ion-bag"></i> <span class="topic-decoration">&bull; SpaCy</span></a>
 					</li>
 					<li>
-						<a href="#section12"><i class="ion-bag"></i> <span class="topic-decoration">&bull; TextBlob</span></a>
+						<a href="#section12"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Textblob</span></a>
 					</li>
 					<li>
-						 <a href="#"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Neural Networks</span></a>
-						 <ul class="nav-flyout">
-							<li>
-								<a href="#section11"><i class="ion-ios-clock-outline"></i>Learning process of Neural Network (NN)</a>
-							</li>
-							<li>
-								<a href="#section12"><i class="ion-ios-color-filter-outline"></i>Keras Layers</a>
-							</li>
-							<li>
-								<a href="#section13"><i class="ion-ios-clock-outline"></i>Convolutional NN</a>
-							</li>
-							<li>
-								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>Recurrent NN</a>
-							</li>
-							<li>
-								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>GANs</a>
-							</li>
-					 </ul>
+						<a href="#section13"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Word Vectors</span></a>
 					</li>
 				</ul>
 				<ul>
 					<h2></h2>
 					<li>
-
 						<a href="{{ url_for( 'index' ) }}"><i class="ion-bag"></i> <span style="color: #00FF00">&#8227 Home Page</span></a>
 					</li>
 					<li>
@@ -361,21 +343,54 @@
 			<br/><a class="topic" style="text-decoration: underline;">Coreference Resolution</a><br/>
 			<br/><h2 class="basicText">&bull; Description</h2>
 			<p class="basicText2">
-					<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
-					<br/><br/>Let’s look at the third sentence in our document:
-					<br/><br/>“It was founded by the Romans, who named it Londinium.”
-					<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
-					<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
+				<br/>English is full of pronouns — words like he, she, and it. These are shortcuts that we use instead of writing out names over and over in each sentence. Humans can keep track of what these words represent based on context. But our NLP model doesn’t know what pronouns mean because it only examines one sentence at a time.
+				<br/><br/>Let’s look at the third sentence in our document:
+				<br/><br/>“It was founded by the Romans, who named it Londinium.”
+				<br/><br/>If we parse this with our NLP pipeline, we’ll know that “it” was founded by Romans. But it’s a lot more useful to know that “London” was founded by Romans.
+				<br/><br/><img img class='imgPos' src="../static/views/cr1.png" alt="cr1" style="margin-left: 20%">
 			</p>
 		</div>
 		<div id="section10">
 			<br/><a class="topic" style="text-decoration: underline;">NLTK</a><br/>
+			<br/><br/><img img class='imgPos' src="../static/views/nltk1.png" alt="nltk" style="margin-left: 20%">
+			<img img class='imgPos' src="../static/views/nltk2.png" alt="nltk" style="margin-left: 20%">
 		</div>
 		<div id="section11">
-			<br/><a class="topic" style="text-decoration: underline;">Spacy</a><br/>
+			<br/><a class="topic" style="text-decoration: underline;">SpaCy</a><br/>
+			<br/><br/><img img class='imgPos' src="../static/views/spacy1.png" alt="spaCy" style="margin-left: 20%">
+			<img img class='imgPos' src="../static/views/spacy2.png" alt="spaCy" style="margin-left: 20%">
 		</div>
 		<div id="section12">
 			<br/><a class="topic" style="text-decoration: underline;">Textblob</a><br/>
+			<br/><br/><img img class='imgPos' src="../static/views/textblob.png" alt="textblob" style="margin-left: 20%">
+		</div>
+		<div id="section13">
+			<br/><a class="topic" style="text-decoration: underline;">Word Representation in Natural Language Processing</a><br/>
+			<br/><h2 class="basicText">&bull; Dictionary Lookup:</h2>
+			<br/><p class="basicText2">
+				First, take the corpus which can be collection of words, sentences or texts. Pre-process them into an intended format. One way is to use lemmatization, which is a process of converting word to its base form. For example, given words walk, walking, walks and walked, their lemma would be walk.
+				<br/><br/>After that, build the lookup dictionary by creating a mapping between words and IDs i.e. each unique word in the vocabulary is assigned an ID.
+				<br/><br/>Then, for each given word, return the corresponding integer representation by looking it up in the dictionary. If the word is not present in the dictionary, the integer corresponding to the Out of Vocabulary token should be returned.
+				<br/><br/>By treating tokens as integers, the model might incorrectly assume the existence of natural ordering. For example, the dictionary contains entries such as 1: “airport” and 2: “plane” . The token with greater ID value might be considered as more important by the Deep learning models than the tokens 
+				with less values which is a wrong assumption. Models which are trained with this type of data are prone to failure. On the contrary, data with ordinal values such as size measures 1: “small”, 2: “medium”, 3:“large” is suitable for this case. Because there is a natural ordering in the data.
+			</p>
+			<br/><h2 class="basicText">&bull; One-Hot Encoding</h2>
+			<br/><p class="basicText2">
+				The second approach of word representation is one-hot encoding. The main idea is to create a vocabulary size vector with filled zeros except one. For a single word only corresponding column is filled with the value 1 and the rest are zero valued. The encoded tokens will consist of vector with dimension
+				1 × (N+ 1), where N is the size of the dictionary and the extra 1 is added to N for the Out of Vocabulary token.
+				The advantage of this encoding to ordinal representation is that it does not suffer from undesirable bias. However, its immense and sparse vector representation requires large memory for computation.
+				<br/><br/><img img class='imgPos' src="../static/views/onehot1.jpeg" alt="onehot">
+			</p>
+			<br/><h2 class="basicText">&bull; Distributional Representation</h2>
+			<br/><p class="basicText2">
+				The main idea behind this approach is that words typically appearing in the similar context would have a similar meaning. The idea is to store the word-context co-occurrence matrix F in which rows represent words in the vocabulary and columns represent contexts. The context could be sliding windows over
+				the training sentences, or even documents. The matrix entries consist a frequency counts or tf-idf (Term Frequency-Inverse Document Frequency) scores.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Sentence 1:</span> Boston has available flights to major US cities.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Sentence 2:</span> Flights to Boston were cancelled due to bad weather conditions.
+				<br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
+				<br/><br/>Since the number of context could be very large, e.g. document might contain thousand of sentences, these methods are known for being inefficient.
+			</p>
+			<br/><h2 class="basicText">&bull; Word Embedding</h2>
 		</div>
 	</section>
 </body>

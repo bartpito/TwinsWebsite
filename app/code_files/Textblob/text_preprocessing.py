@@ -1,5 +1,4 @@
 from textblob import TextBlob
-
 blob = TextBlob("Internet is a great place to learn data science. It helps community through blogs, hackathons, discussions, etc.")
 
 #Tokenization
@@ -67,3 +66,5 @@ find_world = text.find("World")
 #ngrams
 blob = TextBlob("Now is better than never.")
 ngram = blob.ngrams(n=3)
+
+
