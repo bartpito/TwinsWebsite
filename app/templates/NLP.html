@@ -398,11 +398,18 @@
 			<br/><p class="basicText2">
 				General approach for dealing with words in your text data is to one-hot encode your text. You will have tens of thousands of unique words in your text vocabulary. Computations with such one-hot encoded vectors for these words will be very inefficient because most values in your one-hot vector will be 0. 
 				So, the matrix calculation that will happen in between a one-hot vector and a first hidden layer will result in a output that will have mostly 0 values
-				<br/><br/><br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
+				<br/><br/><img img class='imgPos' src="../static/views/wv2.png" alt="wv">
 				<br/><br/>Now, instead of doing the matrix multiplication between the inputs and hidden layer we directly grab the values from embedding weight matrix. We can do this because the multiplication of one-hot vector with weight matrix returns the row of the matrix corresponding to the index of ‘1’ input unit
-				<br/><br/><br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
-				<br/><br/>
-			</p>
+				<br/><br/><img img class='imgPos' src="../static/views/wv3.png" alt="wv">
+				<br/><br/>So, we use this Weight Matrix as lookup table. We encode the words as integers, for example ‘cool’ is encoded as 512, ‘hot’ is encoded as 764. Then to get hidden layer output value for ‘cool’ we just simply need to lookup the 512th row in the weight matrix. This process is called Embedding Lookup. 
+				The number of dimension in the hidden layer output is the embedding dimension
+				<br/><br/><img img class='imgPos' src="../static/views/wv4.png" alt="wv">
+				<span style="font-weight: bold; font-size: 1.0vw;">Summary</span>
+				<br/><br/>&bull; The embedding layer is just a hidden layer
+				<br/><br/>&bull; The lookup table is just a embedding weight matrix
+				<br/><br/>&bull; The lookup is just a shortcut for matrix multiplication
+				<br/><br/><br/>&bull; The lookup table is trained just like any weight matrix
+				<span style="font-weight: bold; font-size: 1.1vw;">&bull; Word2Vec</span>	
 		</div>
 	</section>
 </body>
