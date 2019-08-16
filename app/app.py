@@ -55,7 +55,7 @@ def about(name=None):
     if name == 'pito':
         return render_template('pito.html')
     elif name == 'bart':
-        return render_template('bart.html')
+        return render_template('bart1.html')
 
 
 @app.route('/ProjectsPage')
