@@ -427,7 +427,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">How does Word2Vec work?</span>
 				<br/>The algorithm exists in two flavors <span style="font-weight: bold; font-size: 1.0vw;">CBOW and Skip-Gram.</span> Given a set of sentences (also called corpus) the model loops on the words of each sentence and either tries to use the current word of to predict its neighbors (its context), in which case the method is called “Skip-Gram”, or it uses each of these contexts 
 				to predict the current word, in which case the method is called “Continuous Bag Of Words” (CBOW). The limit on the number of words in each context is determined by a parameter called “window size”.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">CBOW Model:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Skip-gram model:</span>
 				<br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Intuition</span>
 				<br/><br/>The skip-gram neural network model is actually surprisingly simple in its most basic form. Train a simple neural network with a single hidden layer to perform a certain task, but then we’re not actually going to use that neural network for the task we trained it on! Instead, the goal is actually just to learn the weights of the hidden layer–we’ll see that these weights are actually the “word vectors” that we’re trying to learn.
 				<br/><br/>We’re going to train the neural network to do the following. Given a specific word in the middle of a sentence (the input word), look at the words nearby and pick one at random. The network is going to tell us the probability for every word in our vocabulary of being the “nearby word” that we chose.
@@ -442,6 +442,13 @@
 				<br/><br/>300 features is what Google used in their published model trained on the Google news dataset (you can download it from here). The number of features is a “hyper parameter” that you would just have to tune to your application (that is, try different values and see what yields the best results).
 				<br/><br/>If you look at the rows of this weight matrix, these are actually what will be our word vectors!
 				<br/><br/><br/><img img class='imgPos' src="../static/views/sg3.png" alt="sg">
+				<br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Improvement</span>
+				We need few additional modifications to the basic skip-gram model which are important for actually making it feasible to train. Running gradient descent on a neural network that large is going to be slow. And to make matters worse, you need a huge amount of training data in order to tune that many weights and avoid over-fitting. millions of weights times billions of training samples means that training this model is going to be a beast. The authors of Word2Vec addressed these issues in their second paper.
+There are three innovations in this second paper:
+Treating common word pairs or phrases as single “words” in their model.
+Subsampling frequent words to decrease the number of training examples.
+Modifying the optimization objective with a technique they called “Negative Sampling”, which causes each training sample to update only a small percentage of the model’s weights.
+It’s worth noting that subsampling frequent words and applying Negative Sampling not only reduced the compute burden of the training process, but also improved the quality of their resulting word vectors as well.
 			</p>
 		</div>
 	</section>
