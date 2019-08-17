@@ -425,7 +425,8 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Now, although this a great starting point, we notice that the dimensionality of each word will increase linearly with the size of the corpus.</span> If we had a million words (not really a lot in NLP standards), we’d have a million by million sized matrix which would be extremely sparse (lots of 0’s). Definitely 
 				not the best in terms of storage efficiency. There have been numerous advancements in finding the most optimal ways to represent these word vectors. The most famous of which is Word2Vec.
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">How does Word2Vec work?</span>
-				<br/>Word2Vec is a method to construct an embedding. It can be obtained using two methods (both involving Neural Networks): Skip Gram and Common Bag Of Words (CBOW)
+				<br/>The algorithm exists in two flavors <span style="font-weight: bold; font-size: 1.0vw;">CBOW and Skip-Gram.</span> Given a set of sentences (also called corpus) the model loops on the words of each sentence and either tries to use the current word of to predict its neighbors (its context), in which case the method is called “Skip-Gram”, or it uses each of these contexts to predict the current word, in which case the method is called “Continuous Bag Of Words” (CBOW). The limit on the number of words in each context is determined by a parameter called “window size”.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">CBOW Model:</span>
 			</p>
 		</div>
 	</section>
