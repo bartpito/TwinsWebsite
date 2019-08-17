@@ -443,12 +443,21 @@
 				<br/><br/>If you look at the rows of this weight matrix, these are actually what will be our word vectors!
 				<br/><br/><br/><img img class='imgPos' src="../static/views/sg3.png" alt="sg">
 				<br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Improvement</span>
-				We need few additional modifications to the basic skip-gram model which are important for actually making it feasible to train. Running gradient descent on a neural network that large is going to be slow. And to make matters worse, you need a huge amount of training data in order to tune that many weights and avoid over-fitting. millions of weights times billions of training samples means that training this model is going to be a beast. The authors of Word2Vec addressed these issues in their second paper.
-There are three innovations in this second paper:
-Treating common word pairs or phrases as single “words” in their model.
-Subsampling frequent words to decrease the number of training examples.
-Modifying the optimization objective with a technique they called “Negative Sampling”, which causes each training sample to update only a small percentage of the model’s weights.
-It’s worth noting that subsampling frequent words and applying Negative Sampling not only reduced the compute burden of the training process, but also improved the quality of their resulting word vectors as well.
+				<br/><br/>We need few additional modifications to the basic skip-gram model which are important for actually making it feasible to train. Running gradient descent on a neural network that large is going to be slow. And to make matters worse, you need a huge amount of training data in order to tune that many weights and avoid over-fitting. millions of weights times billions of training samples means that training this model is going to be a beast. The authors of Word2Vec addressed these issues in their second paper.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">1. Treating common word pairs or phrases as single “words” in their model.</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">2. Subsampling frequent words to decrease the number of training examples.</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">3. Modifying the optimization objective with a technique they called “Negative Sampling”, which causes each training sample to update only a small percentage of the model’s weights.</span>
+				<br/><br/>It’s worth noting that subsampling frequent words and applying Negative Sampling not only reduced the compute burden of the training process, but also improved the quality of their resulting word vectors as well.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Subsampling: </span>
+				<br/><br/>There are two “problems” with common words like “the”:
+				<br/><br/>When looking at word pairs, (“fox”, “the”) doesn’t tell us much about the meaning of “fox”. “the” appears in the context of pretty much every word.
+				<br/><br/>We will have many more samples of (“the”, …) than we need to learn a good vector for “the”.
+				<br/><br/>Word2Vec implements a “subsampling” scheme to address this. For each word we encounter in our training text, there is a chance that we will effectively delete it from the text. The probability that we cut the word is related to the word’s frequency.
+				<br/><br/>If we have a window size of 10, and we remove a specific instance of “the” from our text:
+				<br/><br/>As we train on the remaining words, “the” will not appear in any of their context windows.
+				<br/><br/>We’ll have 10 fewer training samples where “the” is the input word.
+				<br/><br/>Note how these two effects help address the two problems stated above.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">Negative Sampling:</span>
 			</p>
 		</div>
 	</section>
