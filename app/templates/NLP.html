@@ -434,6 +434,14 @@
 				<br/><br/>The output probabilities are going to relate to how likely it is find each vocabulary word nearby our input word. For example, if you gave the trained network the input word “Soviet”, the output probabilities are going to be much higher for words like “Union” and “Russia” than for unrelated words like “watermelon” and “kangaroo”.
 				<br/><br/>We’ll train the neural network to do this by feeding it word pairs found in our training documents. The below example shows some of the training samples (word pairs) we would take from the sentence “The quick brown fox jumps over the lazy dog.” I’ve used a small window size of 2 just for the example. The word highlighted in blue is the input word.
 				<br/><br/><br/><img img class='imgPos' src="../static/views/sg1.png" alt="sg">
+				<br/><br/>We’re going to represent an input word like “ants” as a one-hot vector. This vector will have 10,000 components (one for every word in our vocabulary) and we’ll place a “1” in the position corresponding to the word “ants”, and 0s in all of the other positions.
+				<br/><br/>The output of the network is a single vector (also with 10,000 components) containing, for every word in our vocabulary, the probability that a randomly selected nearby word is that vocabulary word.
+				<br/><br/><br/><img img class='imgPos' src="../static/views/sg2.png" alt="sg">
+				<br/><br/>There is no activation function on the hidden layer neurons, but the output neurons use softmax.
+				<br/><br/>For our example, we’re going to say that we’re learning word vectors with 300 features. So the hidden layer is going to be represented by a weight matrix with 10,000 rows (one for every word in our vocabulary) and 300 columns (one for every hidden neuron).
+				<br/><br/>300 features is what Google used in their published model trained on the Google news dataset (you can download it from here). The number of features is a “hyper parameter” that you would just have to tune to your application (that is, try different values and see what yields the best results).
+				<br/><br/>If you look at the rows of this weight matrix, these are actually what will be our word vectors!
+				<br/><br/><br/><img img class='imgPos' src="../static/views/sg3.png" alt="sg">
 			</p>
 		</div>
 	</section>
