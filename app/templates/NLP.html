@@ -87,6 +87,14 @@
 					</li>
 					<li>
 						<a href="#section13"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Word Vectors</span></a>
+						<ul class="nav-flyout">
+							<li>
+								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>Word2Vec</a>
+							</li>
+							<li>
+								<a href="#section15"><i class="ion-ios-color-filter-outline"></i>GloVe</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 				<ul>
@@ -410,7 +418,9 @@
 				<br/><br/>&bull; The lookup is just a shortcut for matrix multiplication
 				<br/><br/>&bull; The lookup table is trained just like any weight matrix
 			</p>
-			<br/><br/><h2 class="basicText">&bull; Word2Vec</h2>
+		</div>
+		<div id="section14">
+			<br/><a class="topic" style="text-decoration: underline;">Word2Vec</a><br/>
 			<br/><p class="basicText2">
 				<span style="font-weight: bold; font-size: 1.0vw;">Introduction</span>
 				<br/>Word2Vec model is used for learning vector representations of words called “word embeddings”. This is typically done as a preprocessing step, after which the learned vectors are fed into a discriminative model (typically an RNN) to generate predictions and perform all sort of interesting things.
@@ -481,6 +491,8 @@
 				<br/><br/>The above model takes C context words. When Wvn is used to calculate hidden layer inputs, we take an average over all these C context word inputs.
 			</p>
 		</div>
+		<div id="section15">
+			<br/><a class="topic" style="text-decoration: underline;">GloVe</a><br/>
 	</section>
 </body>
 </html>
