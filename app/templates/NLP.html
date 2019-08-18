@@ -470,7 +470,15 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">The Continuous Bag of Words (CBOW) Model:</span>
 				<br/>The CBOW model architecture tries to predict the current target word (the center word) based on the source context words (surrounding words). Considering a simple sentence, “the quick brown fox jumps over the lazy dog”, this can be pairs of (context_window, target_word) where if we consider a context window of size 2, we have examples like ([quick, fox], 
 				brown), ([the, brown], quick), ([the, dog], lazy) and so on. Thus the model tries to predict the target_word based on the context_window words.
+				<br/><br/><br/><img img class='imgPos' src="../static/views/cbow2.png" alt="cbow">
+				<br/><br/>The input or the context word is a one hot encoded vector of size V. The hidden layer contains N neurons and the output is again a V length vector with the elements being the softmax values.
+				<br/><br/>Let’s get the terms in the picture right:
+				<br/><br/>- Wvn is the weight matrix that maps the input x to the hidden layer (V*N dimensional matrix)
+				<br/><br/>-W`nv is the weight matrix that maps the hidden layer outputs to the final output layer (N*V dimensional matrix)
+				<br/><br/>The hidden layer neurons just copy the weighted sum of inputs to the next layer. There is no activation like sigmoid, tanh or ReLU. The only non-linearity is the softmax calculations in the output layer.
+				<br/><br/>But, the above model used a single context word to predict the target. We can use multiple context words to do the same.
 				<br/><br/><br/><img img class='imgPos' src="../static/views/cbow1.png" alt="cbow">
+				<br/><br/>The above model takes C context words. When Wvn is used to calculate hidden layer inputs, we take an average over all these C context word inputs.
 			</p>
 		</div>
 	</section>
