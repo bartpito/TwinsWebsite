@@ -89,6 +89,9 @@
 						<a href="#section13"><i class="ion-bag"></i> <span class="topic-decoration">&bull; Word Vectors</span></a>
 						<ul class="nav-flyout">
 							<li>
+								<a href="#section13"><i class="ion-ios-color-filter-outline"></i>Word Representation</a>
+							</li>
+							<li>
 								<a href="#section14"><i class="ion-ios-color-filter-outline"></i>Word2Vec</a>
 							</li>
 							<li>
@@ -398,9 +401,18 @@
 				<br/><br/><img img class='imgPos' src="../static/views/dpr1.png" alt="dpr1">
 				<br/><br/>Since the number of context could be very large, e.g. document might contain thousand of sentences, these methods are known for being inefficient.
 			</p>
+			<br/><h2 class="basicText">&bull;TF-IDF</h2></p>
+			<p class="basicText2">
+					<br/>In NLP projects, we are required to determine the importance of each word. TF-IDF is a great statistical measure. It helps us understand the relevance of the term (word).
+					<br/><br/>For each term in a document, a matrix is computed by performing following 3 steps:
+					<br/><br/>1. Calculate the frequency of a term in a document. This is known as Term Frequency (TF). This is achieved by dividing the number of times a term appears in a document divided by the total number of terms in a document.
+					<br/><br/>2. Calculate the inverse of document frequency of a term. This is computed by dividing the total number of documents by the number of documents that contain the term. The inverse is calculated so that we can compute a positive log value. Therefore, compute a log of the computed value. This will result in a positive value. This is known as Inverse Document Frequency (IDF).
+					<br/><br/>3. Finally multiply step 1 by step 3. This is known as TF-IDF
+					<br/><br/>Rows of the matrix represent the terms and the columns of the matrix are the document names.
+			</p>
 			<br/><h2 class="basicText">&bull; Word Embedding</h2>
 			<p class="basicText2">
-				Collective term for models that learned to map a set of words or phrases in a vocabulary to vectors of numerical values.Word Embedding is really all about improving the ability of networks to learn from text data. By representing that data as lower dimensional vectors. These vectors are called Embedding.
+				<br/>Collective term for models that learned to map a set of words or phrases in a vocabulary to vectors of numerical values.Word Embedding is really all about improving the ability of networks to learn from text data. By representing that data as lower dimensional vectors. These vectors are called Embedding.
 			</p>
 			<br/><h2 class="basicText">&bull; How it is done?</h2>
 			<br/><p class="basicText2">
