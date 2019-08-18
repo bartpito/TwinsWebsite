@@ -468,8 +468,9 @@
 				<br/><br/>The “negative samples” (that is, the 5 output words that we’ll train to output 0) are chosen using a “unigram distribution”.
 				<br/><br/>Essentially, the probability for selecting a word as a negative sample is related to its frequency, with more frequent words being more likely to be selected as negative samples.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">The Continuous Bag of Words (CBOW) Model:</span>
-				<br/>The CBOW model architecture tries to predict the current target word (the center word) based on the source context words (surrounding words). Considering a simple sentence, “the quick brown fox jumps over the lazy dog”, this can be pairs of (context_window, target_word) where if we consider a context window of size 2, we have examples like ([quick, fox], brown), ([the, brown], quick), ([the, dog], lazy) and so on. Thus the model tries to predict the target_word based on the context_window words.
-				
+				<br/>The CBOW model architecture tries to predict the current target word (the center word) based on the source context words (surrounding words). Considering a simple sentence, “the quick brown fox jumps over the lazy dog”, this can be pairs of (context_window, target_word) where if we consider a context window of size 2, we have examples like ([quick, fox], 
+				brown), ([the, brown], quick), ([the, dog], lazy) and so on. Thus the model tries to predict the target_word based on the context_window words.
+				<br/><br/><br/><img img class='imgPos' src="../static/views/cbow1.png" alt="cbow">
 			</p>
 		</div>
 	</section>
