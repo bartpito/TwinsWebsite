@@ -437,7 +437,7 @@
 				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">How does Word2Vec work?</span>
 				<br/>The algorithm exists in two flavors <span style="font-weight: bold; font-size: 1.0vw;">CBOW and Skip-Gram.</span> Given a set of sentences (also called corpus) the model loops on the words of each sentence and either tries to use the current word of to predict its neighbors (its context), in which case the method is called “Skip-Gram”, or it uses each of these contexts 
 				to predict the current word, in which case the￼ method is called “Continuous Bag Of Words” (CBOW). The limit on the number of words in each context is determined by a parameter called “window size”.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Skip-gram model:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.3vw;">Skip-gram model:</span>
 				<br/><span style="font-weight: bold; font-size: 1.0vw;">&bull; Intuition</span>
 				<br/><br/>The skip-gram neural network model is actually surprisingly simple in its most basic form. Train a simple neural network with a single hidden layer to perform a certain task, but then we’re not actually going to use that neural network for the task we trained it on! Instead, the goal is actually just to learn the weights of the hidden layer–we’ll see that these weights are actually the “word vectors” that we’re trying to learn.
 				<br/><br/>We’re going to train the neural network to do the following. Given a specific word in the middle of a sentence (the input word), look at the words nearby and pick one at random. The network is going to tell us the probability for every word in our vocabulary of being the “nearby word” that we chose.
@@ -477,7 +477,7 @@
 				<br/><br/>In the hidden layer, only the weights for the input word are updated (this is true whether you’re using Negative Sampling or not).
 				<br/><br/>The “negative samples” (that is, the 5 output words that we’ll train to output 0) are chosen using a “unigram distribution”.
 				<br/><br/>Essentially, the probability for selecting a word as a negative sample is related to its frequency, with more frequent words being more likely to be selected as negative samples.
-				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">The Continuous Bag of Words (CBOW) Model:</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.3vw;">The Continuous Bag of Words (CBOW) Model:</span>
 				<br/>The CBOW model architecture tries to predict the current target word (the center word) based on the source context words (surrounding words). Considering a simple sentence, “the quick brown fox jumps over the lazy dog”, this can be pairs of (context_window, target_word) where if we consider a context window of size 2, we have examples like ([quick, fox], 
 				brown), ([the, brown], quick), ([the, dog], lazy) and so on. Thus the model tries to predict the target_word based on the context_window words.
 				<br/><br/><br/><img img class='imgPos' src="../static/views/cbow2.png" alt="cbow">
