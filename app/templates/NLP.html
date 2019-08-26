@@ -508,6 +508,9 @@
 			<br/><p class="basicText2">
 				<span style="font-weight: bold; font-size: 1.0vw;">Introduction</span>
 				<br/>The GloVe model stands for Global Vectors which is an unsupervised learning model which can be used to obtain dense word vectors similar to Word2Vec. However the technique is different and training is performed on an aggregated global word-word co-occurrence matrix, giving us a vector space with meaningful sub-structures.
+				<br/><br/><span style="font-weight: bold; font-size: 1.0vw;">The basic methodology</span>
+				<br/><br/>The basic methodology of the GloVe model is to first create a huge word-context co-occurence matrix consisting of (word, context) pairs such that each element in this matrix represents how often a word occurs with the context (which can be a sequence of words). The idea then is to apply matrix factorization to approximate this matrix as depicted in the following figure.
+				
 			</p>
 	</section>
 </body>
