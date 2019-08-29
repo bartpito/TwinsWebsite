@@ -541,7 +541,7 @@
 				should occur across other words of the corpus.
 			</p>
 		</div>
-		<div id="section16">
+		<div id="section17">
 			<a class="topic" style="text-decoration: underline;">Evaluation metrics:</a><br/>
 			<br/><p class="basicText2">
 				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">1. Accuracy</span>
@@ -553,6 +553,16 @@
 				<br/><span style="font-weight: bold; font-size: 1.0vw;">Denominator:</span> all subjects
 				<br/><br/><img img class='imgPos' src="../static/views/cm1.jpeg" alt="confusion matrix">
 				<br/><br/><br/><span style="font-weight: bold; font-size: 1.2vw;">2. Precision and Recall</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Precision:</span>
+				<br/><img img class='imgPos' src="../static/views/prec1.png" alt="precision">
+				<br/><br/>The denominator is actually the Total Predicted Positive!
+				<br/><br/><br/><img img class='imgPos' src="../static/views/prec2.png" alt="precision">
+				<br/><br/><br/><img img class='imgPos' src="../static/views/prec3.png" alt="precision">
+				<br/><br/>Immediately, you can see that Precision talks about how precise/accurate your model is out of those predicted positive, how many of them are actual positive.
+				<br/><br/>Precision is a good measure to determine, when the costs of False Positive is high. For instance, email spam detection. In email spam detection, a false positive means that an email that is non-spam (actual negative) has been identified as spam (predicted spam). The email user might lose important emails if the precision is not high for the spam detection model.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Recall:</span>
+				<br/><br/><br/><img img class='imgPos' src="../static/views/rec1.png" alt="recall">
+				<br/><br/><img img class='imgPos' src="../static/views/rec2.jpeg" alt="recall">
 			</p>
 		</div>
 	</section>
