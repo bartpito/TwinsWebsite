@@ -580,7 +580,7 @@
 		<div id="section18">
 			<a class="topic" style="text-decoration: underline;">Natural language Generation: </a><br/>
 			<p class="basicText2">
-				<br/><span style="font-weight: bold; font-size: 1.2vw;">1. BLEU</span>
+				<br/><span style="font-weight: bold; font-size: 1.2vw;">1. BLEU (Bilingual Evaluation Understudy)</span>
 				<br/>his is by far the most popular metric for evaluating machine translation system. In BLEU, precision and recall are approximated by modified n-gram precision and best match length, respectively.
 				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Modified n-gram precision:</span>
 				<br/>First, an n-gram precision is the fraction of n-grams in the candidate text which are present in any of the reference texts. From the example above, the unigram precision of A is 100%. However, just using this value presents a problem. For example, consider the two candidates:
@@ -594,7 +594,17 @@
 				<br/><br/>Therefore, we can introduce recall by just penalizing brevity in candidate texts. This is done by adding a multiplicative factor BP with the modified n-gram precision as follows.
 				<br/><br/><img img class='imgPos' src="../static/views/bleu2.gif" alt="bleu">
 				<br/><br/>Here, c is the total length of candidate translation corpus, and r is the effective reference length of corpus, i.e., average length of all references. The lengths are taken as average over the entire corpus to avoid harshly punishing the length deviations on short sentences. As the candidate length decreases, the ratio r/c increases, and the BP decreases exponentially.
-				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">2. ROGUE</span>
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">2. ROUGE (Recall Oriented Understudy for Gisting Evaluation)</span>
+				<br/>As is clear from its name, ROUGE is based only on recall, and is mostly used for summary evaluation. Depending on the feature used for calculating recall, ROUGE may be of many types, namely ROUGE-N, ROUGE-L, ROUGE-W, and ROUGE-S. Here, we describe the idea behind one of these, and then give a quick run-down of the others.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">ROUGE-N: </span>
+				<br/>This is based on n-grams. For example, ROUGE-1 counts recall based on matching unigrams, and so on. For any n, we count the total number of n-grams across all the reference summaries, and find out how many of them are present in the candidate summary. This fraction is the required metric value.
+				<br/><br/>ROUGE-L/W/S are based on: longest common subsequence (LCS), weighted LCS, and skip-bigram co-occurence statistics, respectively. Instead of using only recall, these use an F-score which is the harmonic mean of precision and recall values. These are in turn, calculated as follows for ROUGE-L.
+				<br/><br/>Suppose A and B are candidate and reference summaries of lengths m and n respectively. Then, we have
+				<br/><br/><img img class='imgPos' src="../static/views/rog1.gif" alt="rogue">
+				<br/><br/>F is then calculated as the weighted harmonic mean of P and R, as
+				<br/><br/><img img class='imgPos' src="../static/views/rog2.gif" alt="rogue">
+				<br/><br/>Similarly, in ROUGE-W, for calculating weighted LCS, we also track the lengths of the consecutive matches, in addition to the length of longest common subsequence (since there may be non-matching words in the middle). In ROUGE-S, a skip-bigram refers to any pair of words in sentence order allowing for arbitrary gaps. The precision and recall, in this case, are computed as a ratio of the total number of possible bigrams, i.e., C(n,2), where C is the combination function.
+				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">3. METEOR (Metric for Evaluation for Translation with Explicit Ordering)</span>
 			</p>
 		</div>
 	</section>
