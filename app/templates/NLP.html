@@ -605,6 +605,16 @@
 				<br/><br/><img img class='imgPos' src="../static/views/rog2.gif" alt="rogue">
 				<br/><br/>Similarly, in ROUGE-W, for calculating weighted LCS, we also track the lengths of the consecutive matches, in addition to the length of longest common subsequence (since there may be non-matching words in the middle). In ROUGE-S, a skip-bigram refers to any pair of words in sentence order allowing for arbitrary gaps. The precision and recall, in this case, are computed as a ratio of the total number of possible bigrams, i.e., C(n,2), where C is the combination function.
 				<br/><br/><span style="font-weight: bold; font-size: 1.2vw;">3. METEOR (Metric for Evaluation for Translation with Explicit Ordering)</span>
+				<br/>METEOR is another metric for machine translation evaluation, and it claims to have better correlation with human judgement.
+				<br/><br/>So why do we need a new metric when BLEU is already available? The problem with BLEU is that since the BP value uses lengths which are averaged over the entire corpus, so the scores of individual sentences take a hit.
+				<br/><br/>To solve this problem, METEOR modifies the precision and recall computations, replacing them with a weighted F-score based on mapping unigrams and a penalty function for incorrect word order.
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Weighted F-score: </span>
+				<br/><br/>First, we try to find the largest subset of mappings that can form an alignment between the candidate and reference translations. For this, we look at exact matches, followed by matches after Porter stemming, and finally using WordNet synonymy. After such an alignment is found, suppose m is the number of mapped unigrams between the two texts. Then, precision and recall are given as m/c and m/r, where c and r are candidate and reference lengths, respectively. F is calculated as
+				<br/><br/><img img class='imgPos' src="../static/views/met1.gif" alt="meteor">
+				<br/><br/><span style="font-weight: bold; font-size: 1.1vw;">Penalty function:</span>
+				<br/><br/>To account for the word order in the candidate, we introduce a penalty function as
+				<br/><br/><img img class='imgPos' src="../static/views/met2.gif" alt="meteor">
+				<br/><br/>Here, c is the number of matching chunks and m is the total number of matches. As such, if most of the matches are contiguous, the number of chunks is lower and the penalty decreases. Finally, the METEOR score is given as (1-Penalty)F.
 			</p>
 		</div>
 	</section>
