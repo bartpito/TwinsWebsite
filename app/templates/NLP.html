@@ -672,7 +672,7 @@
 				<br/><br/>The last of the more established concepts I would like to mention is an attention flow network. In such a network the attention model is decoupled from the RNN. An idea was introduced in the BiDAF model [Seo, 2016]. The attention is computed for every time step, and the attended vector, along with the representations from previous layers, is allowed to flow through to the next modelling layer. The goal is to reduce the information loss caused by early summarization. A multi-hop extension is the Ruminating Reader [Gong, 2017].
 				<br/><br/><img img class='imgPos' src="../static/views/att7.png" alt="attention">
 				<br/><br/>On the image, we can see the attention flow layer. It is responsible for linking and fusing information from the context and the query words by usin two-way attention. The inputs to the layer are contextual vector representations of the context and the query. The outputs of the layer are both the query-aware representations of the context words and the contextual embeddings. Note that we do not produce a single vector, but rather let the attention information flow to the next layer at each time step.
-
+				<br/><br/><a style="font-size: 1.2vw" href="https://towardsdatascience.com/attn-illustrated-attention-5ec4ad276ee3"> Great Article about Attention</a>
 			</p>
 		</div>
 	</section>
