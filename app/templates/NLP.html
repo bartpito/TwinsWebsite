@@ -657,6 +657,12 @@
 				<br/><br/>Self-attention has been used successfully in a variety of tasks. One of the use cases is sentiment analysis. For tasks like this, standard attention is not directly applicable, because there is no extra information: the model is only given one sentence as input. A common approach is to use the final hidden state or pooling. However, it is hard to preserve semantics this way. In Question Answering, there are models used in the SQuAD competition: r-net [Wang, 2017] and Reinforced Mnemonic Reader [Hu, 2017]. In Natural Language Inference — Decomposable Attention Model [Parikh, 2016]. 
 				<br/><br/>In machine translation, self-attention also contributes to impressive results. For example, recently a model, named Transformer, was introduced in a paper with a rather bold title “Attention Is All You Need” [Vaswani, 2017]. As you can guess, this model relies only on self-attention without the use of RNNs. As a result, it is highly parallelizable and requires less time to train, while establishing state-of-the-art results on WMT2014.
 				<br/><br/><img img class='imgPos' src="../static/views/att4.png" alt="attention">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Key-Value(-Predict) attention</span>
+				<br/><br/>In the discussed algorithms, we require output vectors to simultaneously store information for predicting the next word, computing the attention, and encode content relevant to future steps. Such an overloaded use of output representations can make training unnecessarily difficult. A key-value(-predict) attention [Daniluk, 2017] has been proposed to combat the problem. In a key-value part, we separate output vectors into
+				<br/><br/>&bull; Keys to calculate the attention, and
+				<br/>&bull; Values to encode the next-word distribution and context representation.
+				<br/><br/>However, we still use the value part for two goals at once. So, the authors split it again and in the end, the model outputs three vectors at each time step. The first is used to encode the next-word distribution, the second serves as a key to compute the attention vector, and the third as value for an attention mechanism.
+				<br/><br/><img img class='imgPos' src="../static/views/att5.png" alt="attention"  width='100%' height="100%">
 			</p>
 		</div>
 	</section>
