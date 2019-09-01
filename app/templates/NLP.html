@@ -663,6 +663,11 @@
 				<br/>&bull; Values to encode the next-word distribution and context representation.
 				<br/><br/>However, we still use the value part for two goals at once. So, the authors split it again and in the end, the model outputs three vectors at each time step. The first is used to encode the next-word distribution, the second serves as a key to compute the attention vector, and the third as value for an attention mechanism.
 				<br/><br/><img img class='imgPos' src="../static/views/att5.png" alt="attention"  width='100%' height="100%">
+				<br/><br/><br/><span style="font-weight: bold; font-size: 1.2vw;">Hierarchical & Nested attention</span>
+				<br/><br/>Texts tend to have a hierarchical structure and the importance of words and sentences are highly context dependent. To include this insight, hierarchical model proposed by [Yang, 2016] uses two levels of attention — one at the word level and one at the sentence level. Such architecture also allows for a better visualization — the highly informative components of a document are highlighted. A similar idea was presented in the literature for word- and character-levels as well and adapted to a multilingual setting by [Pappas, 2017].
+				<br/><br/>Another take on this is Attention-over-Attention [Cui, 2016]. The idea is to place another attention over the primary attentions, to indicate the “importance” of each attentions.
+				<br/><br/><img img class='imgPos' src="../static/views/att6.png" alt="attention">
+				<br/><br/>Attention-over-Attention is motivated by the Attention Sum Reader we have seen before. They first calculate a pair-wise matching matrix M by multiplying contextual embeddings produced by an LSTM for each pair of words. Then, they apply a column-wise softmax to get the query-to-document attention weights (alphas). The weights represent an alignment between the entire document and a single query word. After that, document-to-query attention weights are obtained by applying softmax row-wise. It is again a form of two-way attention. But now we calculate the dot-product of these weights to get attention-over-attention.
 			</p>
 		</div>
 	</section>
