@@ -3,7 +3,7 @@
 <head>
 	<title>Home</title>
 	<link href="{{ url_for('static', filename='bootstrap/bootstrap.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ url_for('static', filename='CSS/SentimentMainPage.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='CSS/emotion.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
 	{% block navbar %}
@@ -35,16 +35,15 @@
 	<div class="inner">
 		<header>
 			<div>
-				<h2 style="color:purple; font-weight: 900;"><u>Classify News Informations</u></h2>
+				<h2 style="color:purple; font-weight: 900;"><u>Predict if sentence is negative, neutral or positive</u></h2>
 				<p style="font-weight: 600;"><br>
-				Use the KEY WORD about news You are interested in. For example: "bitcoin" and<br>
-				findout whenever the newest news about given topic is <span style="color:green"><u>Positive</u></span> or <span style="color:red"><u>Negative.</u></span></p>
+				Write down your sentence i.e "I am happy :)" and findout whenever the sentence is<span style="color:blue"><u> Neutral</u></span>, <span style="color:green"><u> Positive</u></span> or <span style="color:red"><u>Negative.</u></span></p>
 			</div>
 		</header>
 	</div>
 	<div class="ml-container">
 		<form action="{{  url_for('predict')}}" method="post">
-			<p class='topic'>Enter Topic</p><input class="text" name="topic" placeholder="Enter topic.."><br>
+			<p class='topic'>Enter Sentence</p><input class="text" name="topic" placeholder="Enter sentence.."><br>
 			<div class="button">
 				<input class="predict-button" type="submit" value="Predict">
 			</div>

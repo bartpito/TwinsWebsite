@@ -2,14 +2,14 @@ import random
 from ekphrasis.classes.preprocessor import TextPreProcessor
 from ekphrasis.classes.tokenizer import SocialTokenizer
 from ekphrasis.dicts.emoticons import emoticons
-from utilities.data_preparation import print_dataset_statistics, labels_to_categories, categories_to_onehot
+from TwitterSentiment.utilities.data_preparation import print_dataset_statistics, labels_to_categories, categories_to_onehot
 from sklearn.model_selection import train_test_split
-from data.data_loader import DataLoader
+from TwitterSentiment.data.data_loader import DataLoader
 from sklearn.pipeline import Pipeline
 import numpy as np
-from embeddings.WordVectorsManager import WordVectorsManager
-from modules.CustomPreProcessor import CustomPreProcessor
-from modules.EmbeddingsExtractor import EmbeddingsExtractor
+from TwitterSentiment.embeddings.WordVectorsManager import WordVectorsManager
+from TwitterSentiment.modules.CustomPreProcessor import CustomPreProcessor
+from TwitterSentiment.modules.EmbeddingsExtractor import EmbeddingsExtractor
 
 
 def prepare_dataset(X, y, pipeline, y_one_hot=True, y_as_is=False):

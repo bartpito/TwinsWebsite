@@ -4,13 +4,13 @@ import numpy as np
 import sys
 from keras.callbacks import ModelCheckpoint
 from keras.layers import LSTM
-from utilities.callbacks import MetricsCallback, PlottingCallback
-from utilities.data_preparation import get_labels_to_categories_map, get_class_weights2, onehot_to_categories
-from sklearn.metrics import f1_score, precision_score
-from sklearn.metrics import recall_score
-from data.data_loader import DataLoader
-from models.nn_models import build_attention_RNN
-from utilities.data_loader import get_embeddings, Loader, prepare_dataset
+from TwitterSentiment.utilities.callbacks import MetricsCallback, PlottingCallback
+from TwitterSentiment.utilities.data_preparation import get_labels_to_categories_map, get_class_weights2, onehot_to_categories
+from TwitterSentiment.sklearn.metrics import f1_score, precision_score
+from TwitterSentiment.sklearn.metrics import recall_score
+from TwitterSentiment.data.data_loader import DataLoader
+from TwitterSentiment.models.nn_models import build_attention_RNN
+from TwitterSentiment.utilities.data_loader import get_embeddings, Loader, prepare_dataset
 
 np.random.seed(1337)
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 sys.path.append('projects/SentimentAnalysis/')
+sys.path.append('projects/SentimentAnalysis2/')
 sys.path.append('projects/chatbot/')
 import os
 import pandas as pd
@@ -8,6 +9,7 @@ import tensorflow as tf
 from newsparser import NewsParser
 from network import Network
 from cleaner import Cleaner
+from TwitterSentiment.evaluate import predict_class
 from keras.preprocessing.text import Tokenizer
 from keras.models import load_model
 from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
@@ -16,10 +18,11 @@ from flask import Flask, render_template, url_for, request
 from flask_socketio import SocketIO, send
 from flask import request
 import warnings
+import h5py
 warnings.filterwarnings('ignore')
 
 
-
+f = h5py.File('/home/pszmelcz/Desktop/TwinsWebsite/app/projects/SentimentAnalysis2/bi_model_weights_1.h5', 'r')
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.logging.set_verbosity(tf.logging.ERROR)
@@ -86,6 +89,12 @@ def predict():
         text=network.parser.titles[0])
 
 
+@app.route('/Prediction')
+def prediction():
+    tweets, predicted_y, label = predict_class([], [-1], "datastories.twitter", 300)
+
+
+
 @app.route('/Book')
 def book():
     return render_template('bookPage.html')
@@ -108,7 +117,7 @@ def chatbot():
 
 
 @app.route('/Emotion')
-def sentiment2():
+def emotion():
     return render_template('emotion.html')
 
 @app.route('/fullMode')

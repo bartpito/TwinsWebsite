@@ -1,5 +1,5 @@
-from utilities.data_loader import get_embeddings, Loader, prepare_dataset
-from models.nn_models import build_attention_RNN
+from TwitterSentiment.utilities.data_loader import get_embeddings, Loader, prepare_dataset
+from TwitterSentiment.models.nn_models import build_attention_RNN
 from keras.layers import LSTM
 import numpy as np
 

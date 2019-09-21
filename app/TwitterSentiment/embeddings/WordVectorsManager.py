@@ -3,7 +3,7 @@ import os
 import pickle
 import numpy as np
 
-from utilities.ResourceManager import ResourceManager
+from TwitterSentiment.utilities.ResourceManager import ResourceManager
 
 
 class WordVectorsManager(ResourceManager):

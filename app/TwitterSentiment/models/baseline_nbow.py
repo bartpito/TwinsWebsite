@@ -1,7 +1,7 @@
 import numpy as np
-from data.data_loader import DataLoader
-from utilities.data_loader import get_embeddings
-from utilities.sklearn import eval_clf, nbow_model
+from TwitterSentiment.data.data_loader import DataLoader
+from TwitterSentiment.utilities.data_loader import get_embeddings
+from TwitterSentiment.utilities.sklearn import eval_clf, nbow_model
 
 np.random.seed(1337)
 

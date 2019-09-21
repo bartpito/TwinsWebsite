@@ -10,8 +10,8 @@ from sklearn.preprocessing import Normalizer
 from sklearn.svm import SVR
 import numpy as np
 
-from modules.CustomPreProcessor import CustomPreProcessor
-from modules.NBOWVectorizer import NBOWVectorizer
+from TwitterSentiment.modules.CustomPreProcessor import CustomPreProcessor
+from TwitterSentiment.modules.NBOWVectorizer import NBOWVectorizer
 
 
 def eval_reg(y_hat, y):
