@@ -18,7 +18,7 @@ p {
 	margin: 0;
 }
 .topic {
-	font-size: 1.2em;
+	font-size: 1.5em;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -50,11 +50,11 @@ p {
 }
 
 .text {
-	height: 20px;
-	width: 140px;
+	height: 40px;
+	width: 400px;
 	border-radius: 5px;
 	color: black;
-	font: 600 9px Arial;
+	font: 600 12px Arial;
 }
 .inner {
 	background-color: #ffffff;
