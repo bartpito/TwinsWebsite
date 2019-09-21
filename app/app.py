@@ -106,6 +106,11 @@ def chatbot():
     #os.system('make action')
     return render_template('chatbot.html')
 
+
+@app.route('/Emotion')
+def sentiment2():
+    return render_template('emotion.html')
+
 @app.route('/fullMode')
 def fullMode():
     return render_template('fullMode.html')
