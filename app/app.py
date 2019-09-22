@@ -5,6 +5,7 @@ sys.path.append('projects/SentimentAnalysis2/')
 sys.path.append('projects/chatbot/')
 import os
 import pandas as pd
+import numpy as np
 import tensorflow as tf
 from newsparser import NewsParser
 from network import Network
@@ -20,9 +21,6 @@ from flask import request
 import warnings
 import h5py
 warnings.filterwarnings('ignore')
-
-
-f = h5py.File('/home/pszmelcz/Desktop/TwinsWebsite/app/projects/SentimentAnalysis2/bi_model_weights_1.h5', 'r')
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.logging.set_verbosity(tf.logging.ERROR)
@@ -91,10 +89,19 @@ def predict():
 
 @app.route('/Prediction', methods=['POST'])
 def prediction():
-    sentence = request.form["text"]
+    results = {}
+    sentences = request.form["text"]
+    sentences = sentences.split(".")
     with graph.as_default():
-        tweets, predicted_y, label = predict_class([sentence], [2], "datastories.twitter", 300)
-    return tweets, predicted_y, label
+        if len(sentences) == 1:
+            sentences.append("")
+            tweets, predicted_y, label = predict_class(sentences, -1, "datastories.twitter", 300)
+            return str(predicted_y[0][0])
+        else:
+            tweets, predicted_y, label = predict_class(sentences, -1, "datastories.twitter", 300)
+        for (sentence, y) in zip(sentences, predicted_y):
+               results[sentence] = y
+        return str(results)
 
 @app.route('/Book')
 def book():

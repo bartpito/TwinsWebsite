@@ -17,9 +17,8 @@ def prepare_dataset(X, y, pipeline, y_one_hot=True, y_as_is=False):
         print_dataset_statistics(y)
     except:
         pass
-
+    
     X = pipeline.fit_transform(X)
-
     if y_as_is:
         try:
             return X, np.asarray(y, dtype=float)
