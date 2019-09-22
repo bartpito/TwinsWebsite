@@ -91,7 +91,7 @@ def predict():
 
 @app.route('/Prediction')
 def prediction():
-    tweets, predicted_y, label = predict_class([], [-1], "datastories.twitter", 300)
+    #tweets, predicted_y, label = predict_class([], [-1], "datastories.twitter", 300)
 
 
 
