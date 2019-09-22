@@ -91,9 +91,10 @@ def predict():
 
 @app.route('/Prediction', methods=['POST'])
 def prediction():
-    #tweets, predicted_y, label = predict_class([], [-1], "datastories.twitter", 300)
     sentence = request.form["text"]
-    return sentence + "XD"
+    with graph.as_default():
+        tweets, predicted_y, label = predict_class([sentence], [2], "datastories.twitter", 300)
+    return tweets, predicted_y, label
 
 @app.route('/Book')
 def book():
