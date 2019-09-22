@@ -42,8 +42,8 @@
 		</header>
 	</div>
 	<div class="ml-container">
-		<form action="{{  url_for('prediction')}}">
-			<p class='topic'>Enter Sentence</p><input class="text" name="topic" placeholder="Enter sentence.."><br>
+		<form action="{{  url_for('prediction')}}" method='POST'>
+			<p class='topic'>Enter Sentence</p><input class="text" name="text" placeholder="Enter sentence.."><br>
 			<div class="button">
 				<input class="predict-button" type="submit" value="Predict">
 			</div>

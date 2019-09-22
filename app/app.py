@@ -89,11 +89,11 @@ def predict():
         text=network.parser.titles[0])
 
 
-@app.route('/Prediction')
+@app.route('/Prediction', methods=['POST'])
 def prediction():
     #tweets, predicted_y, label = predict_class([], [-1], "datastories.twitter", 300)
-
-
+    sentence = request.form["text"]
+    return sentence + "XD"
 
 @app.route('/Book')
 def book():
