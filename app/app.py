@@ -4,6 +4,7 @@ sys.path.append('projects/SentimentAnalysis/')
 sys.path.append('projects/SentimentAnalysis2/')
 sys.path.append('projects/chatbot/')
 import os
+import re
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -91,7 +92,10 @@ def predict():
 def prediction():
     results = {}
     text = request.form["text"]
+    if len(text.strip()) == 0 or text.strip() == len(text.strip()) * "." or len(re.sub(".", " ", text).strip()) == 0:
+        return "No input sentences entered"
     sentences = text.split(".")
+
     if sentences[-1] == " " or sentences[-1] == "":
         del sentences[-1]
     with graph.as_default():
