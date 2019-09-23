@@ -95,10 +95,10 @@ def prediction():
     with graph.as_default():
         if len(sentences) == 1:
             sentences.append("")
-            tweets, predicted_y, label = predict_class(sentences, -1, "datastories.twitter", 300)
+            _tweets, predicted_y, _label = predict_class(sentences, -1, "datastories.twitter", 300)
             return str(predicted_y[0][0])
         else:
-            tweets, predicted_y, label = predict_class(sentences, -1, "datastories.twitter", 300)
+            _tweets, predicted_y, _label = predict_class(sentences, -1, "datastories.twitter", 300)
         for (sentence, y) in zip(sentences, predicted_y):
                results[sentence] = y
         return str(results)
