@@ -9,20 +9,16 @@
 		<input id='btnBack' type='submit' value='BACK'>
 	</form>
     <div class="results" style='margin: auto;'>
-        {% if prediction|length == 1 %}
-            {% if prediction == 2 %}
-            <p class="image smile"></p>
-            {% elif prediction == 1 %}
-            <p class="image angry"></p>
-            {% elif prediction == 0 %}
-            <p class="image angry"></p>
-            {% endif %}
+        {% if prediction is number %}
             <h3 style="color:black;text-align:center;"><u>Result:</u></h3>
-            {% if prediction == 2%}
+            {% if prediction == 2 %}
+            <p class='topic' style='color:white; background-color:green;'><b>&nbsp{{sentences}}&nbsp</b></p>
             <h2 class="result" style="color:white; background-color:green;">POSITIVE</h2>
             {% elif prediction == 1 %}
+            <p class='topic' style='color:white; background-color:blue;'><b>&nbsp{{sentences}}&nbsp</b></p>
             <h2 class="result" style="color:white; background-color:blue;">NEUTRAL</h2>
             {% elif prediction == 0 %}
+            <p class='topic' style='color:white; background-color:red;'><b>&nbsp{{sentences}}&nbsp</b></p>
             <h2 class="result" style="color:white; background-color:red;">NEGATIVE</h2>
             {% endif %}
         {% elif prediction|length > 1 %}
@@ -30,7 +26,15 @@
                 {% for key, value in results.items() %}
                 <tr>
                         <th> {{ key }} </th>
-                        <td> {{ value }} </td>
+                        {% if value == [2] %}
+                            <td> POSITIVE </td>
+                        {% elif value == [1] %}
+                            <td> NEUTRAL </td>
+                        {% elif value == [0] %}
+                            <td> NEGATIVE </td>
+                        {% else %}
+                            <td> no value </td> 
+                        {% endif %}   
                 </tr>
                 {% endfor %}
             </table>

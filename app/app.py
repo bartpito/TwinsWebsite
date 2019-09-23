@@ -92,19 +92,20 @@ def prediction():
     results = {}
     text = request.form["text"]
     sentences = text.split(".")
-    if len(sentences[-1]):
+    if sentences[-1] == " " or sentences[-1] == "":
         del sentences[-1]
-    sentences.append(text)
     with graph.as_default():
         if len(sentences) == 1:
             sentences.append("")
             _tweets, predicted_y, _label = predict_class(sentences, -1, "datastories.twitter", 300)
-            return render_template("emotionResults.html", prediction=predicted_y[0][0], sentences=sentences[0], results=results)
+            return render_template("emotionResults.html", prediction=predicted_y[0][0].item(), sentences=sentences[0], results=results)
         else:
+            sentences.append(text)
             _tweets, predicted_y, _label = predict_class(sentences, -1, "datastories.twitter", 300)
         for (sentence, y) in zip(sentences, predicted_y):
                results[sentence] = y
-        return render_template("emotionResults.html", prediction=predicted_y, sentences=sentences[0], results=results)
+        return render_template("emotionResults.html", prediction=predicted_y, sentences=sentences, results=results)
+
 
 @app.route('/Book')
 def book():
