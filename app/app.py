@@ -90,8 +90,11 @@ def predict():
 @app.route('/Prediction', methods=['POST'])
 def prediction():
     results = {}
-    sentences = request.form["text"]
-    sentences = sentences.split(".")
+    text = request.form["text"]
+    sentences = text.split(".")
+    if len(sentences[-1]):
+        del sentences[-1]
+    sentences.append(text)
     with graph.as_default():
         if len(sentences) == 1:
             sentences.append("")
