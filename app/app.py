@@ -92,7 +92,7 @@ def predict():
 def prediction():
     results = {}
     text = request.form["text"]
-    if len(text.strip()) == 0 or text.strip() == len(text.strip()) * "." or len(re.sub(".", " ", text).strip()) == 0:
+    if len(text.strip()) == 0 or text.strip() == len(text.strip()) * "." or len(re.sub("\.", " ", text).strip()) == 0:
         return "No input sentences entered"
     sentences = text.split(".")
 
