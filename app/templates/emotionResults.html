@@ -5,15 +5,22 @@
     <link href="{{ url_for('static', filename='CSS/SentimentResults.css') }}" rel="stylesheet" type="text/css">
     <style>
         p {
-            margin: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            font-size: 1.6em;
             border: solid white 2px;
             border-radius: 6px;
+            line-height: -20px;
         }
+        
         h2 {
-            margin-top: 3px;
-            margin-bottom: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 1.6em;
             border: solid white 2px;
             border-radius: 6px;
+            line-height: -20px;
         }
     </style>
 </head>
@@ -39,8 +46,8 @@
                 {% for key, value in results.items() %}
                 <tr>
                         {% if value == [2] %}
-                        <th><p style="color:white; background-color:green; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
-                        <td><h2 style="color:white; background-color:green; margin-bottom: 3px">POSITIVE</h2></td>
+                        <th><p style="color:white; background-color:green;"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:green;">POSITIVE</h2></td>
                         {% elif value == [1] %}
                         <th><p style="color:white; background-color:blue; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
                         <td><h2 style="color:white; background-color:blue; margin-bottom: 3px">NEUTRAL</h2></td>
