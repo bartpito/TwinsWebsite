@@ -2,13 +2,26 @@
 <html>
 <head>
 	<title></title>
-	<link href="{{ url_for('static', filename='CSS/SentimentResults.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='CSS/SentimentResults.css') }}" rel="stylesheet" type="text/css">
+    <style>
+        p {
+            margin: auto;
+            border: solid white 2px;
+            border-radius: 6px;
+        }
+        h2 {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            border: solid white 2px;
+            border-radius: 6px;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #1e1e1e">
 	<form action="{{ url_for('emotion') }}">
 		<input id='btnBack' type='submit' value='BACK'>
 	</form>
-    <div class="results" style='margin: auto;'>
+    <div class="results" style='margin-top: 10px;'>
         {% if prediction is number %}
             <h3 style="color:black;text-align:center;"><u>Result:</u></h3>
             {% if prediction == 2 %}
@@ -22,18 +35,20 @@
             <h2 class="result" style="color:white; background-color:red;">NEGATIVE</h2>
             {% endif %}
         {% elif prediction|length > 1 %}
-            <table>
+            <table style="display: inline-block; margin-top: 10px;">
                 {% for key, value in results.items() %}
                 <tr>
-                        <th> {{ key }} </th>
                         {% if value == [2] %}
-                            <td> POSITIVE </td>
+                        <th><p style="color:white; background-color:green; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:green; margin-bottom: 3px">POSITIVE</h2></td>
                         {% elif value == [1] %}
-                            <td> NEUTRAL </td>
+                        <th><p style="color:white; background-color:blue; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:blue; margin-bottom: 3px">NEUTRAL</h2></td>
                         {% elif value == [0] %}
-                            <td> NEGATIVE </td>
+                        <th><p style="color:white; background-color:red; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:red; margin-bottom: 3px">NEGATIVE</h2></td>
                         {% else %}
-                            <td> no value </td> 
+                        <td><h2 style="color:white; background-color:black; margin-bottom: 10px">NO value</h2></td>
                         {% endif %}   
                 </tr>
                 {% endfor %}

@@ -6,11 +6,10 @@
 	<link href="{{ url_for('static', filename='CSS/emotion.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body style="background-color: #1e1e1e">
-	
 	{% block navbar %}
 	<nav class="navbar navbar-expand-sm" style="background-color: #1e1e1e	; width: 400px; border: 3px solid #FFFFFF; border-radius: 30px; margin-left: 20px; margin-top: 10px; font-size:1.1em;
 	font-family: cursive;">
-		<div class="collapse navbar-collapse" id="navbarNav" style="background-color: #1e1e1e	">
+		<div class="collapse navbar-collapse" id="navbarNav" style="background-color: #1e1e1e">
 			<ul class="navbar-nav">
 				<li class="nav-item active">
 					<a class="nav-link" href="{{  url_for(  'index')  }}" style="text-align: center; color:#FFFFFF;font-weight: bold;">Home Page <span class="sr-only">(current)</span></a>
@@ -33,7 +32,7 @@
 		</div>
 	</nav>
 	{% endblock %}
-	<div class="inner" style="background-color: #1e1e1e	">
+	<div class="inner" style="background-color: #1e1e1e">
 		<header>
 			<div>
 				<h2 style="color: #FFDF00; font-weight: 900;">Predict if sentence is negative, neutral or positive.</h2>
