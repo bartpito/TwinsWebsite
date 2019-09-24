@@ -136,18 +136,22 @@ def chatbot():
 def emotion():
     return render_template('emotion.html')
 
+
 @app.route('/fullMode')
 def fullMode():
     return render_template('fullMode.html')
+
 
 @app.route('/winMode')
 def winMode():
     return render_template('winMode.html')
 
+
 @socketio.on('message')
 def handleMessage(msg):
     print(f'Message: {msg}')
     send(msg, broadcast=True)
+
 
 if __name__ == "__main__":
     socketio.run(app, host='0.0.0.0', debug=True, port=5003)
