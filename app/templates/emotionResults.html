@@ -26,21 +26,21 @@
 </head>
 <body style="background-color: #1e1e1e">
 	<form action="{{ url_for('emotion') }}">
-		<input id='btnBack' type='submit' value='BACK'>
+		<input id='btnBack' type='submit' value='BACK' style="margin-bottom:8%;">
 	</form>
     <div class="results" style='margin-top: 10px;'>
         {% if prediction is number %}
             {% if prediction == 2 %}
-            <p style='color:white; background-color:green; display: inline block; width: 50%;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 style="color:white; background-color:green; display: inline;">POSITIVE</h2>
+            <p style='color:white; background-color:green; display: inline; font-size: 2.2em;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:green; display: inline; font-size: 2.2em;">POSITIVE</h2>
             {% elif prediction == 1 %}
-            <p style='color:white; background-color:blue; display: inline block;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 style="color:white; background-color:blue; display: inline;">NEUTRAL</h2>
+            <p style='color:white; background-color:blue; display: inline; font-size: 2.2em;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:blue; display: inline; font-size: 2.2em;">NEUTRAL</h2>
             {% elif prediction == 0 %}
-            <p style='color:white; background-color:red; display: inline block;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 style="color:white; background-color:red; display: inline;">NEGATIVE</h2>
+            <p style='color:white; background-color:red; display: inline; font-size: 2.2em;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:red; display: inline; font-size: 2.2em;">NEGATIVE</h2>
             {% else %}
-            <h2 style="color:white; background-color:black; display: inline-block;">NO value</h2><
+            <h2 style="color:white; background-color:black; display: inline; font-size: 2.2em;">NO value</h2><
             {% endif %}
         {% elif prediction|length > 1 %}
             <table style="display: inline-block; margin-top: 10px;">
