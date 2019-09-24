@@ -6,7 +6,7 @@
     <style>
         p {
             margin-top: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             margin-right: 3px;
             font-size: 1.6em;
             border: solid white 2px;
@@ -15,7 +15,7 @@
         }
         
         h2 {
-            margin-top: 5px;
+            margin-top: 3px;
             margin-bottom: 5px;
             font-size: 1.6em;
             border: solid white 2px;
@@ -30,16 +30,17 @@
 	</form>
     <div class="results" style='margin-top: 10px;'>
         {% if prediction is number %}
-            <h3 style="color:black;text-align:center;"><u>Result:</u></h3>
             {% if prediction == 2 %}
-            <p class='topic' style='color:white; background-color:green;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 class="result" style="color:white; background-color:green;">POSITIVE</h2>
+            <p style='color:white; background-color:green; display: inline block; width: 50%;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:green; display: inline;">POSITIVE</h2>
             {% elif prediction == 1 %}
-            <p class='topic' style='color:white; background-color:blue;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 class="result" style="color:white; background-color:blue;">NEUTRAL</h2>
+            <p style='color:white; background-color:blue; display: inline block;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:blue; display: inline;">NEUTRAL</h2>
             {% elif prediction == 0 %}
-            <p class='topic' style='color:white; background-color:red;'><b>&nbsp{{sentences}}&nbsp</b></p>
-            <h2 class="result" style="color:white; background-color:red;">NEGATIVE</h2>
+            <p style='color:white; background-color:red; display: inline block;'><b>&nbsp{{sentences}}&nbsp</b></p>
+            <h2 style="color:white; background-color:red; display: inline;">NEGATIVE</h2>
+            {% else %}
+            <h2 style="color:white; background-color:black; display: inline-block;">NO value</h2><
             {% endif %}
         {% elif prediction|length > 1 %}
             <table style="display: inline-block; margin-top: 10px;">
@@ -49,13 +50,13 @@
                         <th><p style="color:white; background-color:green;"><b>&nbsp{{key}}&nbsp</b></p></th>
                         <td><h2 style="color:white; background-color:green;">POSITIVE</h2></td>
                         {% elif value == [1] %}
-                        <th><p style="color:white; background-color:blue; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
-                        <td><h2 style="color:white; background-color:blue; margin-bottom: 3px">NEUTRAL</h2></td>
+                        <th><p style="color:white; background-color:blue;"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:blue;">NEUTRAL</h2></td>
                         {% elif value == [0] %}
-                        <th><p style="color:white; background-color:red; margin-bottom: 3px"><b>&nbsp{{key}}&nbsp</b></p></th>
-                        <td><h2 style="color:white; background-color:red; margin-bottom: 3px">NEGATIVE</h2></td>
+                        <th><p style="color:white; background-color:red;"><b>&nbsp{{key}}&nbsp</b></p></th>
+                        <td><h2 style="color:white; background-color:red;">NEGATIVE</h2></td>
                         {% else %}
-                        <td><h2 style="color:white; background-color:black; margin-bottom: 10px">NO value</h2></td>
+                        <td><h2 style="color:white; background-color:black;">NO value</h2></td>
                         {% endif %}   
                 </tr>
                 {% endfor %}
